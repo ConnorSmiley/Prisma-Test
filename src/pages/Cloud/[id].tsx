@@ -57,10 +57,10 @@ const CloudPosts: React.FC<IProps> = ({ post }) => {
         <Navbar />
         <IdStyles>
           <Title>
-            {post.title}
+            {post?.title}
           </Title>
           <Content>
-            {post.content}
+            {post?.content}
           </Content>
         </IdStyles>
       </IdContainer>

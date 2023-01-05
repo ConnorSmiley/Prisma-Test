@@ -74,7 +74,6 @@ const Blog = styled.div`
     `}
 `;
 
-
 const ProjectsSelected = styled.div`
   ${tw`
   px-8
@@ -101,6 +100,7 @@ const BlogSelected = styled.div`
 export interface ISidebarNavProps {
   Projects: any;
   Blog: any;
+  slug:any
 }
 
 const SidebarNavCoding: React.FC<ISidebarNavProps> = () => {
@@ -113,9 +113,8 @@ const SidebarNavCoding: React.FC<ISidebarNavProps> = () => {
         <SidebarNavStyle>
           <SidebarNavText>
 
-            {currentRoute === "/Coding" ?
               <>
-                <Link href="Coding/Projects">
+                <Link href="/Coding/[...slug]" as={`/${currentRoute}`}>
                   <Projects>
                     Projects
                   </Projects>
@@ -126,59 +125,6 @@ const SidebarNavCoding: React.FC<ISidebarNavProps> = () => {
                   </Blog>
                 </Link>
               </>
-              :
-              <>
-              </>
-            }
-
-            {currentRoute === "/Projects" ?
-              <>
-                <ProjectsSelected>
-                  Projects
-                </ProjectsSelected>
-                <Link href="/Coding/Blog">
-                  <Blog>
-                    Blog
-                  </Blog>
-                </Link>
-              </>
-              :
-              <>
-                <Link href="Coding/Projects">
-                  <Projects>
-                    Projects
-                  </Projects>
-                </Link>
-                <Blog>
-                  Blog
-                </Blog>
-              </>
-            }
-
-            {currentRoute === "/Blog" ?
-              <>
-                <Link href="/Coding/Projects">
-                  <ProjectsSelected>
-                    Projects
-                  </ProjectsSelected>
-                </Link>
-                <Blog>
-                  Blog
-                </Blog>
-              </>
-              :
-              <>
-                <Projects>
-                  Projects
-                </Projects>
-                <Link href="Coding/Blog">
-                  <Blog>
-                    Blog
-                  </Blog>
-                </Link>
-
-              </>
-            }
 
 
           </SidebarNavText>
