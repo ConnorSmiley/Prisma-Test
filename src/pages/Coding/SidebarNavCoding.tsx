@@ -5,7 +5,6 @@ import tw from "twin.macro";
 const SidebarNavContainer = styled.div`
   ${tw`
     w-full
-    h-full
     flex
     
     lg:w-60 
@@ -49,7 +48,6 @@ const Blog = styled.div`
     `}
 `;
 
-
 export interface ISidebarNavProps {
   Projects: string;
   Blog: string;
@@ -62,7 +60,6 @@ const SidebarNavCoding: React.FC<ISidebarNavProps> = () => {
       <SidebarNavContainer>
         <SidebarNavStyle>
           <SidebarNavText>
-
             <>
               <Projects>
                 Projects
@@ -71,7 +68,6 @@ const SidebarNavCoding: React.FC<ISidebarNavProps> = () => {
                 Blog
               </Blog>
             </>
-
           </SidebarNavText>
         </SidebarNavStyle>
       </SidebarNavContainer>
