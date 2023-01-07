@@ -53,7 +53,8 @@ const Heading = styled.div`
     w-full
     pb-4
     border-b-2
-    border-black
+    border-white
+    relative
     
     `}
 `;
@@ -74,7 +75,6 @@ const Picture = styled.img`
     `}
 `;
 
-
 const Title = styled.header`
   ${tw`
   text-7xl
@@ -82,16 +82,61 @@ const Title = styled.header`
   font-extrabold
   py-8
   w-[40rem]
+  text-white
     
     `}
 `;
 
+const Title1 = styled.div`
+
+  ${tw`
+    text-6xl
+    font-extrabold
+    pb-8
+    tracking-tight
+    italic
+    
+    `}
+`
+
+const Title2 = styled.div`
+    ${tw`
+        text-6xl
+    font-extrabold
+    pb-10
+    pt-4
+    tracking-tight
+    italic
+
+    `}
+`
+
+const Date = styled.div`
+    ${tw`
+    text-white
+    absolute
+    bottom-8
+    right-0
+    text-xl
+    font-light
+    
+    
+    `}
+`
+
 const Content = styled.text`
   white-space: pre-line;
+  background: rgba(0, 0, 0, 0.5);
   ${tw`
-  pt-10
   text-2xl
   tracking-tight
+  text-white
+  pt-10
+  pb-10
+  px-10
+  
+  mt-10
+  rounded-md
     
     `}
 `;
@@ -106,19 +151,29 @@ const CloudPosts: React.FC<IProps> = ({ post }) => {
         <BlogContainer>
           <IdStyles>
 
-          <Heading>
-            <PictureContainer>
-              <Picture src={post?.img} />
-            </PictureContainer>
-            <Title>
-              {post?.title}
-            </Title>
-          </Heading>
+            <Heading>
+              <PictureContainer>
+                <Picture src={post?.img} />
+              </PictureContainer>
+              <Title>
+                {post?.title}
+              </Title>
+              <Date>
+                {post.TimeStamp.slice(0, -16)}
+              </Date>
+            </Heading>
+
 
             <Content>
-              {post?.content}
-            </Content>
+                <Title1>
+                  {post?.title1}
+                </Title1>
+
+                {post?.content}
+
+              </Content>
           </IdStyles>
+
         </BlogContainer>
 
       </IdContainer>
