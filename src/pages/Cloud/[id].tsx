@@ -126,11 +126,13 @@ const Date = styled.div`
     `}
 `;
 
-const Share = styled.div`
+const LinkedIn = styled.div`
   ${tw`
     h-10
-    w-10
+    w-20
     flex
+    bg-black
+    
     
     `}
 `;
@@ -175,9 +177,11 @@ const CloudPosts: React.FC<IProps> = ({ post }) => {
             </Heading>
 
 
-            <LinkedinShareButton url={`www.localhost:3000/Cloud/${post?.id}`}>
-              <LinkedinIcon size={32} round={false} />
-            </LinkedinShareButton>
+            <LinkedIn>
+              <LinkedinShareButton url={`www.localhost:3000/Cloud/${post?.id}`} title={"Connor Smiley's Blog"}>
+                <LinkedinIcon size={32} />
+              </LinkedinShareButton>
+            </LinkedIn>
 
 
             <Content>

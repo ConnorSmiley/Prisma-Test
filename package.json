@@ -4,7 +4,7 @@
   "author": "Connor Smiley",
   "scripts": {
     "dev": "open http://localhost:3000 && next dev",
-    "build": "yarn build",
+    "build": "next build",
     "start": "next start",
     "export": "next export -o dist",
     "stage": "yarn build; yarn start",
