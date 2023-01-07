@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import styled from "styled-components";
 import tw from "twin.macro";
 import Footer from "@/components/Footer";
+import { LinkedinShareButton } from "react-share";
+import { LinkedinIcon } from "react-share";
 
 export interface IProps {
   blogPost: any;
@@ -97,10 +99,10 @@ const Title1 = styled.div`
     italic
     
     `}
-`
+`;
 
 const Title2 = styled.div`
-    ${tw`
+  ${tw`
         text-6xl
     font-extrabold
     pb-10
@@ -109,10 +111,10 @@ const Title2 = styled.div`
     italic
 
     `}
-`
+`;
 
 const Date = styled.div`
-    ${tw`
+  ${tw`
     text-white
     absolute
     bottom-8
@@ -122,7 +124,16 @@ const Date = styled.div`
     
     
     `}
-`
+`;
+
+const Share = styled.div`
+  ${tw`
+    h-10
+    w-10
+    flex
+    
+    `}
+`;
 
 const Content = styled.text`
   white-space: pre-line;
@@ -164,22 +175,28 @@ const CloudPosts: React.FC<IProps> = ({ post }) => {
             </Heading>
 
 
+            <LinkedinShareButton url={`www.localhost:3000/Cloud/${post?.id}`}>
+              <LinkedinIcon size={32} round={true} />
+            </LinkedinShareButton>
+
+
             <Content>
-                <Title1>
-                  {post?.title1}
-                </Title1>
+              <Title1>
+                {post?.title1}
+              </Title1>
 
-                {post?.content}
+              {post?.content}
 
-              </Content>
+            </Content>
           </IdStyles>
 
         </BlogContainer>
 
       </IdContainer>
-      <Footer />
+      <Footer />;
     </>
-  );
+  )
+    ;
 };
 
 export const getStaticPaths = async () => {
