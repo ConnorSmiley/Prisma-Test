@@ -55,7 +55,7 @@ export const getStaticProps = async () => {
 
 const Index: React.FC<ICloudProps> = ({ blogPost }) => {
 
-  const filteredBlog =  blogPost.map((posts:any) => (
+  const filteredBlog =  blogPost.reverse().map((posts:any) => (
     <>
       <CloudCard posts={posts}/>
     </>
