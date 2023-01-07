@@ -26,7 +26,7 @@ const IdContainer = styled.div`
 
 const IdStyles = styled.div`
   ${tw`
-  
+  relative
     mt-20
     h-full
     flex
@@ -43,6 +43,7 @@ const BlogContainer = styled.div`
   flex
   flex-col
   items-center
+  relative
     
     `}
 `;
@@ -122,20 +123,38 @@ const Date = styled.div`
     text-xl
     font-light
     
+    `}
+`;
+
+const LinkedInContainer = styled.div`
+  background: rgba(0, 0, 0, 0.6);
+  ${tw`
+    h-12
+    w-32
+    flex
+    flex-row
+    items-center
+    justify-center
+    justify-evenly
+    rounded-md
+    border-2
+    border-gray-500
+    text-xl
+    font-bold
+    text-white
+    
+    hover:bg-blue-500
     
     `}
 `;
 
-const LinkedIn = styled.div`
-  ${tw`
-    h-10
-    w-20
-    flex
-    bg-black
-    
+
+const LinkedInStyles = styled.div`
+    ${tw`
+    pt-2
     
     `}
-`;
+`
 
 const Content = styled.text`
   white-space: pre-line;
@@ -147,8 +166,8 @@ const Content = styled.text`
   pt-10
   pb-10
   px-10
+  mt-2
   
-  mt-10
   rounded-md
     
     `}
@@ -177,11 +196,16 @@ const CloudPosts: React.FC<IProps> = ({ post }) => {
             </Heading>
 
 
-            <LinkedIn>
+            <LinkedInStyles>
               <LinkedinShareButton url={`www.localhost:3000/Cloud/${post?.id}`} title={"Connor Smiley's Blog"}>
-                <LinkedinIcon size={32} />
+                <LinkedInContainer>
+
+                  <LinkedinIcon size={28} iconFillColor={"white"} borderRadius={5} />
+                  Share
+                </LinkedInContainer>
+
               </LinkedinShareButton>
-            </LinkedIn>
+            </LinkedInStyles>
 
 
             <Content>
