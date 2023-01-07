@@ -13,6 +13,7 @@
   "dependencies": {
     "@fontsource/roboto": "^4.5.8",
     "@supabase/supabase-js": "^2.2.2",
+    "@tailwindcss/line-clamp": "^0.4.2",
     "next": "^12.3.4",
     "react": "18.2.0",
     "react-dom": "^18.2.0",

@@ -25,6 +25,7 @@ module.exports = {
       14: '14',
       15: '15',
       16: '16',
+      '1/1':'1 / 1 '
     },
     corePlugins: {
       aspectRatio: false,
@@ -993,5 +994,7 @@ module.exports = {
     wordBreak: ['responsive'],
     zIndex: ['responsive', 'focus-within', 'focus'],
   },
-  plugins: [require('@tailwindcss/aspect-ratio'),],
+  plugins: [require('@tailwindcss/aspect-ratio'),
+   require('@tailwindcss/line-clamp'),
+  ],
 }

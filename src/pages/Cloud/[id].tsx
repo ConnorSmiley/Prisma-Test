@@ -3,6 +3,7 @@ import { supabase } from "@/utils/supabase";
 import Navbar from "@/components/Navbar";
 import styled from "styled-components";
 import tw from "twin.macro";
+import Footer from "@/components/Footer";
 
 export interface IProps {
   blogPost: any;
@@ -13,41 +14,87 @@ export interface IProps {
 const IdContainer = styled.div`
   ${tw`
     w-screen
-    h-screen
+    h-full
     bg-gradient-to-r from-pink-500 to-purple-900
+    flex
+    pb-20
+    
     `}
 `;
 
 const IdStyles = styled.div`
   ${tw`
+  
     mt-20
     h-full
-    w-[98%]
     flex
+    flex-col
     items-center
     px-2
-    flex-col
+    pr-40
+    pl-40
     `}
 `;
 
-const Title = styled.div`
+const BlogContainer = styled.div`
+  ${tw`
+  flex
+  flex-col
+  items-center
+    
+    `}
+`;
+
+const Heading = styled.div`
+  ${tw`
+    flex
+    items-center
+    justify-start
+    w-full
+    pb-4
+    border-b-2
+    border-black
+    
+    `}
+`;
+
+
+const PictureContainer = styled.div`
+  ${tw`
+    aspect-h-1
+    w-[20rem]
+    mr-8
+    
+    `}
+`;
+
+const Picture = styled.img`
+  ${tw`
+    
+    `}
+`;
+
+
+const Title = styled.header`
   ${tw`
   text-7xl
   uppercase
   font-extrabold
   py-8
+  w-[40rem]
     
     `}
 `;
 
-const Content = styled.div`
+const Content = styled.text`
+  white-space: pre-line;
   ${tw`
-  text-4xl
-  font-medium
+  pt-10
+  text-2xl
+  tracking-tight
     
     `}
 `;
-
 
 const CloudPosts: React.FC<IProps> = ({ post }) => {
 
@@ -55,15 +102,27 @@ const CloudPosts: React.FC<IProps> = ({ post }) => {
     <>
       <IdContainer>
         <Navbar />
-        <IdStyles>
-          <Title>
-            {post?.title}
-          </Title>
-          <Content>
-            {post?.content}
-          </Content>
-        </IdStyles>
+
+        <BlogContainer>
+          <IdStyles>
+
+          <Heading>
+            <PictureContainer>
+              <Picture src={post?.img} />
+            </PictureContainer>
+            <Title>
+              {post?.title}
+            </Title>
+          </Heading>
+
+            <Content>
+              {post?.content}
+            </Content>
+          </IdStyles>
+        </BlogContainer>
+
       </IdContainer>
+      <Footer />
     </>
   );
 };

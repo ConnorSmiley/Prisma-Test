@@ -25,6 +25,7 @@ const CloudCardStyle = styled.div`
   border-gray-500
   pb-8
   my-4
+ 
   
     `}
 `;
@@ -40,30 +41,33 @@ const CardStyle = styled.div`
   ${tw`
   bg-black
   w-full
+  relative
+  pl-2
+  
+  hover:opacity-80
     
     `}
 `;
 
-const Title = styled.div`
+const Title = styled.header`
   ${tw`
     text-white
     text-xl
     font-bold
     text-white
-    text-center
     flex
     pt-2
+    tracking-wide
 
     sm:text-xl
     md:text-xl
     lg:text-lg
-    xl:text-3xl
+    xl:text-4xl
     `}
 `;
 
 const PictureContainer = styled.img`
   ${tw`
-  w-full
   h-full
   left-0
   object-contain
@@ -72,36 +76,35 @@ const PictureContainer = styled.img`
   flex
   items-center
   justify-center
+  aspect-h-1
   
   sm:w-40
   md:w-40
-  lg:w-60
+  lg:w-64
   xl:w-80
     `}
 `;
 
-const ContentContainer = styled.div`
-  white-space: nowrap;
-  text-overflow: ellipsis;
+const ContentContainer = styled.text`
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  min-width: 0;
+  word-break: keep-all;
+
   ${tw`
+  flex
     text-white
-    text-center
-    pt-2
+    pt-4
+    pr-4
     flex
-    overflow-hidden
-    h-6
-    w-full
-    font-light
-   
-   sm:text-xl
-   lg:text-base
-   xl:text-2xl
-   xl:font-light
-   xl:pb-24
-   
+    text-xl
+    tracking-wide
+
    `}
 `;
-
 
 const Date = styled.div`
   ${tw`
@@ -111,6 +114,7 @@ const Date = styled.div`
     bottom-6
     text-white
     font-light
+    tracking-wide
     
     sm:text-sm
     sm:mt-2
@@ -121,7 +125,7 @@ const Date = styled.div`
     lg:pb-0
     lg:bottom-5
     xl:text-xl
-    xl:font-thin
+    xl:font-light
     xl:bottom-4
 
     `}
@@ -129,11 +133,9 @@ const Date = styled.div`
 
 const ButtonContainer = styled.div`
   ${tw`
-  flex
-  justify-end
-  pt-3
-  pr-3
-  w-full
+  absolute
+  bottom-2
+  right-2
    
     `}
 `;
@@ -158,8 +160,6 @@ const ButtonClick = styled.div`
     hover:bg-pink-500
     cursor-pointer
     
-    sm:h-8
-    md:right-4
     `}
 `;
 
@@ -174,13 +174,11 @@ const CloudCard: React.FC<IProps> = ({ posts }) => {
       <CloudCardContainer>
         <Link key={posts?.id} href={`Cloud/${posts?.id}`}>
 
-        <CloudCardStyle>
-
+          <CloudCardStyle>
 
             <CardContainer>
               <PictureContainer src={posts?.img} />
             </CardContainer>
-
 
             <CardStyle>
               <Date>
@@ -194,16 +192,15 @@ const CloudCard: React.FC<IProps> = ({ posts }) => {
                 {posts?.content}
               </ContentContainer>
 
-              <ButtonContainer>
-                <ButtonClick>
-                  Click
-                </ButtonClick>
-              </ButtonContainer>
+              {/*<ButtonContainer>*/}
+              {/*  <ButtonClick>*/}
+              {/*    Click*/}
+              {/*  </ButtonClick>*/}
+              {/*</ButtonContainer>*/}
 
             </CardStyle>
 
-
-        </CloudCardStyle>
+          </CloudCardStyle>
         </Link>
 
       </CloudCardContainer>
