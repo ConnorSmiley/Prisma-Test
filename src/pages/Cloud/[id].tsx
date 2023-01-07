@@ -176,7 +176,7 @@ const CloudPosts: React.FC<IProps> = ({ post }) => {
 
 
             <LinkedinShareButton url={`www.localhost:3000/Cloud/${post?.id}`}>
-              <LinkedinIcon size={32} round={true} />
+              <LinkedinIcon size={32} round={false} />
             </LinkedinShareButton>
 
 
