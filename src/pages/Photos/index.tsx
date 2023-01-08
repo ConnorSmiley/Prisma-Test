@@ -76,10 +76,11 @@ const Photos: React.FC<IDesignProps> = ({ pic }) => {
   const [slider, setSlider] = useState<boolean>(false);
   const [count, setCount] = useState()
 
+
   return (
     <>
       {slider &&
-        <Slider pic={pic}/>}
+        <Slider url={pic}/>}
 
       <PhotosContainer>
 
@@ -89,7 +90,9 @@ const Photos: React.FC<IDesignProps> = ({ pic }) => {
             <MainGrid >
 
               {pic.map((data: any, idx : any) => (
-                  <PhotoThumb setSlider={setSlider} slider={slider} data={data} idx={idx} />
+                  <PhotoThumb setSlider={setSlider} slider={slider} data={data} idx={idx}
+
+                  />
               ))}
 
             </MainGrid>

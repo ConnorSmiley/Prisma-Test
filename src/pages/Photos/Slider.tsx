@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { supabase } from "@/utils/supabase";
@@ -9,7 +9,7 @@ const SliderContainer = styled.div`
     w-full
     h-full
     z-50
-    relative
+    fixed
     flex
     justify-center
     inset-y-24
@@ -32,32 +32,41 @@ const Image = styled.img`
     h-full
     w-full
     
+    
     `}
 `;
 
-
 export interface ISliderProps {
-  data: any;
+  url: any;
 }
 
-const Slider: React.FC<ISliderProps> = ( {pic } ) => {
-  console.log(pic)
+const Slider: React.FC<ISliderProps> = ({ url }) => {
+  const [currImage, setCurrImage] = useState(0)
 
   return (
     <>
       <SliderContainer>
-
         <SliderStyle>
 
-          <Image>
+          <Image src={url[currImage].url} />
 
-
-          </Image>
         </SliderStyle>
       </SliderContainer>
     </>
   );
 };
 
+
+
+
+
 export default Slider;
 
+export const getStaticProps = async () => {
+  const { data: url } = await supabase.from("PhotographyThumbnails").select("*");
+  return {
+    props: {
+      url
+    }
+  };
+};

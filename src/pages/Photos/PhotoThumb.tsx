@@ -71,6 +71,7 @@ export interface IPhotoThumbProps {
 }
 
 
+
 const PhotoThumb: React.FC<IPhotoThumbProps> = ({ data, idx, setSlider, slider }) => {
   const handleClick = () => {
     setSlider(!slider);
