@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import Navbar from "@/components/Navbar";
 import { supabase } from "@/utils/supabase";
-import { IDesignProps } from "@/pages/Design";
 import PhotoThumb from "@/pages/Photos/PhotoThumb";
-
+import Slider from "@/pages/Photos/Slider";
 
 const PhotosContainer = styled.div`
   ${tw`
@@ -21,7 +20,6 @@ const PhotosStyle = styled.div`
   w-full
   h-full
   pt-20
-  
 
    `}
 `;
@@ -71,20 +69,27 @@ export interface IDesignProps {
   pic: any;
   data: any;
   idx:number
+  slider:boolean
 }
 
-const Photos: React.FC<IDesignProps> = ({ pic  }) => {
+const Photos: React.FC<IDesignProps> = ({ pic }) => {
+  const [slider, setSlider] = useState<boolean>(false);
+  const [count, setCount] = useState()
 
   return (
     <>
+      {slider &&
+        <Slider pic={pic}/>}
+
       <PhotosContainer>
+
         <Navbar />
         <PhotosStyle>
           <GridWidth>
-            <MainGrid>
+            <MainGrid >
 
               {pic.map((data: any, idx : any) => (
-                  <PhotoThumb data={data} idx={idx} />
+                  <PhotoThumb setSlider={setSlider} slider={slider} data={data} idx={idx} />
               ))}
 
             </MainGrid>
@@ -94,7 +99,6 @@ const Photos: React.FC<IDesignProps> = ({ pic  }) => {
     </>
   );
 };
-
 
 export default Photos;
 

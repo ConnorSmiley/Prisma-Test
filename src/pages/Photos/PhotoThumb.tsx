@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 
@@ -63,19 +63,24 @@ const HoverThumbTitle = styled.div`
     `}
 `;
 
-
 export interface IPhotoThumbProps {
   data: any;
+  idx: number;
+  slider: boolean;
+  setSlider: boolean;
 }
 
-const PhotoThumb: React.FC<IPhotoThumbProps> = ({ data }) => {
-  const [slider, setSlider] = useState<boolean>(false)
-  const [id, setId] = useState<number>(0)
+
+const PhotoThumb: React.FC<IPhotoThumbProps> = ({ data, idx, setSlider, slider }) => {
+  const handleClick = () => {
+    setSlider(!slider);
+  };
 
 
   return (
     <>
-      <PhotoThumbContainer>
+
+      <PhotoThumbContainer onClick={handleClick}>
         <PhotoImage src={data?.url} />
         <HoverContainer>
           <HoverThumbTitle>
@@ -83,6 +88,7 @@ const PhotoThumb: React.FC<IPhotoThumbProps> = ({ data }) => {
           </HoverThumbTitle>
         </HoverContainer>
       </PhotoThumbContainer>
+
     </>
   );
 };
