@@ -25,6 +25,7 @@ const DarkBackground = styled.div`
     sm:px-20
     sm:pt-4
     md:pt-20
+    
     `}
 `;
 

@@ -26,6 +26,7 @@ const IdContainer = styled.div`
     flex
     pb-20
     
+    
     `}
 `;
 
@@ -40,6 +41,10 @@ const IdStyles = styled.div`
     px-2
     pr-40
     pl-40
+    
+    md:pl-10
+    md:w-[64rem]
+    
     `}
 `;
 
@@ -49,6 +54,7 @@ const BlogContainer = styled.div`
   flex-col
   items-center
   relative
+  
     
     `}
 `;
@@ -91,6 +97,9 @@ const Title = styled.header`
   py-8
   w-[40rem]
   text-white
+  
+  
+  md:text-6xl
     
     `}
 `;
@@ -148,6 +157,7 @@ const Date = styled.div`
     text-xl
     font-light
     
+    md:text-base
     `}
 `;
 

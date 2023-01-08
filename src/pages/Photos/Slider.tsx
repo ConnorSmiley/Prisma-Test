@@ -38,17 +38,16 @@ const Image = styled.img`
 
 export interface ISliderProps {
   url: any;
-  number:number
 }
 
-const Slider: React.FC<ISliderProps> = ({  url, number }) => {
+const Slider: React.FC<ISliderProps> = ({  url }) => {
 
   return (
     <>
       <SliderContainer>
         <SliderStyle>
 
-          <Image src={url[number].id} />
+          <Image src={url.url} />
 
         </SliderStyle>
       </SliderContainer>
@@ -57,4 +56,5 @@ const Slider: React.FC<ISliderProps> = ({  url, number }) => {
 };
 
 
+export default Slider
 

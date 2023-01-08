@@ -73,8 +73,6 @@ export interface IDesignProps {
 }
 
 const Photos: React.FC<IDesignProps> = ({ pic }) => {
-  const [slider, setSlider] = useState<boolean>(false);
-  const [count, setCount] = useState<any>();
 
   return (
     <>
@@ -88,10 +86,6 @@ const Photos: React.FC<IDesignProps> = ({ pic }) => {
 
               {pic.map((data: any, idx: any) => (
                 <PhotoThumb data={data}
-                            slider={slider}
-                            setSlider={setSlider}
-                            setCount={setCount}
-                            count={count}
                 />
               ))}
 
