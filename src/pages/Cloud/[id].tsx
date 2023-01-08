@@ -144,7 +144,7 @@ const Date = styled.div`
     text-white
     absolute
     bottom-8
-    right-1
+    right-0
     text-xl
     font-light
     
@@ -169,11 +169,9 @@ const LinkedInContainer = styled.div`
     font-bold
     text-white
     
-    hover:bg-blue-500
-    
+    hover:bg-gray-500
     `}
 `;
-
 
 const LinkedInStyles = styled.div`
   ${tw`
@@ -181,7 +179,6 @@ const LinkedInStyles = styled.div`
     flex
     justify-evenly
     w-full
-    
     
     `}
 `;
@@ -253,7 +250,7 @@ const CloudPosts: React.FC<IProps> = ({ post }) => {
                     <TwitterShareButton url={`www.localhost:3000/Cloud/${post?.id}`} title={"Connor Smiley's Blog"}>
                       <LinkedInContainer>
                         <TwitterIcon size={28} iconFillColor={"white"} borderRadius={10} />
-                       Tweet
+                        Tweet
                       </LinkedInContainer>
                     </TwitterShareButton>
                   </LinkedInStyles>
