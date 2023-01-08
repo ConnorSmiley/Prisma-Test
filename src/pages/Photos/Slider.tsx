@@ -31,24 +31,24 @@ const Image = styled.img`
   ${tw`
     h-full
     w-full
-    
+    object-cover    
     
     `}
 `;
 
 export interface ISliderProps {
   url: any;
+  number:number
 }
 
-const Slider: React.FC<ISliderProps> = ({ url }) => {
-  const [currImage, setCurrImage] = useState(0)
+const Slider: React.FC<ISliderProps> = ({  url, number }) => {
 
   return (
     <>
       <SliderContainer>
         <SliderStyle>
 
-          <Image src={url[currImage].url} />
+          <Image src={url[number].id} />
 
         </SliderStyle>
       </SliderContainer>
@@ -58,15 +58,3 @@ const Slider: React.FC<ISliderProps> = ({ url }) => {
 
 
 
-
-
-export default Slider;
-
-export const getStaticProps = async () => {
-  const { data: url } = await supabase.from("PhotographyThumbnails").select("*");
-  return {
-    props: {
-      url
-    }
-  };
-};

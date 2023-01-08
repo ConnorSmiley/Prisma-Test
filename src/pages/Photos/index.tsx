@@ -68,31 +68,31 @@ export const getStaticProps = async () => {
 export interface IDesignProps {
   pic: any;
   data: any;
-  idx:number
-  slider:boolean
+  idx: number;
+  slider: boolean;
 }
 
 const Photos: React.FC<IDesignProps> = ({ pic }) => {
   const [slider, setSlider] = useState<boolean>(false);
-  const [count, setCount] = useState()
-
+  const [count, setCount] = useState<any>();
 
   return (
     <>
-      {slider &&
-        <Slider url={pic}/>}
 
       <PhotosContainer>
 
         <Navbar />
         <PhotosStyle>
           <GridWidth>
-            <MainGrid >
+            <MainGrid>
 
-              {pic.map((data: any, idx : any) => (
-                  <PhotoThumb setSlider={setSlider} slider={slider} data={data} idx={idx}
-
-                  />
+              {pic.map((data: any, idx: any) => (
+                <PhotoThumb data={data}
+                            slider={slider}
+                            setSlider={setSlider}
+                            setCount={setCount}
+                            count={count}
+                />
               ))}
 
             </MainGrid>
