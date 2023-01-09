@@ -4,18 +4,19 @@ import tw from "twin.macro";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Projects from "@/pages/Coding/Projects";
+import { supabase } from "@/utils/supabase";
 
 const CodingContainer = styled.div`
-    ${tw`
+  ${tw`
     w-screen
-    h-screen
+    h-full
     bg-gradient-to-r from-pink-500 to-purple-900
  
     `}
-`
+`;
 
 const CodingStyle = styled.div`
-    ${tw`
+  ${tw`
     h-full
     w-full
     flex
@@ -23,28 +24,40 @@ const CodingStyle = styled.div`
     items-center
     
     `}
-`
+`;
 
 export interface ICodingProps {
-   Projects:any
-    Blog:any
+  Projects: any;
+  Blog: any;
+  codePics:any
 }
 
 
-const Coding: React.FC<ICodingProps> = () => {
+const Coding: React.FC<ICodingProps> = ({codePics}) => {
 
-    return (
+  return (
     <>
-        <CodingContainer>
-            <CodingStyle>
-                <Navbar />
-                <Projects />
+      <Navbar />
+      <CodingContainer>
+        <CodingStyle>
+          <Projects codePics={codePics}/>
 
-            </CodingStyle>
-        </CodingContainer>
-        <Footer />
+        </CodingStyle>
+      </CodingContainer>
+      <Footer />
     </>
-    )
-}
+  );
+};
 
-export default Coding
+export default Coding;
+
+
+export const getStaticProps = async () => {
+  const { data: codePics } = await supabase.from("CodeThumbnails").select("*");
+  return {
+    props: {
+      codePics
+    }
+  };
+};
+

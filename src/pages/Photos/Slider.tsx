@@ -35,7 +35,6 @@ export interface ISliderProps {
 }
 
 const Slider: React.FC<ISliderProps> = ({ data }) => {
-  console.log(data.url)
 
   return (
     <>

@@ -1,43 +1,53 @@
 import React from "react";
 import styled from "styled-components";
-import tw from "twin.macro"
+import tw from "twin.macro";
 import Navbar from "@/components/Navbar";
+import { supabase } from "@/utils/supabase";
 
 const ProjectsContainer = styled.div`
-    ${tw`
+  ${tw`
     w-screen
-    h-auto
+    h-full
     bg-gradient-to-r from-pink-500 to-purple-900
     
     `}
-`
+`;
 
 const ProjectsStyle = styled.div`
-    ${tw`
+  ${tw`
     w-full
     h-full
     pt-20
     flex
     justify-center
     
+    sm:h-full
+    sm:pt-20
     `}
-`
+`;
 
 const ProjectDisplay = styled.div`
-    ${tw`
+  ${tw`
     grid
-    grid-cols-3
-    pt-20
-    h-[30rem]
-    w-[70%]
+    grid-cols-1
+    gap-4
+    h-full
+    w-[80%]
+    pb-10
     flex
-    justify-between
-    bg-red-500
+    items-center
+    flex-col
+    grid-cols-1
     
+    
+    sm:items-center
+    sm:h-full
+    sm:w-[70%]
     sm:pt-0
     sm:gap-4
     sm:flex-col
     sm:grid-cols-1
+    sm:pb-8
     
     md:flex
     md:flex-row
@@ -52,44 +62,50 @@ const ProjectDisplay = styled.div`
     xl:w-[70%]
     
     `}
-`
+`;
 
-const Card = styled.div`
-    ${tw`
-    bg-black
+const Card = styled.img`
+  ${tw`
     rounded-xl
-    aspect-h-1
+    h-[20rem]
+    w-[20rem]
+    border
+    border-white
+    object-cover
     
-    sm:aspect-w-1
-    md:w-full
+    sm:h-[30rem]
+    sm:w-[30rem]
+    md:w-60
+    md:h-[30rem]
     lg:w-64
+    lg:h-[30rem]
     xl:w-72
-    xl:h-72
+    xl:h-[30rem]
     `}
-`
+`;
 
 export interface IProjectsProps {
-
+  codePics: any;
 }
 
-const Projects: React.FC<IProjectsProps> = () => {
+const Projects: React.FC<IProjectsProps> = ({ codePics }) => {
 
-    return(
-       <>
-        <ProjectsContainer>
-          <Navbar />
-            <ProjectsStyle>
-              <ProjectDisplay>
+  return (
+    <>
+      <ProjectsContainer>
+        <ProjectsStyle>
+          <ProjectDisplay>
 
-                <Card />
-                <Card />
-                <Card />
+            <Card src={codePics[0]?.url} />
+            <Card src={codePics[1]?.url}/>
+            <Card />
 
-              </ProjectDisplay>
-            </ProjectsStyle>
-        </ProjectsContainer>
-       </>
-    )
-}
+          </ProjectDisplay>
+        </ProjectsStyle>
+      </ProjectsContainer>
+    </>
+  );
+};
 
-export default Projects
+export default Projects;
+
