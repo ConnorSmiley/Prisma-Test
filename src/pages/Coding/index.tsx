@@ -5,6 +5,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Projects from "@/pages/Coding/Projects";
 import { supabase } from "@/utils/supabase";
+import Blog from "@/pages/Coding/Blog";
+import CodePosts from "@/pages/Coding/[id]";
 
 const CodingContainer = styled.div`
   ${tw`
@@ -41,8 +43,10 @@ const Coding: React.FC<ICodingProps> = ({codePics}) => {
       <CodingContainer>
         <CodingStyle>
           <Projects codePics={codePics}/>
-
         </CodingStyle>
+
+        <CodePosts />
+
       </CodingContainer>
       <Footer />
     </>
