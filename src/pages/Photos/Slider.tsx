@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
-import { supabase } from "@/utils/supabase";
+import Image from 'next/image'
+
+
 
 const SliderContainer = styled.div`
   background: rgba(0, 0, 0, 0.6);
@@ -27,27 +29,20 @@ const SliderStyle = styled.div`
     `}
 `;
 
-const Image = styled.img`
-  ${tw`
-    h-full
-    w-full
-    object-cover    
-    
-    `}
-`;
 
 export interface ISliderProps {
-  url: any;
+  data: any;
 }
 
-const Slider: React.FC<ISliderProps> = ({  url }) => {
+const Slider: React.FC<ISliderProps> = ({ data }) => {
+  console.log(data.url)
 
   return (
     <>
       <SliderContainer>
         <SliderStyle>
 
-          <Image src={url.url} />
+          <Image src={data.id} width={80} height={80} />
 
         </SliderStyle>
       </SliderContainer>
@@ -55,6 +50,4 @@ const Slider: React.FC<ISliderProps> = ({  url }) => {
   );
 };
 
-
 export default Slider
-

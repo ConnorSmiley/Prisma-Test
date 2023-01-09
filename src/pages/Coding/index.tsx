@@ -3,7 +3,7 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import SidebarNavCoding, { ISidebarNavProps } from "@/pages/Coding/SidebarNavCoding";
+import Projects from "@/pages/Coding/Projects";
 
 const CodingContainer = styled.div`
     ${tw`
@@ -38,7 +38,8 @@ const Coding: React.FC<ICodingProps> = () => {
         <CodingContainer>
             <CodingStyle>
                 <Navbar />
-                <SidebarNavCoding Projects="/Projects" Blog="/Blog"/>
+                <Projects />
+
             </CodingStyle>
         </CodingContainer>
         <Footer />

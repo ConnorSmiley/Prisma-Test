@@ -72,23 +72,21 @@ export interface IPhotoThumbProps {
 }
 
 
-const PhotoThumb: React.FC<IPhotoThumbProps> = ({ data, idx  }) => {
+const PhotoThumb: React.FC<IPhotoThumbProps> = ({ data, idx }) => {
   const [slider, setSlider] = useState<boolean>(false);
   const [number, setNumber] = useState();
 
   const handleClick = () => {
-    setSlider(!slider)
-    setNumber(data.id)
-
-    }
+    setSlider(!slider);
+    setNumber(data.id);
+  };
 
 
   return (
     <>
 
       {slider &&
-        <Slider url={data} number={number} />}
-
+        <Slider data={data} number={number} />}
 
       <PhotoThumbContainer onClick={handleClick}>
 

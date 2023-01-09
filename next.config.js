@@ -12,4 +12,7 @@ module.exports = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
+  images: {
+    domains: ['https://njnfyypwtoiiqclfvxqe.supabase.co']
+  },
 }

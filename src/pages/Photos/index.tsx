@@ -4,7 +4,6 @@ import tw from "twin.macro";
 import Navbar from "@/components/Navbar";
 import { supabase } from "@/utils/supabase";
 import PhotoThumb from "@/pages/Photos/PhotoThumb";
-import Slider from "@/pages/Photos/Slider";
 
 const PhotosContainer = styled.div`
   ${tw`
@@ -85,7 +84,7 @@ const Photos: React.FC<IDesignProps> = ({ pic }) => {
             <MainGrid>
 
               {pic.map((data: any, idx: any) => (
-                <PhotoThumb data={data}
+                <PhotoThumb data={data} key={idx}
                 />
               ))}
 
