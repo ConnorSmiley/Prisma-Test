@@ -77,9 +77,9 @@ export interface IPhotoThumbProps {
   slider: boolean;
   setSlider: boolean;
   number: any;
-  pics: any;
+  pictures: any;
+  pics:any
 }
-
 
 const PhotoThumb: React.FC<IPhotoThumbProps> = ({ data, pics }) => {
   const [slider, setSlider] = useState<boolean>(false);
@@ -111,5 +111,4 @@ const PhotoThumb: React.FC<IPhotoThumbProps> = ({ data, pics }) => {
 };
 
 export default PhotoThumb;
-
 

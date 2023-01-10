@@ -72,6 +72,7 @@ export interface IDesignProps {
   data: any;
   idx: number;
   slider: boolean;
+  pics:any
 }
 
 const Photos: React.FC<IDesignProps> = ({ pic, pics }) => {
