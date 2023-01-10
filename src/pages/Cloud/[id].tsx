@@ -244,16 +244,6 @@ const CloudPosts: React.FC<IProps> = ({ post }) => {
                   </LinkedinShareButton>
                 </LinkedInStyles>
 
-                <LinksContainer>
-                  <LinkedInStyles>
-                    <FacebookShareButton url={`www.localhost:3000/Cloud/${post?.id}`} title={"Connor Smiley's Blog"}>
-                      <LinkedInContainer>
-                        <FacebookIcon size={28} iconFillColor={"white"} borderRadius={10} />
-                        Share
-                      </LinkedInContainer>
-                    </FacebookShareButton>
-                  </LinkedInStyles>
-                </LinksContainer>
 
                 <LinksContainer>
                   <LinkedInStyles>

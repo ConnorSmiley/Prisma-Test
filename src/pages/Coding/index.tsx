@@ -4,9 +4,8 @@ import tw from "twin.macro";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Projects from "@/pages/Coding/Projects";
+import CodeBlog from "@/pages/Coding/Blog";
 import { supabase } from "@/utils/supabase";
-import Blog from "@/pages/Coding/Blog";
-import CodePosts from "@/pages/Coding/[id]";
 
 const CodingContainer = styled.div`
   ${tw`
@@ -32,10 +31,11 @@ export interface ICodingProps {
   Projects: any;
   Blog: any;
   codePics:any
+  codeBlog:any
 }
 
 
-const Coding: React.FC<ICodingProps> = ({codePics}) => {
+const Coding: React.FC<ICodingProps> = ({codePics, codeBlog }) => {
 
   return (
     <>
@@ -45,7 +45,7 @@ const Coding: React.FC<ICodingProps> = ({codePics}) => {
           <Projects codePics={codePics}/>
         </CodingStyle>
 
-        <CodePosts />
+        <CodeBlog codeBlog={codeBlog}/>
 
       </CodingContainer>
       <Footer />
@@ -57,10 +57,12 @@ export default Coding;
 
 
 export const getStaticProps = async () => {
-  const { data: codePics } = await supabase.from("CodeThumbnails").select("*");
+  const { data: codePics } = await supabase.from("CodeThumbnails" ).select("*");
+  const {data : codeBlog } = await supabase.from ("CodeBlog" ).select( "*")
   return {
     props: {
-      codePics
+      codePics,
+      codeBlog
     }
   };
 };

@@ -2,6 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import Navbar from "@/components/Navbar";
+import { FacebookIcon, FacebookShareButton, LinkedinIcon, TwitterIcon, TwitterShareButton } from "react-share";
+import Footer from "@/components/Footer";
+import { supabase } from "@/utils/supabase";
 
 const IdContainer = styled.div`
   ${tw`
@@ -62,6 +65,27 @@ const PictureContainer = styled.div`
     mr-8
     
     `}
+`;
+
+const Sharebutton = styled.div`
+  background: rgba(0, 0, 0, 0.6);
+  ${tw`
+    h-12
+    w-32
+    flex
+    flex-row
+    items-center
+    justify-between
+    pr-4
+    pl-3
+    rounded-xl
+    border-2
+    border-gray-500
+    text-xl
+    font-bold
+    text-white
+    
+    hover:bg-gray-500    `}
 `;
 
 
@@ -183,11 +207,11 @@ const Content = styled.text`
 `;
 
 
-export interface IIdProps {
-
+export interface IdProps {
+  post: any;
 }
 
-const CodePosts: React.FC<IIdProps> = () => {
+const CodePosts: React.FC<IdProps> = () => {
 
   return (
     <>
@@ -209,23 +233,62 @@ const CodePosts: React.FC<IIdProps> = () => {
             </Heading>
 
             <LinkMain>
-             <LinksContainer>
+              <LinksContainer>
+                <LinkedInStyles>
+                  <Sharebutton>
+                    <LinkedInContainer>
+                      <LinkedinIcon size={28} iconFillColor={"white"} borderRadius={10} />
+
+                    </LinkedInContainer>
+                  </Sharebutton>
+                </LinkedInStyles>
 
 
+                <LinksContainer>
+                  <LinkedInStyles>
+                    <Sharebutton>
+                      <LinkedInContainer>
+                        <FacebookIcon />
+                        Share
+                      </LinkedInContainer>
+                    </Sharebutton>
+                  </LinkedInStyles>
+                </LinksContainer>
 
 
-             </LinksContainer>
+                <LinksContainer>
+                  <LinkedInStyles>
+                    <Sharebutton>
+                      <TwitterShareButton url={""} title={"Connor Smiley's Blog"}>
+                        <LinkedInContainer>
+                          <TwitterIcon size={28} iconFillColor={"white"} borderRadius={10} />
+                          Tweet
+                        </LinkedInContainer>
+                      </TwitterShareButton>
+                    </Sharebutton>
+                  </LinkedInStyles>
+                </LinksContainer>
+              </LinksContainer>
             </LinkMain>
 
 
+            <Content>
+              <Title1>
 
+              </Title1>
 
+            </Content>
           </IdStyle>
+
+
         </BlogContainer>
 
       </IdContainer>
+      <Footer />
     </>
-  );
+  )
+    ;
 };
 
 export default CodePosts;
+

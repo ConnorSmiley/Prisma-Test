@@ -22,6 +22,8 @@ const DesignThumbStyle = styled.img`
 `;
 
 const HoverContainer = styled.div`
+  :hover{opacity: 90%}
+  :hover{background: rgba(0,0,0,0.7)}
   ${tw`
   h-auto
   w-auto
@@ -32,9 +34,6 @@ const HoverContainer = styled.div`
   flex-col
   
   hover:cursor-pointer
-  hover:opacity-100
-  hover:bg-black
-  hover:bg-opacity-70
 
     `}
 `;

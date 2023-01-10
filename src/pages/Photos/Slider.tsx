@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
-import Image from 'next/image'
 
 
 
@@ -30,18 +29,30 @@ const SliderStyle = styled.div`
 `;
 
 
+const Image = styled.img`
+    ${tw`
+    h-full
+    w-full
+    object-contain
+    
+    `}
+`
+
+
 export interface ISliderProps {
   data: any;
+  number:any
 }
 
-const Slider: React.FC<ISliderProps> = ({ data }) => {
+const Slider: React.FC<ISliderProps> = ({ data, number }) => {
+  console.log(data.url)
 
   return (
     <>
       <SliderContainer>
         <SliderStyle>
 
-          <Image src={data.id} width={80} height={80} />
+          <Image src={data.url} />
 
         </SliderStyle>
       </SliderContainer>

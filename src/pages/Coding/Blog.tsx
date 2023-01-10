@@ -1,38 +1,47 @@
 import React from "react";
 import styled from "styled-components";
-import tw from "twin.macro"
+import tw from "twin.macro";
+import CodeCard from "@/pages/Coding/CodeCard";
 
 const BlogContainer = styled.div`
-    ${tw`
+  ${tw`
     w-screen
     h-full
     
     `}
-`
+`;
 
 const BlogStyle = styled.div`
-    ${tw`
+  ${tw`
     h-full
     w-full
     
     `}
-`
+`;
 
 export interface IBlogProps {
+  codeBlog: any;
 
 }
 
-const Blog: React.FC<IBlogProps> = () => {
+const CodeBlog: React.FC<IBlogProps> = ({ codeBlog }) => {
 
-    return(
-       <>
-        <BlogContainer>
-            <BlogStyle>
-djfdkflafjdlk
-            </BlogStyle>
-        </BlogContainer>
-       </>
-    )
-}
+  const mappedBlog = codeBlog.reverse().map((posts :any)  => (
+    <>
+      <CodeCard posts={posts}/>
+    </>
+  ))
 
-export default Blog
+  return (
+    <>
+      <BlogContainer>
+        <BlogStyle>
+          {mappedBlog}
+        </BlogStyle>
+      </BlogContainer>
+    </>
+  );
+};
+
+export default CodeBlog;
+
