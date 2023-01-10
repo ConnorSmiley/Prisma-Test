@@ -23,8 +23,14 @@ const PhotoImage = styled.img`
 `;
 
 const HoverContainer = styled.div`
-  :hover{opacity: 90%}
-  :hover{background: rgba(0,0,0,0.7)}
+  :hover {
+    opacity: 90%
+  }
+
+  :hover {
+    background: rgba(0, 0, 0, 0.7)
+  }
+
   ${tw`
   h-auto
   w-auto
@@ -69,7 +75,7 @@ export interface IPhotoThumbProps {
   idx: number;
   slider: boolean;
   setSlider: boolean;
-  number:any
+  number: any;
 }
 
 
@@ -87,11 +93,12 @@ const PhotoThumb: React.FC<IPhotoThumbProps> = ({ data, idx }) => {
     <>
 
       {slider &&
-        <Slider data={data} number={number} />}
+        <Slider data={data} number={number} setSlider={setSlider} />}
 
       <PhotoThumbContainer onClick={handleClick}>
 
         <PhotoImage src={data?.url} />
+
         <HoverContainer>
           <HoverThumbTitle>
             Click
