@@ -57,9 +57,12 @@ const PictureContainer = styled.div`
 
 export const getStaticProps = async () => {
   const { data: pic } = await supabase.from("PhotographyThumbnails").select("*");
+  const { data: pics } = await supabase.from("Photography").select("*");
+
   return {
     props: {
-      pic
+      pic,
+      pics
     }
   };
 };
@@ -71,7 +74,7 @@ export interface IDesignProps {
   slider: boolean;
 }
 
-const Photos: React.FC<IDesignProps> = ({ pic }) => {
+const Photos: React.FC<IDesignProps> = ({ pic, pics }) => {
 
   return (
     <>
@@ -84,7 +87,7 @@ const Photos: React.FC<IDesignProps> = ({ pic }) => {
             <MainGrid>
 
               {pic.map((data: any, idx: any) => (
-                <PhotoThumb data={data} key={idx}
+                <PhotoThumb data={data} key={idx} pics={pics}
                 />
               ))}
 

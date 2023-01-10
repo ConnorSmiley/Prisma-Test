@@ -5,10 +5,12 @@ import Link from "next/link";
 
 const CodeCardContainer = styled.div`
   ${tw`
-    w-[60rem]
+    w-full
     h-full
     flex
+    flex-col
     justify-center
+    items-center
     cursor-pointer
     overflow-hidden
     
@@ -17,14 +19,14 @@ const CodeCardContainer = styled.div`
 
 const CodeCardStyle = styled.div`
   ${tw`
-  w-full
+  w-[60rem]
   h-[270px]
   flex
+  
   border-b-2
   border-gray-500
   pb-8
   my-4
- 
   
     `}
 `;
@@ -32,6 +34,7 @@ const CodeCardStyle = styled.div`
 const CardContainer = styled.div`
   ${tw`
   bg-black
+  flex
   
     `}
 `;
@@ -92,7 +95,6 @@ const ContentContainer = styled.text`
 
   min-width: 0;
   word-break: keep-all;
-
   ${tw`
   flex
     text-white
@@ -163,7 +165,7 @@ const ButtonClick = styled.div`
 `;
 
 export interface ICodeCardProps {
-  posts:any
+  posts: any;
 
 }
 
@@ -192,18 +194,13 @@ const CodeCard: React.FC<ICodeCardProps> = ({ posts }) => {
                 {posts?.content}
               </ContentContainer>
 
-              {/*<ButtonContainer>*/}
-              {/*  <ButtonClick>*/}
-              {/*    Click*/}
-              {/*  </ButtonClick>*/}
-              {/*</ButtonContainer>*/}
-
             </CardStyle>
 
           </CodeCardStyle>
         </Link>
 
-      </CodeCardContainer>       </>
+      </CodeCardContainer>
+    </>
   );
 };
 

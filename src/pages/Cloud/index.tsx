@@ -46,7 +46,8 @@ export interface ICloudProps {
 }
 
 export const getStaticProps = async () => {
-  const { data: blogPost } = await supabase.from("BlogPosts").select("*");
+  const { data: blogPost } = await supabase.from("CloudBlogPosts").select("*");
+  console.log(blogPost)
   return {
     props: {
       blogPost

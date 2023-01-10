@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import Slider from "@/pages/Photos/Slider";
+import { supabase } from "@/utils/supabase";
 
 const PhotoThumbContainer = styled.div`
   ${tw`
@@ -76,10 +77,11 @@ export interface IPhotoThumbProps {
   slider: boolean;
   setSlider: boolean;
   number: any;
+  pics: any;
 }
 
 
-const PhotoThumb: React.FC<IPhotoThumbProps> = ({ data, idx }) => {
+const PhotoThumb: React.FC<IPhotoThumbProps> = ({ data, pics }) => {
   const [slider, setSlider] = useState<boolean>(false);
   const [number, setNumber] = useState();
 
@@ -88,12 +90,10 @@ const PhotoThumb: React.FC<IPhotoThumbProps> = ({ data, idx }) => {
     setNumber(data.id);
   };
 
-
   return (
     <>
-
       {slider &&
-        <Slider data={data} number={number} setSlider={setSlider} />}
+        <Slider pics={pics} data={data} number={number} setSlider={setSlider} />}
 
       <PhotoThumbContainer onClick={handleClick}>
 
@@ -111,3 +111,5 @@ const PhotoThumb: React.FC<IPhotoThumbProps> = ({ data, idx }) => {
 };
 
 export default PhotoThumb;
+
+

@@ -17,7 +17,6 @@ export interface IProps {
   post: any;
 }
 
-
 const IdContainer = styled.div`
   ${tw`
     w-screen
@@ -25,7 +24,6 @@ const IdContainer = styled.div`
     bg-gradient-to-r from-pink-500 to-purple-900
     flex
     pb-20
-    
     
     `}
 `;

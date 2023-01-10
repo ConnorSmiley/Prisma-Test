@@ -6,12 +6,14 @@ import Footer from "@/components/Footer";
 import Projects from "@/pages/Coding/Projects";
 import CodeBlog from "@/pages/Coding/Blog";
 import { supabase } from "@/utils/supabase";
+import CodeCard from "@/pages/Coding/CodeCard";
 
 const CodingContainer = styled.div`
   ${tw`
     w-screen
     h-full
     bg-gradient-to-r from-pink-500 to-purple-900
+    pt-10
  
     `}
 `;
@@ -23,6 +25,7 @@ const CodingStyle = styled.div`
     flex
     justify-center
     items-center
+    pb-10
     
     `}
 `;
@@ -34,8 +37,13 @@ export interface ICodingProps {
   codeBlog:any
 }
 
-
 const Coding: React.FC<ICodingProps> = ({codePics, codeBlog }) => {
+
+  const filterBlog = codeBlog.reverse().map((posts : any) => (
+    <>
+      <CodeCard posts={posts}/>
+    </>
+  ))
 
   return (
     <>
@@ -45,7 +53,7 @@ const Coding: React.FC<ICodingProps> = ({codePics, codeBlog }) => {
           <Projects codePics={codePics}/>
         </CodingStyle>
 
-        <CodeBlog codeBlog={codeBlog}/>
+        {filterBlog}
 
       </CodingContainer>
       <Footer />

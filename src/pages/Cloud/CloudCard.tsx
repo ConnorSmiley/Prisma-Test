@@ -26,7 +26,6 @@ const CloudCardStyle = styled.div`
   pb-8
   my-4
  
-  
     `}
 `;
 
@@ -191,12 +190,6 @@ const CloudCard: React.FC<IProps> = ({ posts }) => {
               <ContentContainer>
                 {posts?.content}
               </ContentContainer>
-
-              {/*<ButtonContainer>*/}
-              {/*  <ButtonClick>*/}
-              {/*    Click*/}
-              {/*  </ButtonClick>*/}
-              {/*</ButtonContainer>*/}
 
             </CardStyle>
 

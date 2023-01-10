@@ -15,6 +15,8 @@ const BlogStyle = styled.div`
   ${tw`
     h-full
     w-full
+    flex
+    justify-center
     
     `}
 `;
