@@ -7,11 +7,29 @@ const SliderContainer = styled.div`
     w-full
     h-full
     z-50
-    fixed
     flex
     justify-center
-    inset-y-24
-    bg-black
+    items-center
+    inset-x-0
+    inset-y-0
+    
+    `}
+`;
+
+const SliderBackground = styled.div`
+  background-color: rgba(0, 0, 0, 9);
+  ${tw`
+      fixed
+      top-1/2
+      left-1/2 
+      -translate-y-1/2 
+      -translate-x-1/2
+      w-full
+      h-full
+      flex
+      justify-center
+      items-center
+
     `}
 `;
 
@@ -20,25 +38,24 @@ const SliderStyle = styled.div`
     absolute
     h-[40rem]
     w-[60rem]
-    bg-black
     rounded-xl
     
     `}
 `;
 
 const Image = styled.img`
-    ${tw`
+  ${tw`
     h-full
     w-full
     object-contain
     
     `}
-`
+`;
 
 export interface ISliderProps {
   data: any;
-  number:any
-  setSlider:any
+  number: any;
+  setSlider: any;
 }
 
 const Slider: React.FC<ISliderProps> = ({ data, setSlider }) => {
@@ -46,14 +63,16 @@ const Slider: React.FC<ISliderProps> = ({ data, setSlider }) => {
   return (
     <>
       <SliderContainer onClick={() => setSlider(false)}>
-        <SliderStyle>
+        <SliderBackground>
+          <SliderStyle>
 
-          <Image src={data.url} />
+            <Image src={data.url} />
 
-        </SliderStyle>
+          </SliderStyle>
+        </SliderBackground>
       </SliderContainer>
     </>
   );
 };
 
-export default Slider
+export default Slider;
