@@ -96,8 +96,9 @@ const Projects: React.FC<IProjectsProps> = ({ codePics }) => {
         <ProjectsStyle>
           <ProjectDisplay>
 
-            {/*<Card src={codePics[0]?.url} />*/}
-            {/*<Card src={codePics[1]?.url}/>*/}
+
+            <Card src={'https://njnfyypwtoiiqclfvxqe.supabase.co/storage/v1/object/public/images/Code%20Thumbnails/Thinkscript.jpeg'}/>
+            <Card src={'https://njnfyypwtoiiqclfvxqe.supabase.co/storage/v1/object/public/images/Code%20Thumbnails/Wordle.png'} />
             <Card />
 
           </ProjectDisplay>
