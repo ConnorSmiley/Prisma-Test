@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import CloudCard from "@/pages/Cloud/CloudCard";
 import { supabase } from "@/utils/supabase";
 import Footer from "@/components/Footer";
+import Link from 'next/link'
 
 const CloudContainer = styled.div`
   ${tw`
@@ -47,7 +48,7 @@ export interface ICloudProps {
 
 export const getStaticProps = async () => {
   const { data: blogPost } = await supabase.from("CloudBlogPosts").select("*");
-  console.log(blogPost)
+  console.log(blogPost);
   return {
     props: {
       blogPost
@@ -57,9 +58,11 @@ export const getStaticProps = async () => {
 
 const Index: React.FC<ICloudProps> = ({ blogPost }) => {
 
-  const filteredBlog = [...blogPost].reverse().map((posts: any) => (
+  const filteredBlog = blogPost.reverse().map((posts: any) => (
     <>
-      <CloudCard posts={posts} />
+      <Link key={blogPost.id} href={`/${blogPost.id}`} >
+        <CloudCard posts={posts} />
+      </Link>
     </>
   ));
 

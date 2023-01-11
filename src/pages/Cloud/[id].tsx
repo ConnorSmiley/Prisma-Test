@@ -6,6 +6,8 @@ import tw from "twin.macro";
 import Footer from "@/components/Footer";
 import { LinkedinShareButton } from "react-share";
 import { LinkedinIcon } from "react-share";
+import { FacebookIcon } from "react-share";
+import { FacebookShareButton } from "react-share";
 import { TwitterIcon } from "react-share";
 import { TwitterShareButton } from "react-share";
 
@@ -14,6 +16,7 @@ export interface IProps {
   blogPost: any;
   post: any;
 }
+
 
 const IdContainer = styled.div`
   ${tw`
@@ -37,10 +40,6 @@ const IdStyles = styled.div`
     px-2
     pr-40
     pl-40
-    
-    md:pl-10
-    md:w-[64rem]
-    
     `}
 `;
 
@@ -50,7 +49,6 @@ const BlogContainer = styled.div`
   flex-col
   items-center
   relative
-  
     
     `}
 `;
@@ -93,9 +91,6 @@ const Title = styled.header`
   py-8
   w-[40rem]
   text-white
-  
-  
-  md:text-6xl
     
     `}
 `;
@@ -153,7 +148,6 @@ const Date = styled.div`
     text-xl
     font-light
     
-    md:text-base
     `}
 `;
 
@@ -240,6 +234,16 @@ const CloudPosts: React.FC<IProps> = ({ post }) => {
                   </LinkedinShareButton>
                 </LinkedInStyles>
 
+                <LinksContainer>
+                  <LinkedInStyles>
+                    <FacebookShareButton url={`www.localhost:3000/Cloud/${post?.id}`} title={"Connor Smiley's Blog"}>
+                      <LinkedInContainer>
+                        <FacebookIcon size={28} iconFillColor={"white"} borderRadius={10} />
+                        Share
+                      </LinkedInContainer>
+                    </FacebookShareButton>
+                  </LinkedInStyles>
+                </LinksContainer>
 
                 <LinksContainer>
                   <LinkedInStyles>
@@ -279,13 +283,13 @@ export const getStaticPaths = async () => {
 
   const paths = posts?.map(({ id }) => ({
     params: {
-      id: id?.toString(),
-    },
+      id: id.toString()
+    }
   }));
   return {
-    paths: [],
+    paths,
     fallback: false
-  } ;
+  };
 };
 
 export const getStaticProps = async ({ params: { id } }) => {
