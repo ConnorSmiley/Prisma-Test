@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import Image from 'next/image'
@@ -57,11 +57,12 @@ export interface ISliderProps {
   number: any;
   setSlider: any;
   pics: any;
+
 }
 
 const Slider: React.FC<ISliderProps> = ({ number, setSlider, pics }) => {
-  // const picString = pics[number]?.url.toString()
-  // console.log(picString)
+
+
 
   return (
     <>
@@ -69,7 +70,7 @@ const Slider: React.FC<ISliderProps> = ({ number, setSlider, pics }) => {
         <SliderBackground>
           <SliderStyle>
 
-            <ImageSlider src={"https://njnfyypwtoiiqclfvxqe.supabase.co/storage/v1/object/public/images/Photography/Full%20images/11.jpg"} />
+            {/*<ImageSlider src={pics[number]?.url} />*/}
             {/*<Image src={pics[number]?.url} layout='fill' loading="eager"/>*/}
 
           </SliderStyle>
