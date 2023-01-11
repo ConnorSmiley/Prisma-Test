@@ -279,11 +279,11 @@ const CloudPosts: React.FC<IProps> = ({ post }) => {
 };
 
 export const getStaticPaths = async () => {
-  const { data: posts } = await supabase.from("BlogPosts").select("id");
+  const { data: posts } = await supabase.from("CloudBlogPosts").select("id");
 
   const paths = posts?.map(({ id }) => ({
     params: {
-      id: id.toString()
+      id: id?.toString()
     }
   }));
   return {
@@ -293,7 +293,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params: { id } }) => {
-  const { data: post } = await supabase.from("BlogPosts").select("*").eq("id", id).single();
+  const { data: post } = await supabase.from("CloudBlogPosts").select("*").eq("id", id).single();
 
   return {
     props: {

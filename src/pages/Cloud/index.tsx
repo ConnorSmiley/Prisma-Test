@@ -44,11 +44,11 @@ const CloudStyle = styled.div`
 
 export interface ICloudProps {
   blogPost: any;
+  index: any
 }
 
 export const getStaticProps = async () => {
   const { data: blogPost } = await supabase.from("CloudBlogPosts").select("*");
-  console.log(blogPost);
   return {
     props: {
       blogPost
@@ -58,11 +58,11 @@ export const getStaticProps = async () => {
 
 const Index: React.FC<ICloudProps> = ({ blogPost }) => {
 
-  const filteredBlog = blogPost.reverse().map((posts: any) => (
+  const filteredBlog = [...blogPost]?.reverse().map((posts: any, index :any) => (
     <>
-      <Link key={blogPost.id} href={`/${blogPost.id}`} >
-        <CloudCard posts={posts} />
-      </Link>
+      {/*<Link key={blogPost.id} href={`/${blogPost.id}`} >*/}
+        <CloudCard posts={posts} index={index}/>
+      {/*</Link>*/}
     </>
   ));
 
