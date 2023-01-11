@@ -60,6 +60,8 @@ export interface ISliderProps {
 }
 
 const Slider: React.FC<ISliderProps> = ({ number, setSlider, pics }) => {
+  // const picString = pics[number]?.url.toString()
+  // console.log(picString)
 
   return (
     <>
@@ -67,7 +69,7 @@ const Slider: React.FC<ISliderProps> = ({ number, setSlider, pics }) => {
         <SliderBackground>
           <SliderStyle>
 
-            <ImageSlider src={pics[number]?.url} />
+            <ImageSlider src={"https://njnfyypwtoiiqclfvxqe.supabase.co/storage/v1/object/public/images/Photography/Full%20images/11.jpg"} />
             {/*<Image src={pics[number]?.url} layout='fill' loading="eager"/>*/}
 
           </SliderStyle>

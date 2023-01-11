@@ -30,6 +30,7 @@
     "@types/styled-components": "^5.1.25",
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-styled-components": "^2.0.7",
+    "eslint": "^8.31.0",
     "prettier": "^2.7.1",
     "react-is": "^18.2.0",
     "styled-components": "^5.3.6",
