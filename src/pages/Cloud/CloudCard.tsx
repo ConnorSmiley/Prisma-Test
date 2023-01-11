@@ -167,7 +167,6 @@ export interface IProps {
 }
 
 const CloudCard: React.FC<IProps> = ({ posts }) => {
-  console.log(posts.id)
 
   return (
     <>
