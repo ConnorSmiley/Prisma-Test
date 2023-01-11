@@ -28,7 +28,7 @@ export interface IBlogProps {
 
 const CodeBlog: React.FC<IBlogProps> = ({ codeBlog }) => {
 
-  const mappedBlog = codeBlog.reverse().map((posts :any)  => (
+  const mappedBlog = codeBlog?.reverse().map((posts :any)  => (
     <>
       <CodeCard posts={posts}/>
     </>

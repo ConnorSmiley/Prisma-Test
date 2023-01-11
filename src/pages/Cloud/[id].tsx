@@ -6,8 +6,6 @@ import tw from "twin.macro";
 import Footer from "@/components/Footer";
 import { LinkedinShareButton } from "react-share";
 import { LinkedinIcon } from "react-share";
-import { FacebookIcon } from "react-share";
-import { FacebookShareButton } from "react-share";
 import { TwitterIcon } from "react-share";
 import { TwitterShareButton } from "react-share";
 
@@ -279,15 +277,15 @@ const CloudPosts: React.FC<IProps> = ({ post }) => {
 export const getStaticPaths = async () => {
   const { data: posts } = await supabase.from("BlogPosts").select("id");
 
-  const paths = posts.map(({ id }) => ({
+  const paths = posts?.map(({ id }) => ({
     params: {
-      id: id.toString()
-    }
+      id: id?.toString(),
+    },
   }));
   return {
-    paths,
+    paths: [],
     fallback: false
-  };
+  } ;
 };
 
 export const getStaticProps = async ({ params: { id } }) => {

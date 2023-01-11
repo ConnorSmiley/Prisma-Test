@@ -44,13 +44,13 @@ const SliderStyle = styled.div`
     `}
 `;
 
-// const Image = styled.img`
-//   ${tw`
-//     h-full
-//     w-full
-//     object-contain
-//     `}
-// `;
+const ImageSlider = styled.img`
+  ${tw`
+    h-full
+    w-full
+    object-contain
+    `}
+`;
 
 export interface ISliderProps {
   data: any;
@@ -60,7 +60,6 @@ export interface ISliderProps {
 }
 
 const Slider: React.FC<ISliderProps> = ({ number, setSlider, pics }) => {
-  const refImage = pics[number]?.url
 
   return (
     <>
@@ -68,8 +67,8 @@ const Slider: React.FC<ISliderProps> = ({ number, setSlider, pics }) => {
         <SliderBackground>
           <SliderStyle>
 
-            {/*<Image src={pics[number]?.url} />*/}
-            <Image src={refImage} layout='fill' loading="eager"/>
+            <ImageSlider src={pics[number]?.url} />
+            {/*<Image src={pics[number]?.url} layout='fill' loading="eager"/>*/}
 
           </SliderStyle>
         </SliderBackground>

@@ -4,6 +4,7 @@ import tw from "twin.macro";
 import Navbar from "@/components/Navbar";
 import { FacebookIcon, FacebookShareButton, LinkedinIcon, TwitterIcon, TwitterShareButton } from "react-share";
 import Footer from "@/components/Footer";
+import { supabase } from "@/utils/supabase";
 
 const IdContainer = styled.div`
   ${tw`
@@ -291,4 +292,49 @@ const CodePosts: React.FC<IdProps> = () => {
 };
 
 export default CodePosts;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
