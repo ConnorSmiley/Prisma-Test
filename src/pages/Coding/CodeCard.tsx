@@ -174,7 +174,7 @@ const CodeCard: React.FC<ICodeCardProps> = ({ posts }) => {
   return (
     <>
       <CodeCardContainer>
-        <Link key={posts?.id} href={`Code/${posts?.id}`}>
+        <Link key={posts?.id} href={`Coding/${posts?.id}`}>
 
           <CodeCardStyle>
 

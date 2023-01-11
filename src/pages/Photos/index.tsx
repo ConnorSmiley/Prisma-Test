@@ -66,6 +66,7 @@ export interface IDesignProps {
 
 const Photos: React.FC<IDesignProps> = ({ pic, pics }) => {
 
+
   return (
     <>
       <PhotosContainer>

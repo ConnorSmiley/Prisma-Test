@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import Navbar from "@/components/Navbar";
@@ -69,16 +69,9 @@ export interface IDesignProps {
   thumbnails: any;
 }
 
-export const getStaticProps = async () => {
-  const { data: thumbnails } = await supabase.from("DesignThumbnails").select("*");
-  return {
-    props: {
-      thumbnails
-    }
-  };
-};
 
 const Design: React.FC<IDesignProps> = ({ thumbnails }) => {
+
     return (
       <>
         <DesignContainer>
@@ -87,12 +80,10 @@ const Design: React.FC<IDesignProps> = ({ thumbnails }) => {
             <GridWidth>
               <MainGrid>
 
-                {thumbnails.map((data: any) => (
-                  <Link key={data.id} href={`Design/${data.id}`}>
-                    <PictureContainer>
-                      <DesignThumb key={data.id} data={data} />
-                    </PictureContainer>
-                  </Link>
+                {[...thumbnails]?.map((data: any, idx: any) => (
+                  <>
+                      <DesignThumb key={data.id} data={data} idx={idx} />
+                  </>
                 ))}
 
               </MainGrid>
@@ -106,3 +97,13 @@ const Design: React.FC<IDesignProps> = ({ thumbnails }) => {
 ;
 
 export default Design;
+
+
+export const getStaticProps = async () => {
+  const { data: thumbnails } = await supabase.from("DesignThumbnails").select("*");
+  return {
+    props: {
+      thumbnails
+    }
+  };
+};

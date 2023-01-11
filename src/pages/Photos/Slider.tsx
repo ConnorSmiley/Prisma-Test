@@ -63,14 +63,15 @@ export interface ISliderProps {
 const Slider: React.FC<ISliderProps> = ({ number, setSlider, pics }) => {
 
 
-
   return (
     <>
       <SliderContainer onClick={() => setSlider(false)}>
         <SliderBackground>
           <SliderStyle>
 
-            {/*<ImageSlider src={pics[number]?.url} />*/}
+
+              {/*<ImageSlider src={pics[number]?.url} />*/}
+
             {/*<Image src={pics[number]?.url} layout='fill' loading="eager"/>*/}
 
           </SliderStyle>

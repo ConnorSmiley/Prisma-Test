@@ -2,7 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import Navbar from "@/components/Navbar";
-import { FacebookIcon, FacebookShareButton, LinkedinIcon, TwitterIcon, TwitterShareButton } from "react-share";
+import {
+  FacebookIcon,
+  FacebookShareButton,
+  LinkedinIcon,
+  LinkedinShareButton,
+  TwitterIcon,
+  TwitterShareButton
+} from "react-share";
 import Footer from "@/components/Footer";
 import { supabase } from "@/utils/supabase";
 
@@ -10,6 +17,7 @@ const IdContainer = styled.div`
   ${tw`
     w-screen
     h-full
+    bg-gradient-to-r from-pink-500 to-purple-900
     flex
     pb-20
     
@@ -200,6 +208,8 @@ const Content = styled.text`
   pb-10
   px-10
   mt-2
+  w-full
+  h-full
   
   rounded-md
     
@@ -211,7 +221,7 @@ export interface IdProps {
   post: any;
 }
 
-const CodePosts: React.FC<IdProps> = () => {
+const CodePosts: React.FC<IdProps> = ({post}) => {
 
   return (
     <>
@@ -223,50 +233,47 @@ const CodePosts: React.FC<IdProps> = () => {
 
             <Heading>
               <PictureContainer>
-                <Picture />
+                <Picture src={post?.img} />
               </PictureContainer>
               <Title>
-
+                {post?.title}
               </Title>
               <Date>
-
+                {/*{post?.TimeStamp.slice(0, -16)}*/}
               </Date>
             </Heading>
+
 
             <LinkMain>
               <LinksContainer>
                 <LinkedInStyles>
-                  <Sharebutton>
+                  <LinkedinShareButton url={`www.localhost:3000/Cloud/${post?.id}`} title={"Connor Smiley's Blog"}>
                     <LinkedInContainer>
                       <LinkedinIcon size={28} iconFillColor={"white"} borderRadius={10} />
-
+                      Share
                     </LinkedInContainer>
-                  </Sharebutton>
+                  </LinkedinShareButton>
                 </LinkedInStyles>
-
 
                 <LinksContainer>
                   <LinkedInStyles>
-                    <Sharebutton>
+                    <FacebookShareButton url={`www.localhost:3000/Cloud/${post?.id}`} title={"Connor Smiley's Blog"}>
                       <LinkedInContainer>
-                        <FacebookIcon />
+                        <FacebookIcon size={28} iconFillColor={"white"} borderRadius={10} />
                         Share
                       </LinkedInContainer>
-                    </Sharebutton>
+                    </FacebookShareButton>
                   </LinkedInStyles>
                 </LinksContainer>
 
-
                 <LinksContainer>
                   <LinkedInStyles>
-                    <Sharebutton>
-                      <TwitterShareButton url={""} title={"Connor Smiley's Blog"}>
-                        <LinkedInContainer>
-                          <TwitterIcon size={28} iconFillColor={"white"} borderRadius={10} />
-                          Tweet
-                        </LinkedInContainer>
-                      </TwitterShareButton>
-                    </Sharebutton>
+                    <TwitterShareButton url={`www.localhost:3000/Cloud/${post?.id}`} title={"Connor Smiley's Blog"}>
+                      <LinkedInContainer>
+                        <TwitterIcon size={28} iconFillColor={"white"} borderRadius={10} />
+                        Tweet
+                      </LinkedInContainer>
+                    </TwitterShareButton>
                   </LinkedInStyles>
                 </LinksContainer>
               </LinksContainer>
@@ -275,17 +282,18 @@ const CodePosts: React.FC<IdProps> = () => {
 
             <Content>
               <Title1>
-
+                {post?.title1}
               </Title1>
+
+              {post?.content}
 
             </Content>
           </IdStyle>
 
-
         </BlogContainer>
 
       </IdContainer>
-      <Footer />
+      <Footer />;
     </>
   )
     ;
@@ -294,7 +302,29 @@ const CodePosts: React.FC<IdProps> = () => {
 export default CodePosts;
 
 
+export const getStaticPaths = async () => {
+  const { data: posts } = await supabase.from("CodeBlog").select("id");
 
+  const paths = posts?.map(({ id }) => ({
+    params: {
+      id: id?.toString()
+    }
+  }));
+  return {
+    paths,
+    fallback: false
+  };
+};
+
+export const getStaticProps = async ({ params: { id } }) => {
+  const { data: post } = await supabase.from("CodeBlog").select("*").eq("id", id).single();
+
+  return {
+    props: {
+      post
+    }
+  };
+};
 
 
 

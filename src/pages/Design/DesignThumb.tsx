@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
+import Link from "next/link";
+
 
 const DesignThumbContainer = styled.div`
   ${tw`
@@ -22,8 +24,14 @@ const DesignThumbStyle = styled.img`
 `;
 
 const HoverContainer = styled.div`
-  :hover{opacity: 90%}
-  :hover{background: rgba(0,0,0,0.7)}
+  :hover {
+    opacity: 90%
+  }
+
+  :hover {
+    background: rgba(0, 0, 0, 0.7)
+  }
+
   ${tw`
   h-auto
   w-auto
@@ -74,15 +82,23 @@ const HoverThumbDescription = styled.div`
 
 export interface IDesignThumbProps {
   data: any;
+  idx: any;
 }
 
 const DesignThumb: React.FC<IDesignThumbProps> = ({ data }) => {
+  const [count, setCount] = useState();
+  console.log(count);
+
+  const handleClick = () => {
+    setCount(data.id);
+  };
 
   return (
     <>
-      <DesignThumbContainer>
+      <DesignThumbContainer onClick={handleClick}>
+        {/*<Link href={`Design/${data?.url}`}>*/}
 
-        <DesignThumbStyle src={data?.url} />
+          <DesignThumbStyle src={data?.url} />
 
           <HoverContainer>
             <HoverThumbTitle>
@@ -92,6 +108,7 @@ const DesignThumb: React.FC<IDesignThumbProps> = ({ data }) => {
               {data?.ThumbDescription}
             </HoverThumbDescription>
           </HoverContainer>
+        {/*</Link>*/}
 
       </DesignThumbContainer>
     </>

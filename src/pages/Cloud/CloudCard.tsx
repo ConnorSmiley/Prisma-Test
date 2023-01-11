@@ -6,8 +6,7 @@ import Link from "next/link";
 
 const CloudCardContainer = styled.div`
   ${tw`
-    w-[60rem]
-    h-full
+    w-full
     flex
     justify-center
     cursor-pointer
@@ -19,12 +18,17 @@ const CloudCardContainer = styled.div`
 const CloudCardStyle = styled.div`
   ${tw`
   w-full
-  h-[270px]
+  h-auto
   flex
+  flex-row
   border-b-2
   border-gray-500
   pb-8
   my-4
+  
+  sm:flex
+  sm:flex-col
+  md:flex-row
  
     `}
 `;
@@ -32,6 +36,10 @@ const CloudCardStyle = styled.div`
 const CardContainer = styled.div`
   ${tw`
   bg-black
+  w-auto
+  h-full
+  flex
+  items-center
   
     `}
 `;
@@ -39,6 +47,7 @@ const CardContainer = styled.div`
 const CardStyle = styled.div`
   ${tw`
   bg-black
+  h-full
   w-full
   relative
   pl-2
@@ -58,7 +67,8 @@ const Title = styled.header`
     pt-2
     tracking-wide
 
-    sm:text-xl
+    sm:text-4xl
+    sm:pr-4
     md:text-xl
     lg:text-lg
     xl:text-4xl
@@ -67,20 +77,19 @@ const Title = styled.header`
 
 const PictureContainer = styled.img`
   ${tw`
-  h-full
+  
   left-0
+  
   object-contain
   p-2
   rounded-lg
-  flex
-  items-center
-  justify-center
   aspect-h-1
   
-  sm:w-40
-  md:w-40
-  lg:w-64
-  xl:w-80
+  sm:flex
+  sm:flex-col
+  md:w-60
+  lg:w-80
+  xl:w-96
     `}
 `;
 
@@ -102,6 +111,9 @@ const ContentContainer = styled.text`
     text-xl
     tracking-wide
 
+   sm:text-xl
+   md:text-base
+   lg:text-2xl
    `}
 `;
 

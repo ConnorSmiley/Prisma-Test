@@ -5,7 +5,6 @@ import Navbar from "@/components/Navbar";
 import CloudCard from "@/pages/Cloud/CloudCard";
 import { supabase } from "@/utils/supabase";
 import Footer from "@/components/Footer";
-import Link from 'next/link'
 
 const CloudContainer = styled.div`
   ${tw`

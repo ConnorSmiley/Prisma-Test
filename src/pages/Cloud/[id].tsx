@@ -1,5 +1,4 @@
 import React from "react";
-import { supabase } from "@/utils/supabase";
 import Navbar from "@/components/Navbar";
 import styled from "styled-components";
 import tw from "twin.macro";
@@ -10,7 +9,7 @@ import { FacebookIcon } from "react-share";
 import { FacebookShareButton } from "react-share";
 import { TwitterIcon } from "react-share";
 import { TwitterShareButton } from "react-share";
-
+import Link from "next/link";
 
 export interface IProps {
   blogPost: any;
@@ -208,6 +207,8 @@ const CloudPosts: React.FC<IProps> = ({ post }) => {
         <Navbar />
 
         <BlogContainer>
+          <Link key={post?.id} href={`Cloud/${post?.id}`}>
+
           <IdStyles>
 
             <Heading>
@@ -218,7 +219,7 @@ const CloudPosts: React.FC<IProps> = ({ post }) => {
                 {post?.title}
               </Title>
               <Date>
-                {post.TimeStamp.slice(0, -16)}
+                {post?.TimeStamp.slice(0, -16)}
               </Date>
             </Heading>
 
@@ -268,6 +269,7 @@ const CloudPosts: React.FC<IProps> = ({ post }) => {
 
             </Content>
           </IdStyles>
+          </Link>
 
         </BlogContainer>
 
@@ -278,28 +280,5 @@ const CloudPosts: React.FC<IProps> = ({ post }) => {
     ;
 };
 
-export const getStaticPaths = async () => {
-  const { data: posts } = await supabase.from("CloudBlogPosts").select("id");
-
-  const paths = posts?.map(({ id }) => ({
-    params: {
-      id: id?.toString()
-    }
-  }));
-  return {
-    paths,
-    fallback: false
-  };
-};
-
-export const getStaticProps = async ({ params: { id } }) => {
-  const { data: post } = await supabase.from("CloudBlogPosts").select("*").eq("id", id).single();
-
-  return {
-    props: {
-      post
-    }
-  };
-};
 
 export default CloudPosts;
