@@ -75,7 +75,7 @@ const Photos: React.FC<IDesignProps> = ({ pic, pics }) => {
           <GridWidth>
             <MainGrid>
 
-              {pic.map((data: any, idx: any) => (
+              {[...pic].map((data: any, idx: any) => (
                 <PhotoThumb data={data} key={idx} pics={pics}
                 />
               ))}
