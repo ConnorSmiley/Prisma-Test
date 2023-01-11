@@ -39,7 +39,7 @@ export interface ICodingProps {
 
 const Coding: React.FC<ICodingProps> = ({codePics, codeBlog }) => {
 
-  const filterBlog = codeBlog.reverse().map((posts : any) => (
+  const filterBlog = [...codeBlog].reverse().map((posts : any) => (
     <>
       <CodeCard posts={posts}/>
     </>
