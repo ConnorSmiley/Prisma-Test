@@ -68,7 +68,7 @@ const Slider: React.FC<ISliderProps> = ({ number, setSlider, pics }) => {
         <SliderBackground>
           <SliderStyle>
 
-            {/*<Image src={pics.url} />*/}
+            {/*<Image src={pics[number]?.url} />*/}
             <Image src={refImage} layout='fill' loading="eager"/>
 
           </SliderStyle>

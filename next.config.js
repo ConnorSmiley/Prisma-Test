@@ -14,13 +14,13 @@ module.exports = {
   },
   images: {
     domains: ['localhost', 'njnfyypwtoiiqclfvxqe.supabase.co'],
-    // remotePatterns: [
-    //   {
-    //     protocol: 'https',
-    //     hostname: 'njnfyypwtoiiqclfvxqe.supabase.co',
-    //     port: '',
-    //     pathname: '*',
-    //   },
-    // ],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'njnfyypwtoiiqclfvxqe.supabase.co',
+        port: '',
+        pathname: '*',
+      },
+    ],
   },
 }

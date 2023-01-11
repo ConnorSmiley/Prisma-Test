@@ -55,17 +55,6 @@ const PictureContainer = styled.div`
     `}
 `;
 
-export const getStaticProps = async () => {
-  const { data: pic } = await supabase.from("PhotographyThumbnails").select("*");
-  const { data: pics } = await supabase.from("Photography").select("*");
-
-  return {
-    props: {
-      pic,
-      pics
-    }
-  };
-};
 
 export interface IDesignProps {
   pic: any;
@@ -79,7 +68,6 @@ const Photos: React.FC<IDesignProps> = ({ pic, pics }) => {
 
   return (
     <>
-
       <PhotosContainer>
 
         <Navbar />
@@ -102,3 +90,14 @@ const Photos: React.FC<IDesignProps> = ({ pic, pics }) => {
 
 export default Photos;
 
+export const getStaticProps = async () => {
+  const { data: pic } = await supabase.from("PhotographyThumbnails").select("*");
+  const { data: pics } = await supabase.from("Photography").select("*");
+
+  return {
+    props: {
+      pic,
+      pics
+    }
+  };
+};
