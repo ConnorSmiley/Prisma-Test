@@ -80,7 +80,7 @@ const Design: React.FC<IDesignProps> = ({ thumbnails }) => {
             <GridWidth>
               <MainGrid>
 
-                {[...thumbnails]?.map((data: any, idx: any) => (
+                {thumbnails?.map((data: any, idx: any) => (
                   <>
                       <DesignThumb key={data.id} data={data} idx={idx} />
                   </>

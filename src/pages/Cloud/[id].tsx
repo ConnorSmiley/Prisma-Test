@@ -119,14 +119,14 @@ const Title2 = styled.div`
 `;
 
 const LinkMain = styled.div`
-    ${tw`
+  ${tw`
     w-full
     flex
     items-center
     justify-evenly
     
     `}
-`
+`;
 
 const LinksContainer = styled.div`
   ${tw`
@@ -209,66 +209,66 @@ const CloudPosts: React.FC<IProps> = ({ post }) => {
         <BlogContainer>
           <Link key={post?.id} href={`Cloud/${post?.id}`}>
 
-          <IdStyles>
+            <IdStyles>
 
-            <Heading>
-              <PictureContainer>
-                <Picture src={post?.img} />
-              </PictureContainer>
-              <Title>
-                {post?.title}
-              </Title>
-              <Date>
-                {post?.TimeStamp.slice(0, -16)}
-              </Date>
-            </Heading>
+              <Heading>
+                <PictureContainer>
+                  <Picture src={post?.img} />
+                </PictureContainer>
+                <Title>
+                  {post?.title}
+                </Title>
+                <Date>
+                  {post?.TimeStamp.slice(0, -16)}
+                </Date>
+              </Heading>
 
 
-            <LinkMain>
-              <LinksContainer>
-                <LinkedInStyles>
-                  <LinkedinShareButton url={`www.localhost:3000/Cloud/${post?.id}`} title={"Connor Smiley's Blog"}>
-                    <LinkedInContainer>
-                      <LinkedinIcon size={28} iconFillColor={"white"} borderRadius={10} />
-                      Share
-                    </LinkedInContainer>
-                  </LinkedinShareButton>
-                </LinkedInStyles>
-
+              <LinkMain>
                 <LinksContainer>
                   <LinkedInStyles>
-                    <FacebookShareButton url={`www.localhost:3000/Cloud/${post?.id}`} title={"Connor Smiley's Blog"}>
+                    <LinkedinShareButton url={`www.localhost:3000/Cloud/${post?.id}`} title={"Connor Smiley's Blog"}>
                       <LinkedInContainer>
-                        <FacebookIcon size={28} iconFillColor={"white"} borderRadius={10} />
+                        <LinkedinIcon size={28} iconFillColor={"white"} borderRadius={10} />
                         Share
                       </LinkedInContainer>
-                    </FacebookShareButton>
+                    </LinkedinShareButton>
                   </LinkedInStyles>
+
+                  <LinksContainer>
+                    <LinkedInStyles>
+                      <FacebookShareButton url={`www.localhost:3000/Cloud/${post?.id}`} title={"Connor Smiley's Blog"}>
+                        <LinkedInContainer>
+                          <FacebookIcon size={28} iconFillColor={"white"} borderRadius={10} />
+                          Share
+                        </LinkedInContainer>
+                      </FacebookShareButton>
+                    </LinkedInStyles>
+                  </LinksContainer>
+
+                  <LinksContainer>
+                    <LinkedInStyles>
+                      <TwitterShareButton url={`www.localhost:3000/Cloud/${post?.id}`} title={"Connor Smiley's Blog"}>
+                        <LinkedInContainer>
+                          <TwitterIcon size={28} iconFillColor={"white"} borderRadius={10} />
+                          Tweet
+                        </LinkedInContainer>
+                      </TwitterShareButton>
+                    </LinkedInStyles>
+                  </LinksContainer>
                 </LinksContainer>
-
-                <LinksContainer>
-                  <LinkedInStyles>
-                    <TwitterShareButton url={`www.localhost:3000/Cloud/${post?.id}`} title={"Connor Smiley's Blog"}>
-                      <LinkedInContainer>
-                        <TwitterIcon size={28} iconFillColor={"white"} borderRadius={10} />
-                        Tweet
-                      </LinkedInContainer>
-                    </TwitterShareButton>
-                  </LinkedInStyles>
-                </LinksContainer>
-              </LinksContainer>
-            </LinkMain>
+              </LinkMain>
 
 
-            <Content>
-              <Title1>
-                {post?.title1}
-              </Title1>
+              <Content>
+                <Title1>
+                  {post?.title1}
+                </Title1>
 
-              {post?.content}
+                {post?.content}
 
-            </Content>
-          </IdStyles>
+              </Content>
+            </IdStyles>
           </Link>
 
         </BlogContainer>
@@ -282,3 +282,5 @@ const CloudPosts: React.FC<IProps> = ({ post }) => {
 
 
 export default CloudPosts;
+
+

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import Link from "next/link";
@@ -90,24 +90,24 @@ const DesignThumb: React.FC<IDesignThumbProps> = ({ data }) => {
   console.log(count);
 
   const handleClick = () => {
-    setCount(data.id);
-  };
+    setCount(data.id)
+  }
 
   return (
     <>
       <DesignThumbContainer onClick={handleClick}>
         {/*<Link href={`Design/${data?.url}`}>*/}
 
-          <DesignThumbStyle src={data?.url} />
+        <DesignThumbStyle src={data?.url} />
 
-          <HoverContainer>
-            <HoverThumbTitle>
-              {data?.Company}
-            </HoverThumbTitle>
-            <HoverThumbDescription>
-              {data?.ThumbDescription}
-            </HoverThumbDescription>
-          </HoverContainer>
+        <HoverContainer>
+          <HoverThumbTitle>
+            {data?.Company}
+          </HoverThumbTitle>
+          <HoverThumbDescription>
+            {data?.ThumbDescription}
+          </HoverThumbDescription>
+        </HoverContainer>
         {/*</Link>*/}
 
       </DesignThumbContainer>
