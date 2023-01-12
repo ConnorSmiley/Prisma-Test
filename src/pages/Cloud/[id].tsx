@@ -10,6 +10,7 @@ import { FacebookShareButton } from "react-share";
 import { TwitterIcon } from "react-share";
 import { TwitterShareButton } from "react-share";
 import Link from "next/link";
+import { supabase } from "@/utils/supabase";
 
 export interface IProps {
   blogPost: any;
@@ -284,3 +285,26 @@ const CloudPosts: React.FC<IProps> = ({ post }) => {
 export default CloudPosts;
 
 
+export const getStaticPaths = async () => {
+  const { data: posts } = await supabase.from("CloudBlogPosts").select("id");
+
+  const paths = posts?.map(({ id }) => ({
+    params: {
+      id: id?.toString()
+    }
+  }));
+  return {
+    paths,
+    fallback: false
+  };
+};
+
+export const getStaticProps = async ({ params: { id } }) => {
+  const { data: post } = await supabase.from("CloudBlogPosts").select("*").eq("id", id).single();
+
+  return {
+    props: {
+      post
+    }
+  };
+};
