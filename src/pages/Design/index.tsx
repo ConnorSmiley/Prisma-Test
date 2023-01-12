@@ -72,29 +72,35 @@ export interface IDesignProps {
 
 const Design: React.FC<IDesignProps> = ({ thumbnails }) => {
 
-    return (
-      <>
-        <DesignContainer>
-          <Navbar />
-          <DesignStyle>
-            <GridWidth>
-              <MainGrid>
 
-                {thumbnails?.map((data: any, idx: any) => (
-                  <>
-                      <DesignThumb key={data.id} data={data} idx={idx} />
-                  </>
-                ))}
+  const filteredThumbs = [...thumbnails]?.map((posts: any) => (
+    <>
+      <Link key={posts.id} href={`Design/${posts.id}`}>
+        <DesignThumb key={posts.id} posts={posts} />
+      </Link>
+    </>
+  ));
 
-              </MainGrid>
-            </GridWidth>
-          </DesignStyle>
-        </DesignContainer>
-        <Footer />
-      </>
-    );
-  }
-;
+
+  return (
+    <>
+      <DesignContainer>
+        <Navbar />
+        <DesignStyle>
+          <GridWidth>
+            <MainGrid>
+
+              {filteredThumbs}
+
+
+            </MainGrid>
+          </GridWidth>
+        </DesignStyle>
+      </DesignContainer>
+      <Footer />
+    </>
+  );
+};
 
 export default Design;
 

@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
-import { supabase } from "@/utils/supabase";
 import Link from "next/link";
 
 const CloudCardContainer = styled.div`
@@ -214,11 +213,3 @@ const CloudCard: React.FC<IProps> = ({ posts }) => {
 };
 export default CloudCard;
 
-export const getStaticProps = async () => {
-  const { data: blogPost } = await supabase.from("BlogPosts").select("id");
-  return {
-    props: {
-      blogPost
-    }
-  };
-};

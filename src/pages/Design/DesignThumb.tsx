@@ -2,6 +2,7 @@ import React, { useEffect, useReducer, useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import Link from "next/link";
+import { supabase } from "@/utils/supabase";
 
 
 const DesignThumbContainer = styled.div`
@@ -10,6 +11,13 @@ const DesignThumbContainer = styled.div`
     aspect-h-12
     w-full
     h-full
+    
+    `}
+`;
+
+const Container = styled.div`
+  ${tw`
+    flex
     
     `}
 `;
@@ -81,38 +89,34 @@ const HoverThumbDescription = styled.div`
 `;
 
 export interface IDesignThumbProps {
-  data: any;
-  idx: any;
+  posts: unknown;
 }
 
-const DesignThumb: React.FC<IDesignThumbProps> = ({ data }) => {
-  const [count, setCount] = useState();
-  console.log(count);
-
-  const handleClick = () => {
-    setCount(data.id)
-  }
+const DesignThumb: React.FC<IDesignThumbProps> = ({ posts }) => {
 
   return (
     <>
-      <DesignThumbContainer onClick={handleClick}>
-        {/*<Link href={`Design/${data?.url}`}>*/}
+      <Link key={posts?.id} href={`Design/${posts?.id}`}>
 
-        <DesignThumbStyle src={data?.url} />
+        <DesignThumbContainer>
 
-        <HoverContainer>
-          <HoverThumbTitle>
-            {data?.Company}
-          </HoverThumbTitle>
-          <HoverThumbDescription>
-            {data?.ThumbDescription}
-          </HoverThumbDescription>
-        </HoverContainer>
-        {/*</Link>*/}
+          <DesignThumbStyle src={posts?.url} />
 
-      </DesignThumbContainer>
+          <HoverContainer>
+            <HoverThumbTitle>
+              {posts?.Company}
+            </HoverThumbTitle>
+            <HoverThumbDescription>
+              {posts?.ThumbDescription}
+            </HoverThumbDescription>
+          </HoverContainer>
+
+        </DesignThumbContainer>
+      </Link>
+
     </>
   );
 };
 
 export default DesignThumb;
+
