@@ -9,7 +9,6 @@ import { FacebookIcon } from "react-share";
 import { FacebookShareButton } from "react-share";
 import { TwitterIcon } from "react-share";
 import { TwitterShareButton } from "react-share";
-import Link from "next/link";
 import { supabase } from "@/utils/supabase";
 
 export interface IProps {
@@ -24,7 +23,8 @@ const IdContainer = styled.div`
     h-full
     bg-gradient-to-r from-pink-500 to-purple-900
     flex
-    pb-20
+    pb-10
+    overflow-hidden
     
     `}
 `;
@@ -44,23 +44,26 @@ const IdStyles = styled.div`
 const BlogContainer = styled.div`
   ${tw`
   flex
+  w-full
   flex-col
   items-center
   relative
-    
+  
     `}
 `;
 
 const Heading = styled.div`
   ${tw`
-    flex
-    items-center
-    justify-start
-    pb-4
-    border-b-2
-    border-white
+  flex
+  flex-col
+    pb-2
+    w-[80%]
     
-    
+   
+   sm:flex-col
+    sm:w-[80%]
+    md:w-[80%]
+    md:flex-row
     lg:w-[80%]
     xl:flex
     xl:items-center
@@ -73,19 +76,23 @@ const Heading2 = styled.div`
     ${tw`
     flex
     flex-col
+    w-full
     
+    sm:flex
+    md:flex
+    md:flex-col
     `}
 `
-
 
 const PictureContainer = styled.div`
   ${tw`
     aspect-h-1
-    w-[20rem]
+    w-[100%]
     mr-8
     
-    lg:w-[18rem]
-    xl:w-[20rem]
+    md:w-[40%]
+    lg:w-[30%]
+    xl:w-[35%]
     `}
 `;
 
@@ -97,21 +104,24 @@ const Picture = styled.img`
 
 const Title = styled.header`
   ${tw`
-  text-7xl
+  text-2xl
   uppercase
   font-extrabold
-  py-8
-  w-[40rem]
   text-white
+  pt-2
   
   
-  md:text-5xl
+  sm:text-4xl
+  sm:pt-6
+  sm:pb-2
+  md:w-[100%]
+  md:text-4xl
   lg:text-5xl
   
   xl:text-7xl
   xl:font-extrabold
   xl:py-8
-  xl:w-[40rem]
+  xl:w-[90%]
   
     
     `}
@@ -120,12 +130,17 @@ const Title = styled.header`
 const Title1 = styled.div`
 
   ${tw`
-    text-6xl
+    text-4xl
     font-extrabold
-    pb-8
+    pb-6
     tracking-tight
     italic
     
+    sm:text-4xl
+    md:pb-8
+    md:text-5xl
+    lg:text-5xl
+    xl:text-6xl
     `}
 `;
 
@@ -164,10 +179,14 @@ const LinksContainer = styled.div`
 const Date = styled.div`
   ${tw`
     text-white
-    text-xl
+    text-base
     font-light
     flex
     self-end
+    
+    sm:text-base
+    md:text-lg
+    lg:text-xl
     `}
 `;
 
@@ -211,17 +230,21 @@ const Content = styled.text`
   flex
   flex-col
   justify-center
-  w-full
-  text-2xl
+  w-[80%]
+  text-xl
   tracking-tight
   text-white
-  pt-10
-  pb-10
-  px-10
+  pt-4
+  pb-6
+  px-6
   mt-2
   
   rounded-md
   
+  sm:pt-6
+  sm:text-lg
+  sm:w-[80%]
+  md:w-[80%]
   lg:w-[80%]
   xl:w-[80%]
   xl:pb-10
@@ -239,7 +262,6 @@ const CloudPosts: React.FC<IProps> = ({ post }) => {
         <Navbar />
 
         <BlogContainer>
-          <Link key={post?.id} href={`Cloud/${post?.id}`}>
 
             <IdStyles>
 
@@ -303,7 +325,6 @@ const CloudPosts: React.FC<IProps> = ({ post }) => {
 
               </Content>
             </IdStyles>
-          </Link>
 
         </BlogContainer>
 
