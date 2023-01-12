@@ -60,6 +60,12 @@ const Heading = styled.div`
     border-b-2
     border-white
     
+    
+    lg:w-[80%]
+    xl:flex
+    xl:items-center
+    xl:justify-start
+    xl:w-[80%]
     `}
 `;
 
@@ -78,6 +84,8 @@ const PictureContainer = styled.div`
     w-[20rem]
     mr-8
     
+    lg:w-[18rem]
+    xl:w-[20rem]
     `}
 `;
 
@@ -95,6 +103,16 @@ const Title = styled.header`
   py-8
   w-[40rem]
   text-white
+  
+  
+  md:text-5xl
+  lg:text-5xl
+  
+  xl:text-7xl
+  xl:font-extrabold
+  xl:py-8
+  xl:w-[40rem]
+  
     
     `}
 `;
@@ -172,6 +190,7 @@ const LinkedInContainer = styled.div`
     text-white
     
     hover:bg-gray-500
+    
     `}
 `;
 
@@ -202,6 +221,12 @@ const Content = styled.text`
   mt-2
   
   rounded-md
+  
+  lg:w-[80%]
+  xl:w-[80%]
+  xl:pb-10
+  xl:pt-10
+  xl:mt-2
     
     `}
 `;
