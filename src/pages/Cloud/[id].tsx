@@ -34,12 +34,10 @@ const IdStyles = styled.div`
   relative
     mt-20
     h-full
+    w-full
     flex
     flex-col
     items-center
-    px-2
-    pr-40
-    pl-40
     `}
 `;
 
@@ -58,14 +56,20 @@ const Heading = styled.div`
     flex
     items-center
     justify-start
-    w-full
     pb-4
     border-b-2
     border-white
-    relative
     
     `}
 `;
+
+const Heading2 = styled.div`
+    ${tw`
+    flex
+    flex-col
+    
+    `}
+`
 
 
 const PictureContainer = styled.div`
@@ -142,12 +146,10 @@ const LinksContainer = styled.div`
 const Date = styled.div`
   ${tw`
     text-white
-    absolute
-    bottom-8
-    right-0
     text-xl
     font-light
-    
+    flex
+    self-end
     `}
 `;
 
@@ -187,6 +189,10 @@ const Content = styled.text`
   white-space: pre-line;
   background: rgba(0, 0, 0, 0.5);
   ${tw`
+  flex
+  flex-col
+  justify-center
+  w-full
   text-2xl
   tracking-tight
   text-white
@@ -216,12 +222,14 @@ const CloudPosts: React.FC<IProps> = ({ post }) => {
                 <PictureContainer>
                   <Picture src={post?.img} />
                 </PictureContainer>
-                <Title>
-                  {post?.title}
-                </Title>
-                <Date>
-                  {post?.TimeStamp.slice(0, -16)}
-                </Date>
+                <Heading2>
+                  <Title>
+                    {post?.title}
+                  </Title>
+                  <Date>
+                    {post?.TimeStamp.slice(0, -16)}
+                  </Date>
+                </Heading2>
               </Heading>
 
 
