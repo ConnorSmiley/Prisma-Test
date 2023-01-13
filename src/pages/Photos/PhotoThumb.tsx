@@ -88,7 +88,7 @@ const PhotoThumb: React.FC<IPhotoThumbProps> = ({ pics, fullPics }) => {
 
   const handleClick = () => {
     setSlider(!slider);
-    setNumber(pics.id - 1);
+    setNumber(pics?.id - 1);
   };
 
   return (

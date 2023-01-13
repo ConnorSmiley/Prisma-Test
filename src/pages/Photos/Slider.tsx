@@ -105,19 +105,18 @@ export interface ISliderProps {
 
 const Slider: React.FC<ISliderProps> = ({ setSlider, number, fullPics }) => {
   const [currImg, setCurrImg] = useState(number);
-  console.log(currImg);
 
   const leftClick = () => {
-    if (currImg > 0 && fullPics.length - 1) {
-      setCurrImg(prev => (prev - 1));
+    if (currImg > 0 && fullPics?.length - 1) {
+      setCurrImg((prev) => (prev - 1));
     } else {
-      return (setCurrImg(fullPics.length - 1));
+      return (setCurrImg(fullPics?.length - 1));
     }
   };
 
   const rightClick = () => {
-    if (currImg < fullPics.length - 1) {
-      setCurrImg(prev => (prev + 1));
+    if (currImg < fullPics?.length - 1) {
+      setCurrImg((prev) => (prev + 1));
     } else {
       return (setCurrImg(0));
     }
@@ -131,7 +130,8 @@ const Slider: React.FC<ISliderProps> = ({ setSlider, number, fullPics }) => {
 
             <Left onClick={leftClick} />
 
-              <ImageSlider src={fullPics[currImg]?.url} />
+              {/*<ImageSlider src={fullPics[currImg]?.url} />*/}
+
             <CloseSlider onClick={() => setSlider(false)}/>
 
 
