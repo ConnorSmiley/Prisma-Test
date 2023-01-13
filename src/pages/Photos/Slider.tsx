@@ -25,7 +25,7 @@ const SliderBackground = styled.div`
       left-1/2 
       -translate-y-1/2 
       -translate-x-1/2
-      w-full
+      w-[80%]
       h-full
       flex
       justify-center
@@ -60,8 +60,7 @@ export interface ISliderProps {
 
 }
 
-const Slider: React.FC<ISliderProps> = ({ number, setSlider, pics }) => {
-
+const Slider: React.FC<ISliderProps> = ({ setSlider, pics }) => {
 
   return (
     <>
@@ -69,8 +68,7 @@ const Slider: React.FC<ISliderProps> = ({ number, setSlider, pics }) => {
         <SliderBackground>
           <SliderStyle>
 
-
-              {/*<ImageSlider src={pics[number]?.url} />*/}
+              <ImageSlider src={pics?.url} />
 
             {/*<Image src={pics[number]?.url} layout='fill' loading="eager"/>*/}
 

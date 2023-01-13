@@ -51,9 +51,7 @@ const Index: React.FC<ICloudProps> = ({ blogPost }) => {
 
   const filteredBlog = [...blogPost]?.reverse().map((posts: any, index :any) => (
     <>
-      {/*<Link key={blogPost.id} href={`/${blogPost.id}`} >*/}
         <CloudCard key={posts.id} posts={posts} index={index}/>
-      {/*</Link>*/}
     </>
   ));
 
