@@ -50,10 +50,6 @@ export interface IidProps {
 }
 
 const DesignID: React.FC<IidProps> = ({ post }) => {
-  console.log(post);
-
-
-  const postArray = Array.from(post);
 
 
   return (

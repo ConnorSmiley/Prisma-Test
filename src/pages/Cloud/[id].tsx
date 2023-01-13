@@ -91,7 +91,7 @@ const PictureContainer = styled.div`
     mr-8
     
     md:w-[40%]
-    lg:w-[30%]
+    lg:w-[35%]
     xl:w-[35%]
     `}
 `;

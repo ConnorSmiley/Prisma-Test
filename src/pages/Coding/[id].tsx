@@ -19,7 +19,8 @@ const IdContainer = styled.div`
     h-full
     bg-gradient-to-r from-pink-500 to-purple-900
     flex
-    pb-20
+    pb-10
+    overflow-hidden
     
     `}
 `;
@@ -29,22 +30,18 @@ const IdStyle = styled.div`
   relative
     mt-20
     h-full
+    w-full
     flex
     flex-col
     items-center
-    px-2
-    pr-40
-    pl-40
-    
-    md:pl-10
-    md:w-[64rem]
     
     `}
 `;
 
 const BlogContainer = styled.div`
   ${tw`
-      flex
+  flex
+  w-full
   flex-col
   items-center
   relative
@@ -54,24 +51,47 @@ const BlogContainer = styled.div`
 
 const Heading = styled.div`
   ${tw`
-    flex
-    items-center
-    justify-start
-    w-full
-    pb-4
-    border-b-2
-    border-white
-    relative
+  flex
+  flex-col
+    pb-2
+    w-[80%]
+   
+   sm:flex-col
+    sm:w-[80%]
+    md:w-[80%]
+    md:flex-row
+    lg:w-[80%]
+    xl:flex
+    xl:items-center
+    xl:justify-start
+    xl:w-[80%]
     
     `}
 `;
 
+const Heading2 = styled.div`
+  ${tw`
+    flex
+    flex-col
+    w-full
+    h-full
+    justify-evenly
+    
+    sm:flex
+    md:flex
+    md:flex-col
+    `}
+`;
 
 const PictureContainer = styled.div`
   ${tw`
     aspect-h-1
-    w-[20rem]
+    w-[100%]
     mr-8
+    
+    md:w-[40%]
+    lg:w-[35%]
+    xl:w-[35%]
     
     `}
 `;
@@ -94,20 +114,31 @@ const Sharebutton = styled.div`
     font-bold
     text-white
     
-    hover:bg-gray-500    `}
+    hover:bg-gray-500
+    `}
 `;
 
 
 const Title = styled.header`
   ${tw`
-  text-7xl
+  text-2xl
   uppercase
   font-extrabold
-  py-8
-  w-[40rem]
   text-white
+  pt-2
   
-  md:text-6xl
+  
+  sm:text-4xl
+  sm:pt-6
+  sm:pb-2
+  md:w-[100%]
+  md:text-4xl
+  lg:text-5xl
+  
+  xl:text-7xl
+  xl:font-extrabold
+  xl:py-8
+  xl:w-[90%]
     
     `}
 `;
@@ -115,7 +146,6 @@ const Title = styled.header`
 
 const Picture = styled.img`
   ${tw`
-    
     `}
 `;
 
@@ -123,11 +153,17 @@ const Picture = styled.img`
 const Title1 = styled.div`
 
   ${tw`
-    text-6xl
+    text-4xl
     font-extrabold
-    pb-8
+    pb-6
     tracking-tight
     italic
+    
+    sm:text-4xl
+    md:pb-8
+    md:text-5xl
+    lg:text-5xl
+    xl:text-6xl
     
     `}
 `;
@@ -155,13 +191,14 @@ const LinksContainer = styled.div`
 const Date = styled.div`
   ${tw`
     text-white
-    absolute
-    bottom-8
-    right-0
-    text-xl
+    text-base
     font-light
+    flex
+    self-end
     
-    md:text-base
+    sm:text-base
+    md:text-lg
+    lg:text-xl
     `}
 `;
 
@@ -201,17 +238,29 @@ const Content = styled.text`
   white-space: pre-line;
   background: rgba(0, 0, 0, 0.5);
   ${tw`
-  text-2xl
+  flex
+  flex-col
+  justify-center
+  w-[80%]
+  text-xl
   tracking-tight
   text-white
-  pt-10
-  pb-10
-  px-10
+  pt-4
+  pb-6
+  px-6
   mt-2
-  w-full
-  h-full
   
   rounded-md
+  
+  sm:pt-6
+  sm:text-lg
+  sm:w-[80%]
+  md:w-[80%]
+  lg:w-[80%]
+  xl:w-[80%]
+  xl:pb-10
+  xl:pt-10
+  xl:mt-2
     
     `}
 `;
@@ -221,7 +270,7 @@ export interface IdProps {
   post: any;
 }
 
-const CodePosts: React.FC<IdProps> = ({post}) => {
+const CodePosts: React.FC<IdProps> = ({ post }) => {
 
   return (
     <>
@@ -235,12 +284,14 @@ const CodePosts: React.FC<IdProps> = ({post}) => {
               <PictureContainer>
                 <Picture src={post?.img} />
               </PictureContainer>
-              <Title>
-                {post?.title}
-              </Title>
-              <Date>
-                {/*{post?.TimeStamp.slice(0, -16)}*/}
-              </Date>
+              <Heading2>
+                <Title>
+                  {post?.title}
+                </Title>
+                <Date>
+                  {post?.timestamp.slice(0, -16)}
+                </Date>
+              </Heading2>
             </Heading>
 
 
