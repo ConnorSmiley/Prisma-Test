@@ -78,16 +78,17 @@ export interface IPhotoThumbProps {
   setSlider: boolean;
   number: any;
   pictures: any;
-  pics:any
+  pics: any;
+  fullPics: any;
 }
 
 const PhotoThumb: React.FC<IPhotoThumbProps> = ({ pics, fullPics }) => {
   const [slider, setSlider] = useState<boolean>(false);
-  const [number, setNumber] = useState()
+  const [number, setNumber] = useState();
 
   const handleClick = () => {
     setSlider(!slider);
-    setNumber(pics.id - 1)
+    setNumber(pics.id - 1);
   };
 
   return (
