@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { supabase } from "@/utils/supabase";
 import Navbar from "@/components/Navbar";
+import Link from "next/link";
 
 const IdContainer = styled.div`
   ${tw`
@@ -24,48 +25,20 @@ export interface IidProps {
 }
 
 const DesignID: React.FC<IidProps> = ({ post }) => {
-  const [fetcherror, setFetcherror] = useState();
-  const [table, setTable] = useState<any>();
-
-
-  useEffect(() => {
-    const fetchTable = async () => {
-      const { data, error } = await supabase
-        .from("DesignThumbnails")
-        .select("Company, GoLite(url)")
-        .eq('GoLite', table)
-
-      ;
-
-      if (error) {
-        setFetcherror("error");
-        setTable(null);
-        console.log(error);
-      }
-      if (data) {
-        setTable(data);
-        setFetcherror(null)
-      }
-
-    };
-    fetchTable()
-  },[]);
-
+  console.log(post)
 
   return (
     <>
       <IdContainer>
         <Navbar />
         <IdStyle>
-          {fetcherror && (<p>{fetcherror}</p>)}
 
-          {table && (
-            <div>
-              {table.map(data => (
-                <div>{data.title}</div>
-              ))}
-            </div>
-          )}
+          <Link href={`Design/${post?.id}`}>
+            <IdContainer>
+            {post?.img}
+
+            </IdContainer>
+          </Link>
 
         </IdStyle>
       </IdContainer>
@@ -76,28 +49,28 @@ const DesignID: React.FC<IidProps> = ({ post }) => {
 
 export default DesignID;
 
-// export const getStaticPaths = async () => {
-//   const { data: posts } = await supabase.from("").select("id");
-//
-//   const paths = posts?.map(({ id }) => ({
-//     params: {
-//       id: id?.toString()
-//     }
-//   }));
-//   return {
-//     paths,
-//     fallback: false
-//   };
-// };
-//
-// export const getStaticProps = async ({ params: { id } }) => {
-//   const { data: post } = await supabase.from("GoLite").select("*").eq("id", id).single();
-//
-//   return {
-//     props: {
-//       post
-//     }
-//   };
-// };
+export const getStaticPaths = async () => {
+  const { data: posts } = await supabase.from("DesignThumbnails").select("id");
+
+  const paths = posts?.map(({ id }) => ({
+    params: {
+      id: id?.toString()
+    }
+  }));
+  return {
+    paths,
+    fallback: false
+  };
+};
+
+export const getStaticProps = async ({ params: { id } }) => {
+  const { data: post } = await supabase.from("DesignThumbnails").select("*").eq("id", id).single();
+
+  return {
+    props: {
+      post
+    }
+  };
+};
 
 
