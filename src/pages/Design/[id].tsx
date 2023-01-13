@@ -35,7 +35,7 @@ const DesignID: React.FC<IidProps> = ({ post }) => {
 
           <Link href={`Design/${post?.id}`}>
             <IdContainer>
-            {post?.img}
+              {post?.img}
 
             </IdContainer>
           </Link>
