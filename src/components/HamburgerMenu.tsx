@@ -50,7 +50,7 @@ const CgCloseOIcon = styled(CgCloseO)`
 `;
 
 
-const HamburgerList = styled.div` 
+const HamburgerList = styled.div`
   ${tw`
   bg-black
    h-screen
@@ -69,25 +69,29 @@ const HamburgerList = styled.div`
    pb-[40%]
    pt-[20%]
    z-10
-   hover:text-red-500
    
    sm:text-4xl
    sm:pb-[20%]
    sm:pt-[10%]
    sm:font-extrabold
-   sm:hover:text-blue-500
    
    md:text-5xl
    md:pb-[20%]
    md:pt-[10%]
    md:font-extrabold
-   md:hover:text-green-500
    
    lg:text-2xl
 
     `}
 `;
 
+const Hover = styled.div`
+  ${tw`
+  hover:cursor-pointer
+  hover:text-pink-500
+    
+    `}
+`;
 
 export interface IHamburgerMenuProps {
 }
@@ -109,22 +113,34 @@ const HamburgerMenu: React.FC<IHamburgerMenuProps> = () => {
           {open && (
             <HamburgerList>
               <Link href="/">
-                Home
+                <Hover>
+                  Home
+                </Hover>
               </Link>
               <Link href="/Design/">
-                Design
+                <Hover>
+                  Design
+                </Hover>
               </Link>
               <Link href="/Coding">
-                Index
+                <Hover>
+                  Coding
+                </Hover>
               </Link>
               <Link href="/Cloud">
-                .I.T. & cloud
+                <Hover>
+                  Cloud
+                </Hover>
               </Link>
-              <Link href="/Photos/index">
-                Photos
+              <Link href="/Photos">
+                <Hover>
+                  Photos
+                </Hover>
               </Link>
               <Link href="/About">
-                about
+                <Hover>
+                  About
+                </Hover>
               </Link>
             </HamburgerList>)
           }

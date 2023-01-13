@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
-import Image from 'next/image'
+import Image from "next/image";
+import { supabase } from "@/utils/supabase";
 
 const SliderContainer = styled.div`
   ${tw`
@@ -18,14 +19,14 @@ const SliderContainer = styled.div`
 `;
 
 const SliderBackground = styled.div`
-  background-color: rgba(0, 0, 0, 9);
+  background-color: rgba(0, 0, 0, 0.7);
   ${tw`
       fixed
       top-1/2
       left-1/2 
       -translate-y-1/2 
       -translate-x-1/2
-      w-[80%]
+      w-full
       h-full
       flex
       justify-center
@@ -60,7 +61,9 @@ export interface ISliderProps {
 
 }
 
-const Slider: React.FC<ISliderProps> = ({ setSlider, pics }) => {
+const Slider: React.FC<ISliderProps> = ({ setSlider, number, fullPics }) => {
+
+
 
   return (
     <>
@@ -68,7 +71,7 @@ const Slider: React.FC<ISliderProps> = ({ setSlider, pics }) => {
         <SliderBackground>
           <SliderStyle>
 
-              <ImageSlider src={pics?.url} />
+            <ImageSlider src={fullPics[number]?.url} />
 
             {/*<Image src={pics[number]?.url} layout='fill' loading="eager"/>*/}
 
@@ -80,3 +83,4 @@ const Slider: React.FC<ISliderProps> = ({ setSlider, pics }) => {
 };
 
 export default Slider;
+
