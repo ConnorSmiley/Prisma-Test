@@ -75,7 +75,6 @@ const Title = styled.header`
     font-bold
     text-white
     flex
-    pt-2
     tracking-wide
     leading-tight
 
@@ -94,7 +93,7 @@ const PictureContainer = styled.img`
   p-2
   rounded-lg
   aspect-h-1
-  w-[30rem]
+  w-60
   
   sm:flex
   sm:flex-col
@@ -115,10 +114,10 @@ const ContentContainer = styled.text`
   ${tw`
   flex
     text-white
-    pt-4
+    pt-2
     pr-4
     flex
-    text-lg
+    text-base
     tracking-wide
     leading-tight
 
@@ -133,7 +132,7 @@ const Date = styled.div`
   ${tw`
     font-bold
     font-normal
-    text-lg
+    text-sm
     bottom-6
     text-white
     font-light
