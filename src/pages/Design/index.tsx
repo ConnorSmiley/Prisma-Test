@@ -73,7 +73,7 @@ export interface IDesignProps {
 const Design: React.FC<IDesignProps> = ({ thumbnails }) => {
 
 
-  const filteredThumbs = thumbnails?.map((posts: any) => (
+  const filteredThumbs = [...thumbnails]?.map((posts: any) => (
     <>
       <Link key={posts.id} href={`Design/${posts.id}`}>
         <DesignThumb key={posts.id} posts={posts} />
@@ -103,7 +103,6 @@ const Design: React.FC<IDesignProps> = ({ thumbnails }) => {
 };
 
 export default Design;
-
 
 export const getStaticProps = async () => {
   const { data: thumbnails } = await supabase.from("DesignThumbnails").select("*");
