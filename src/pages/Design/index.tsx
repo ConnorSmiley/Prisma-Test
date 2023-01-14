@@ -36,10 +36,11 @@ const GlowBoxPink = styled.div`
 
 const DesignContainer = styled.div`
   ${tw`
-    w-screen
+    w-full
     h-full
     bg-black
     relative
+    overflow-hidden
  
     `}
 `;
