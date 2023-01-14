@@ -114,7 +114,7 @@ const ContentContainer = styled.text`
   ${tw`
   flex
     text-white
-    pt-2
+    pt-1
     pr-4
     flex
     text-sm

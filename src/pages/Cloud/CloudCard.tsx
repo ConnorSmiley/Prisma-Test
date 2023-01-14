@@ -52,6 +52,9 @@ const CardStyle = styled.div`
   w-full
   relative
   pl-2
+  border-b-2
+  border-gray-500
+  pt-1
   
     
     `}
