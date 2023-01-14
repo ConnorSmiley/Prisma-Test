@@ -39,7 +39,7 @@ const SliderStyle = styled.div`
   ${tw`
     absolute
     h-[40rem]
-    rounded-xl
+    w-[90%]
     flex
     items-center
     justify-evenly
@@ -59,36 +59,59 @@ const CloseSlider = styled.div`
 
 const ImageSlider = styled.img`
   ${tw`
+  flex
     h-full
-    w-full
+    w-[70%]
+    px-4
     object-contain
     `}
 `;
 
 const Right = styled(FaArrowRight)`
-!important;
   color: white;
   ${tw`
-    h-20
-    w-20
+    h-10
+    w-10
     z-50
+    bg-black
+    rounded-md
     
     hover:cursor-pointer
     hover:text-gray-500
+    
+    sm:h-10
+    sm:w-10
+    sm:p-6
+    md:h-40
+    md:w-20
     
     `}
 `;
 
 const Left = styled(FaArrowLeft)`
-!important;
   color: white;
   ${tw`
-    h-20
-    w-20
+    h-10
+    w-10
     z-50
+    bg-black
+    rounded-md
     
     hover:cursor-pointer
     hover:text-gray-500
+    
+    sm:h-10
+    sm:w-10
+    sm:p-6
+    md:h-40
+    md:w-20
+
+    
+    `}
+`;
+
+const SliderFlex = styled.div`
+  ${tw`
     
     `}
 `;
@@ -129,10 +152,10 @@ const Slider: React.FC<ISliderProps> = ({ setSlider, number, fullPics }) => {
 
             {setSlider &&
               <>
-                <Left onClick={leftClick} />
-                <ImageSlider src={fullPics[currImg]?.url} />
-                <CloseSlider onClick={() => setSlider(false)} />
-                <Right onClick={rightClick} />
+                  <Left onClick={leftClick} />
+                  <ImageSlider src={fullPics[currImg]?.url} />
+                  <CloseSlider onClick={() => setSlider(false)} />
+                  <Right onClick={rightClick} />
               </>
             }
 

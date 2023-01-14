@@ -7,11 +7,38 @@ import DesignThumb from "@/pages/Design/DesignThumb";
 import { supabase } from "@/utils/supabase";
 import Link from "next/link";
 
+
+const Background = styled.div`
+  ${tw`
+    absolute
+    flex
+    w-full
+    h-full
+    items-center  
+    justify-evenly
+    `}
+`;
+const GlowBoxPurple = styled.div`
+  //x-offset y-offset blur spread
+  box-shadow: 0px 0px 10000px 200px rgba(148, 97, 255, 1);
+  ${tw`
+    
+    `}
+`;
+
+const GlowBoxPink = styled.div`
+  box-shadow: 0px 0px 1000px 200px #fe017a;
+  ${tw`
+    
+    `}
+`;
+
 const DesignContainer = styled.div`
   ${tw`
     w-screen
     h-full
-    bg-gradient-to-r from-pink-500 to-purple-900
+    bg-black
+    relative
  
     `}
 `;
@@ -33,6 +60,7 @@ const GridWidth = styled.div`
 `;
 
 const MainGrid = styled.div`
+  
   ${tw`
     grid
     grid-cols-1
@@ -49,8 +77,6 @@ const MainGrid = styled.div`
 
 const PictureContainer = styled.div`
   ${tw`
-    // aspect-w-16
-    // aspect-h-12
     h-full
     w-full
     
@@ -86,7 +112,13 @@ const Design: React.FC<IDesignProps> = ({ thumbnails }) => {
     <>
       <DesignContainer>
         <Navbar />
+
         <DesignStyle>
+          <Background>
+            <GlowBoxPurple />
+            <GlowBoxPink />
+          </Background>
+
           <GridWidth>
             <MainGrid>
 
@@ -94,9 +126,15 @@ const Design: React.FC<IDesignProps> = ({ thumbnails }) => {
 
 
             </MainGrid>
+
           </GridWidth>
+
         </DesignStyle>
+
+
+
       </DesignContainer>
+
       <Footer />
     </>
   );

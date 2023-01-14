@@ -8,12 +8,14 @@ import CodeBlog from "@/pages/Coding/Blog";
 import { supabase } from "@/utils/supabase";
 import CodeCard from "@/pages/Coding/CodeCard";
 
+
 const CodingContainer = styled.div`
   ${tw`
     w-screen
     h-full
-    bg-gradient-to-r from-pink-500 to-purple-900
     pt-10
+    z-50
+    bg-black
  
     `}
 `;
@@ -22,38 +24,88 @@ const CodingStyle = styled.div`
   ${tw`
     h-full
     w-full
-    flex
-    justify-center
-    items-center
-    pb-10
     
     `}
 `;
 
+
+const Background = styled.div`
+  ${tw`
+  absolute
+  w-full
+    h-[70%]
+    flex
+    items-center
+    justify-evenly
+    overflow-hidden
+    `}
+`;
+const GlowBoxPurple = styled.div`
+  //x-offset y-offset blur spread
+  box-shadow: 0px 0px 10000px 200px rgba(148, 97, 255, 1);
+  ${tw`
+    
+    `}
+`;
+
+const GlowBoxPink = styled.div`
+  box-shadow: 0px 0px 1000px 200px #fe017a;
+  ${tw`
+    
+    `}
+`;
+
+const Blog = styled.div`
+    ${tw`
+    w-full
+    h-full
+    relative
+    
+    `}
+`
+
+
 export interface ICodingProps {
   Projects: any;
   Blog: any;
-  codePics:any
-  codeBlog:any
+  codePics: any;
+  codeBlog: any;
 }
 
-const Coding: React.FC<ICodingProps> = ({codePics, codeBlog }) => {
+const Coding: React.FC<ICodingProps> = ({ codePics, codeBlog }) => {
 
-  const filterBlog = [...codeBlog].reverse().map((posts : any) => (
+  const filterBlog = [...codeBlog].reverse().map((posts: any) => (
     <>
-      <CodeCard posts={posts}/>
+      <CodeCard posts={posts} />
     </>
-  ))
+  ));
 
   return (
     <>
       <Navbar />
+
       <CodingContainer>
+
         <CodingStyle>
-          <Projects codePics={codePics}/>
+
+
+          <CodingStyle>
+            <Projects codePics={codePics} />
+          </CodingStyle>
+          <Background>
+            <GlowBoxPurple />
+            <GlowBoxPink />
+          </Background>
+
+
+          <Blog>
+            {filterBlog}
+
+          </Blog>
+
+
         </CodingStyle>
 
-        {filterBlog}
 
       </CodingContainer>
       <Footer />
@@ -65,8 +117,8 @@ export default Coding;
 
 
 export const getStaticProps = async () => {
-  const { data: codePics } = await supabase.from("CodeThumbnails" ).select("*");
-  const {data : codeBlog } = await supabase.from ("CodeBlog" ).select( "*")
+  const { data: codePics } = await supabase.from("CodeThumbnails").select("*");
+  const { data: codeBlog } = await supabase.from("CodeBlog").select("*");
   return {
     props: {
       codePics,

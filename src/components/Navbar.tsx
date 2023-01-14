@@ -48,14 +48,12 @@ const NavbarTextBottomBorder = styled.div`
   ${tw`
   absolute
   w-28
-  border-white
+  border-pink-700
   border-b-8
   flex
   justify-center
   pb-14
   rounded-lg
-  opacity-40
-  
   
  hidden lg:flex
     `}
@@ -69,15 +67,8 @@ const HoverStyle = styled.div`
   items-center
   justify-center
   
-  hover:text-gray-800
+  hover:text-pink-500
  
-    `}
-`;
-
-const Highlighted = styled.div`
-  ${tw`
-    
-    
     `}
 `;
 

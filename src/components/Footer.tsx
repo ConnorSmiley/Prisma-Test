@@ -14,6 +14,7 @@ const FooterContainer = styled.div`
     justify-center
     font-light
     opacity-80
+    text-white
     
     `}
 `

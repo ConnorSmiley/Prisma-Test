@@ -6,11 +6,38 @@ import CloudCard from "@/pages/Cloud/CloudCard";
 import { supabase } from "@/utils/supabase";
 import Footer from "@/components/Footer";
 
+
+const Background = styled.div`
+  ${tw`
+    absolute
+    flex
+    w-full
+    h-[70%]
+    items-center  
+    justify-evenly
+    `}
+`;
+const GlowBoxPurple = styled.div`
+  //x-offset y-offset blur spread
+  box-shadow: 0px 0px 10000px 200px rgba(148, 97, 255, 1);
+  ${tw`
+    
+    `}
+`;
+
+const GlowBoxPink = styled.div`
+  box-shadow: 0px 0px 1000px 200px #fe017a;
+  ${tw`
+    
+    `}
+`;
+
+
 const CloudContainer = styled.div`
   ${tw`
     w-screen
     h-full
-    bg-gradient-to-r from-pink-500 to-purple-900
+    bg-black
  
     `}
 `;
@@ -37,6 +64,7 @@ const CloudStyle = styled.div`
   flex
   flex-col
   justify-center
+  z-50
     
     `}
 `;
@@ -66,6 +94,11 @@ const Index: React.FC<ICloudProps> = ({ blogPost }) => {
           <CloudStyle>
             {filteredBlog}
           </CloudStyle>
+
+          <Background>
+            <GlowBoxPurple />
+            <GlowBoxPink />
+          </Background>
 
         </DarkBackground>
         <Footer />

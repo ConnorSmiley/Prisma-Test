@@ -1,14 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
-import Navbar from "@/components/Navbar";
-import { supabase } from "@/utils/supabase";
 
 const ProjectsContainer = styled.div`
+
   ${tw`
     w-screen
     h-full
-    bg-gradient-to-r from-pink-500 to-purple-900
+    bg-black
     
     `}
 `;
@@ -65,6 +64,8 @@ const ProjectDisplay = styled.div`
 `;
 
 const Card = styled.img`
+  :hover {opacity: 100%}
+
   ${tw`
     rounded-xl
     h-[20rem]
@@ -72,6 +73,8 @@ const Card = styled.img`
     border
     border-white
     object-cover
+    opacity-70
+
     
     sm:h-[30rem]
     sm:w-[30rem]

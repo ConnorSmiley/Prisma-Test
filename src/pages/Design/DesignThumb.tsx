@@ -2,15 +2,25 @@ import React, { useEffect, useReducer, useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import Link from "next/link";
-import { supabase } from "@/utils/supabase";
 
 
 const DesignThumbContainer = styled.div`
+  :hover {
+    background: rgba(0, 0, 0, 1)
+  }
+  :hover {
+    opacity: 100%
+  }
+
+
+
   ${tw`
     aspect-w-16
     aspect-h-12
     w-full
     h-full
+    z-50
+    opacity-60
     
     `}
 `;
@@ -27,27 +37,25 @@ const DesignThumbStyle = styled.img`
     object-cover
 
     hover:cursor-pointer
-    hover:bg-black
+    hover:bg-white
     `}
 `;
 
 const HoverContainer = styled.div`
-  :hover {
-    opacity: 90%
-  }
+  opacity: 0%;
 
   :hover {
-    background: rgba(0, 0, 0, 0.7)
+    opacity: 100%
   }
 
   ${tw`
   h-auto
   w-auto
-  opacity-0
   flex
   items-center
   justify-center
   flex-col
+  z-50
   
   hover:cursor-pointer
 
@@ -56,13 +64,18 @@ const HoverContainer = styled.div`
 
 
 const HoverThumbTitle = styled.div`
+  box-shadow: 0px 0px 10px 5px #fe017a;
+  :hover {
+    text-shadow: rgba(255, 255, 255, 1) 0px 0px 140px;
+  }
+
   ${tw`
   text-5xl
   font-extrabold
   mb-4
-  text-white
+  text-black
   border
-  border-white
+  border-[#fe017a]
   border-4
   p-6
   rounded-md
@@ -79,6 +92,7 @@ const HoverThumbDescription = styled.div`
   text-white
   text-3xl
   font-light
+  text-black
   
   sm:text-xl
   md:text-xl

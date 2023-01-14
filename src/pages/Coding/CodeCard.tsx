@@ -4,6 +4,8 @@ import tw from "twin.macro";
 import Link from "next/link";
 
 const CodeCardContainer = styled.div`
+  :hover {opacity: 100%}
+
   ${tw`
     w-full
     h-full
@@ -13,6 +15,7 @@ const CodeCardContainer = styled.div`
     items-center
     cursor-pointer
     overflow-hidden
+    opacity-70
     
     `}
 `;
@@ -46,7 +49,6 @@ const CardStyle = styled.div`
   relative
   pl-2
   
-  hover:opacity-80
     
     `}
 `;
