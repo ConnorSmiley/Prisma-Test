@@ -16,6 +16,7 @@ const Background = styled.div`
     h-full
     items-center  
     justify-evenly
+    overflow-hidden
     `}
 `;
 const GlowBoxPurple = styled.div`

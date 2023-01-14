@@ -16,7 +16,7 @@ const HamburgerMenuContainer = styled.div`
 
 const HamburgerMenuStyle = styled.div`
   ${tw`
-    right-4
+    right-2
     top-2
     overflow-hidden
     `}
@@ -31,7 +31,7 @@ const FaBarsIcon = styled(FaBars)`
     z-50
     text-white
     fill-current
-    right-8
+    right-4
     top-4
     `}
 `;
@@ -65,19 +65,19 @@ const HamburgerList = styled.div`
    items-center
    justify-evenly
    text-white
-   text-4xl
+   text-3xl
    pb-[40%]
    pt-[20%]
    z-10
    hover:text-red-500
    
-   sm:text-4xl
+   sm:text-3xl
    sm:pb-[20%]
    sm:pt-[10%]
    sm:font-extrabold
    sm:hover:text-blue-500
    
-   md:text-5xl
+   md:text-4xl
    md:pb-[20%]
    md:pt-[10%]
    md:font-extrabold

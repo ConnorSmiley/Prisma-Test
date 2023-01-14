@@ -9,7 +9,6 @@ const IdContainer = styled.div`
   ${tw`
     w-screen
     h-screen
-    bg-gradient-to-r from-pink-500 to-purple-900
     
     `}
 `;
