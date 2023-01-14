@@ -117,7 +117,7 @@ const ContentContainer = styled.text`
     pt-2
     pr-4
     flex
-    text-base
+    text-sm
     tracking-wide
     leading-tight
 
@@ -132,7 +132,7 @@ const Date = styled.div`
   ${tw`
     font-bold
     font-normal
-    text-sm
+    text-xs
     bottom-6
     text-white
     font-light
