@@ -93,7 +93,6 @@ export interface IDesignThumbProps {
 }
 
 const DesignThumb: React.FC<IDesignThumbProps> = ({ posts }) => {
-  console.log(posts)
 
   return (
     <>

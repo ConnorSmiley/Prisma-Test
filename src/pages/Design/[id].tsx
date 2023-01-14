@@ -3,63 +3,42 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import { supabase } from "@/utils/supabase";
 import Navbar from "@/components/Navbar";
+import Link from "next/link";
 
 const IdContainer = styled.div`
   ${tw`
     w-screen
     h-screen
     bg-gradient-to-r from-pink-500 to-purple-900
-    pt-20
     
     `}
 `;
 
 const IdStyle = styled.div`
   ${tw`
-  w-full
-  h-full
-  flex
-  justify-center
-    
-    `}
-`;
-
-const ModalContainer = styled.div`
-  ${tw`
-  grid
-  gap-4
-    h-96
-    w-[80%]
-    bg-black
-    
-    `}
-`;
-
-const Modal = styled.div`
-  ${tw`
-    h-80
-    w-80
-    bg-black
     
     `}
 `;
 
 export interface IidProps {
   post: any;
-  data: any;
 }
 
 const DesignID: React.FC<IidProps> = ({ post }) => {
-
+  console.log(post)
 
   return (
     <>
       <IdContainer>
         <Navbar />
         <IdStyle>
-          <ModalContainer>
 
-          </ModalContainer>
+          <Link href={`Design/${post?.id}`}>
+            <IdContainer>
+              {post?.img}
+
+            </IdContainer>
+          </Link>
 
         </IdStyle>
       </IdContainer>
@@ -93,6 +72,5 @@ export const getStaticProps = async ({ params: { id } }) => {
     }
   };
 };
-
 
 

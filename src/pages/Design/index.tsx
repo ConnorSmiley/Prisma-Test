@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React  from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import Navbar from "@/components/Navbar";
@@ -73,7 +73,7 @@ export interface IDesignProps {
 const Design: React.FC<IDesignProps> = ({ thumbnails }) => {
 
 
-  const filteredThumbs = [...thumbnails]?.map((posts: any) => (
+  const filteredThumbs = thumbnails?.map((posts: any) => (
     <>
       <Link key={posts.id} href={`Design/${posts.id}`}>
         <DesignThumb key={posts.id} posts={posts} />
