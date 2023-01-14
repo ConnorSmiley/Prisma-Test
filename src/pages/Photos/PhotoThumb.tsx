@@ -5,11 +5,13 @@ import Slider from "@/pages/Photos/Slider";
 import { supabase } from "@/utils/supabase";
 
 const PhotoThumbContainer = styled.div`
+  :hover {opacity: 100%}
   ${tw`
     aspect-w-8
     aspect-h-8
     w-full
     h-full
+    opacity-70
     
     `}
 `;
@@ -19,18 +21,14 @@ const PhotoImage = styled.img`
     object-cover
 
     hover:cursor-pointer
-    hover:bg-black
     `}
 `;
 
 const HoverContainer = styled.div`
   :hover {
-    opacity: 90%
+    opacity: 100%
   }
 
-  :hover {
-    background: rgba(0, 0, 0, 0.7)
-  }
 
   ${tw`
   h-auto

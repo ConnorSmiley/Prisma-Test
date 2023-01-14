@@ -4,12 +4,15 @@ import tw from "twin.macro";
 import Link from "next/link";
 
 const CloudCardContainer = styled.div`
+  :hover {opacity: 100%}
+
   ${tw`
     w-full
     flex
     justify-center
     cursor-pointer
     overflow-hidden
+    opacity-70
     
     `}
 `;
@@ -51,7 +54,6 @@ const CardStyle = styled.div`
   relative
   pl-2
   
-  hover:opacity-80
     
     `}
 `;

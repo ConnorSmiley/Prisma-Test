@@ -5,11 +5,38 @@ import Navbar from "@/components/Navbar";
 import { supabase } from "@/utils/supabase";
 import PhotoThumb from "@/pages/Photos/PhotoThumb";
 
+
+const Background = styled.div`
+  ${tw`
+    absolute
+    flex
+    w-full
+    h-full
+    items-center  
+    justify-evenly
+    `}
+`;
+const GlowBoxPurple = styled.div`
+  //x-offset y-offset blur spread
+  box-shadow: 0px 0px 10000px 200px rgba(148, 97, 255, 1);
+  ${tw`
+    
+    `}
+`;
+
+const GlowBoxPink = styled.div`
+  box-shadow: 0px 0px 1000px 200px #fe017a;
+  ${tw`
+    
+    `}
+`;
+
+
 const PhotosContainer = styled.div`
   ${tw`
     w-screen
     h-full
-    bg-gradient-to-r from-pink-500 to-purple-900
+    bg-black
 
     `}
 `;
@@ -73,6 +100,12 @@ const Photos: React.FC<IDesignProps> = ({ pic, fullPics }) => {
 
         <Navbar />
         <PhotosStyle>
+          <Background>
+            <GlowBoxPurple />
+            <GlowBoxPink />
+          </Background>
+
+
           <GridWidth>
             <MainGrid>
 
