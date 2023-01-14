@@ -64,7 +64,7 @@ export interface IDesignProps {
   pics:any
 }
 
-const Photos: React.FC<IDesignProps> = ({ pic, pics }) => {
+const Photos: React.FC<IDesignProps> = ({ pic, fullPics }) => {
 
 
   return (
@@ -76,8 +76,8 @@ const Photos: React.FC<IDesignProps> = ({ pic, pics }) => {
           <GridWidth>
             <MainGrid>
 
-              {[...pic].map((data: any, idx: any) => (
-                <PhotoThumb data={data} key={idx} pics={pics}
+              {[...pic].map((pics: any, idx: any) => (
+                <PhotoThumb pics={pics} fullPics={fullPics} key={idx}
                 />
               ))}
 
@@ -93,12 +93,12 @@ export default Photos;
 
 export const getStaticProps = async () => {
   const { data: pic } = await supabase.from("PhotographyThumbnails").select("*");
-  const { data: pics } = await supabase.from("Photography").select("*");
+  const { data: fullPics } = await supabase.from("Photography").select("*");
 
   return {
     props: {
       pic,
-      pics
+      fullPics
     }
   };
 };
