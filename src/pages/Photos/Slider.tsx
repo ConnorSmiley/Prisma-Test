@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
-import {FaArrowLeft, FaWindowClose} from "react-icons/fa"
-import {FaArrowRight} from "react-icons/fa"
+import { FaArrowLeft, FaWindowClose } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 
 const SliderContainer = styled.div`
   ${tw`
@@ -127,14 +127,14 @@ const Slider: React.FC<ISliderProps> = ({ setSlider, number, fullPics }) => {
         <SliderBackground>
           <SliderStyle>
 
-            <Left onClick={leftClick} />
-
-            {/*<ImageSlider src={fullPics[currImg]?.url} />*/}
-
-            <CloseSlider onClick={() => setSlider(false)}/>
-
-
-            <Right onClick={rightClick} />
+            {setSlider &&
+              <>
+                <Left onClick={leftClick} />
+                <ImageSlider src={fullPics[currImg]?.url} />
+                <CloseSlider onClick={() => setSlider(false)} />
+                <Right onClick={rightClick} />
+              </>
+            }
 
           </SliderStyle>
         </SliderBackground>
