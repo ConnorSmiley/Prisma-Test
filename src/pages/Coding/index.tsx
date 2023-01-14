@@ -33,7 +33,7 @@ const Background = styled.div`
   ${tw`
   absolute
   w-full
-    h-[70%]
+  h-full
     flex
     items-center
     justify-evenly
@@ -64,7 +64,6 @@ const Blog = styled.div`
     `}
 `
 
-
 export interface ICodingProps {
   Projects: any;
   Blog: any;
@@ -92,13 +91,14 @@ const Coding: React.FC<ICodingProps> = ({ codePics, codeBlog }) => {
           <CodingStyle>
             <Projects codePics={codePics} />
           </CodingStyle>
-          <Background>
-            <GlowBoxPurple />
-            <GlowBoxPink />
-          </Background>
 
 
           <Blog>
+            <Background>
+              <GlowBoxPurple />
+              <GlowBoxPink />
+            </Background>
+
             {filterBlog}
 
           </Blog>

@@ -65,7 +65,7 @@ const CloudStyle = styled.div`
   flex
   flex-col
   justify-center
-  z-20
+  z-30
     
     `}
 `;
@@ -93,9 +93,10 @@ const Index: React.FC<ICloudProps> = ({ blogPost }) => {
         <DarkBackground>
 
           <CloudStyle>
-            {filteredBlog}
-          </CloudStyle>
 
+            {filteredBlog}
+
+          </CloudStyle>
           <Background>
             <GlowBoxPurple />
             <GlowBoxPink />
