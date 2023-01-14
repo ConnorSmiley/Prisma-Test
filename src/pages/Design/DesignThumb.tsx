@@ -13,15 +13,15 @@ const DesignThumbContainer = styled.div`
   }
 
 
-
   ${tw`
     aspect-w-16
     aspect-h-12
     w-full
     h-full
     z-20
-    opacity-60
+    opacity-100
     
+    sm:opacity-60
     `}
 `;
 
@@ -65,9 +65,18 @@ const HoverContainer = styled.div`
 
 const HoverThumbTitle = styled.div`
   box-shadow: 0px 0px 10px 5px #fe017a;
-  :hover {
-    text-shadow: rgba(255, 255, 255, 1) 0px 0px 140px;
-  }
+  text-shadow:
+    /* White glow */
+          0 0 7px #fff,
+          0 0 10px #fff,
+          0 0 21px #fff,
+            /* Green glow */
+          0 0 42px #fff,
+          0 0 82px #fff,
+          0 0 92px #fff,
+          0 0 102px #fff,
+          0 0 151px #fff;
+}
 
   ${tw`
   text-5xl

@@ -7,29 +7,33 @@ const CodeCardContainer = styled.div`
   :hover {opacity: 100%}
 
   ${tw`
-    w-full
-    h-full
+   w-full
     flex
-    flex-col
     justify-center
-    items-center
     cursor-pointer
     overflow-hidden
-    opacity-70
+    opacity-100
+    px-2
+    
+    sm:opacity-70
     
     `}
 `;
 
 const CodeCardStyle = styled.div`
   ${tw`
-  w-[60rem]
-  h-[270px]
+  w-full
+  h-auto
   flex
-  
+  flex-row
   border-b-2
   border-gray-500
   pb-8
   my-4
+  
+  sm:flex
+  sm:flex-col
+  md:flex-row
   
     `}
 `;
@@ -37,7 +41,10 @@ const CodeCardStyle = styled.div`
 const CardContainer = styled.div`
   ${tw`
   bg-black
+  w-auto
+  h-full
   flex
+  items-center
   
     `}
 `;
@@ -45,6 +52,7 @@ const CardContainer = styled.div`
 const CardStyle = styled.div`
   ${tw`
   bg-black
+  h-full
   w-full
   relative
   pl-2
@@ -54,16 +62,25 @@ const CardStyle = styled.div`
 `;
 
 const Title = styled.header`
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  min-width: 0;
+  word-break: keep-all;
   ${tw`
     text-white
-    text-xl
+    text-lg
     font-bold
     text-white
     flex
     pt-2
     tracking-wide
+    leading-tight
 
-    sm:text-xl
+    sm:text-4xl
+    sm:pr-4
     md:text-xl
     lg:text-lg
     xl:text-4xl
@@ -72,20 +89,18 @@ const Title = styled.header`
 
 const PictureContainer = styled.img`
   ${tw`
-  h-full
   left-0
   object-contain
   p-2
   rounded-lg
-  flex
-  items-center
-  justify-center
   aspect-h-1
+  w-[30rem]
   
-  sm:w-40
-  md:w-40
-  lg:w-64
-  xl:w-80
+  sm:flex
+  sm:flex-col
+  md:w-60
+  lg:w-80
+  xl:w-96
     `}
 `;
 
@@ -103,8 +118,13 @@ const ContentContainer = styled.text`
     pt-4
     pr-4
     flex
-    text-xl
+    text-lg
     tracking-wide
+    leading-tight
+
+   sm:text-xl
+   md:text-base
+   lg:text-2xl
 
    `}
 `;
@@ -118,6 +138,7 @@ const Date = styled.div`
     text-white
     font-light
     tracking-wide
+    pt-2
     
     sm:text-sm
     sm:mt-2

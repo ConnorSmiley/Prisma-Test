@@ -12,8 +12,9 @@ const CloudCardContainer = styled.div`
     justify-center
     cursor-pointer
     overflow-hidden
-    opacity-70
+    opacity-100
     
+    sm:opacity-70
     `}
 `;
 
@@ -26,8 +27,8 @@ const CloudCardStyle = styled.div`
   border-b-2
   border-gray-500
   pb-8
-  my-4
   
+  sm:my-4
   sm:flex
   sm:flex-col
   md:flex-row
@@ -38,7 +39,7 @@ const CloudCardStyle = styled.div`
 const CardContainer = styled.div`
   ${tw`
   bg-black
-  w-auto
+  w-full
   h-full
   flex
   items-center
@@ -59,38 +60,28 @@ const CardStyle = styled.div`
 `;
 
 const Title = styled.header`
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  min-width: 0;
+  word-break: keep-all;
   ${tw`
     text-white
     text-xl
     font-bold
     text-white
     flex
-    pt-2
     tracking-wide
+    leading-tight
 
+    sm:pt-2
     sm:text-4xl
     sm:pr-4
     md:text-xl
     lg:text-lg
     xl:text-4xl
-    `}
-`;
-
-const PictureContainer = styled.img`
-  ${tw`
-  
-  left-0
-  
-  object-contain
-  p-2
-  rounded-lg
-  aspect-h-1
-  
-  sm:flex
-  sm:flex-col
-  md:w-60
-  lg:w-80
-  xl:w-96
     `}
 `;
 
@@ -104,19 +95,38 @@ const ContentContainer = styled.text`
   word-break: keep-all;
 
   ${tw`
-  flex
     text-white
-    pt-4
     pr-4
     flex
     text-xl
     tracking-wide
+    leading-tight
+    pt-4
 
+    sm:pt-4
    sm:text-xl
    md:text-base
    lg:text-2xl
    `}
 `;
+
+
+const PictureContainer = styled.img`
+  ${tw`
+  left-0
+  object-contain
+  p-2
+  rounded-lg
+  aspect-h-1
+  
+  sm:flex
+  sm:flex-col
+  md:w-60
+  lg:w-80
+  xl:w-96
+    `}
+`;
+
 
 const Date = styled.div`
   ${tw`

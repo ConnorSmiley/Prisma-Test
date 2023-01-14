@@ -12,9 +12,10 @@ const Background = styled.div`
     absolute
     flex
     w-full
-    h-[70%]
+    h-full
     items-center  
     justify-evenly
+    
     `}
 `;
 const GlowBoxPurple = styled.div`
@@ -58,8 +59,8 @@ const DarkBackground = styled.div`
 
 const CloudStyle = styled.div`
   ${tw`
+  pt-4
   h-auto
-  m-5
   overflow-hidden
   flex
   flex-col

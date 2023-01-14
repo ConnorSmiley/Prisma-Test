@@ -11,8 +11,9 @@ const PhotoThumbContainer = styled.div`
     aspect-h-8
     w-full
     h-full
-    opacity-70
+    opacity-100
     
+    sm:opacity-70
     `}
 `;
 
@@ -28,7 +29,20 @@ const HoverContainer = styled.div`
   :hover {
     opacity: 100%
   }
+  box-shadow: 0px 0px 10px 5px #fe017a;
 
+  text-shadow:
+    /* White glow */
+          0 0 7px #fff,
+          0 0 10px #fff,
+          0 0 21px #fff,
+            /* Green glow */
+          0 0 42px #fff,
+          0 0 82px #fff,
+          0 0 92px #fff,
+          0 0 102px #fff,
+          0 0 151px #fff;
+}
 
   ${tw`
   h-auto
@@ -46,6 +60,8 @@ const HoverContainer = styled.div`
 `;
 
 const HoverThumbTitle = styled.div`
+  box-shadow: 0px 0px 10px 5px #fe017a;
+
   ${tw`
   text-sm
   text-white
@@ -57,7 +73,7 @@ const HoverThumbTitle = styled.div`
   justify-center
   border
   border-4
-  border-white
+  border-pink-500
   px-10
   py-4
   rounded-md

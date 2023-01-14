@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
+import Link from "next/link";
 
 const ProjectsContainer = styled.div`
 
@@ -64,7 +65,9 @@ const ProjectDisplay = styled.div`
 `;
 
 const Card = styled.img`
-  :hover {opacity: 100%}
+  :hover {
+    opacity: 100%
+  }
 
   ${tw`
     rounded-xl
@@ -73,9 +76,11 @@ const Card = styled.img`
     border
     border-white
     object-cover
-    opacity-70
-
+    opacity-100
     
+    hover:cursor-pointer
+    
+    sm:opacity-70
     sm:h-[30rem]
     sm:w-[30rem]
     md:w-60
@@ -93,6 +98,10 @@ export interface IProjectsProps {
 
 const Projects: React.FC<IProjectsProps> = ({ codePics }) => {
 
+  const url2 = () => {
+
+  };
+
   return (
     <>
       <ProjectsContainer>
@@ -100,8 +109,14 @@ const Projects: React.FC<IProjectsProps> = ({ codePics }) => {
           <ProjectDisplay>
 
 
-            <Card src={'https://njnfyypwtoiiqclfvxqe.supabase.co/storage/v1/object/public/images/Code%20Thumbnails/Thinkscript.jpeg'}/>
-            <Card src={'https://njnfyypwtoiiqclfvxqe.supabase.co/storage/v1/object/public/images/Code%20Thumbnails/Wordle.png'} />
+            <Link href={"https://dumbscript.com/"}>
+              <Card
+                src={"https://njnfyypwtoiiqclfvxqe.supabase.co/storage/v1/object/public/images/Code%20Thumbnails/Thinkscript.jpeg"} />
+            </Link>
+            <Link href={"https://willowy-puppy-ece4b9.netlify.app/"}>
+              <Card
+                src={"https://njnfyypwtoiiqclfvxqe.supabase.co/storage/v1/object/public/images/Code%20Thumbnails/Wordle.png"} />
+            </Link>
             <Card />
 
           </ProjectDisplay>

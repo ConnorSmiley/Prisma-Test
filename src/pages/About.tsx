@@ -32,9 +32,8 @@ export default function About () {
         <AboutContainer>
             <AboutStyle>
                 <Navbar />
-                <div class="text-xl"
-                >
-                    dfjkdl
+                <div>
+                    Work in progress
                 </div>
 
             </AboutStyle>
