@@ -24,8 +24,6 @@ const CloudCardStyle = styled.div`
   h-auto
   flex
   flex-row
-  border-b-2
-  border-gray-500
   pb-8
   
   sm:my-4
@@ -69,7 +67,7 @@ const Title = styled.header`
   word-break: keep-all;
   ${tw`
     text-white
-    text-xl
+    text-lg
     font-bold
     text-white
     flex
@@ -98,7 +96,7 @@ const ContentContainer = styled.text`
     text-white
     pr-4
     flex
-    text-xl
+    text-sm
     tracking-wide
     leading-tight
     pt-4
@@ -118,6 +116,7 @@ const PictureContainer = styled.img`
   p-2
   rounded-lg
   aspect-h-1
+  w-60
   
   sm:flex
   sm:flex-col
@@ -132,7 +131,7 @@ const Date = styled.div`
   ${tw`
     font-bold
     font-normal
-    text-lg
+    text-xs
     bottom-6
     text-white
     font-light
