@@ -44,8 +44,8 @@ const CgCloseOIcon = styled(CgCloseO)`
     h-10
     w-10
     z-50
-    right-4
-    top-4
+    right-6
+    top-6
     `}
 `;
 
@@ -115,12 +115,12 @@ const HamburgerMenu: React.FC<IHamburgerMenuProps> = () => {
                 Design
               </Link>
               <Link href="/Coding">
-                Index
+               Coding
               </Link>
               <Link href="/Cloud">
-                .I.T. & cloud
+                cloud
               </Link>
-              <Link href="/Photos/index">
+              <Link href="/Photos">
                 Photos
               </Link>
               <Link href="/About">

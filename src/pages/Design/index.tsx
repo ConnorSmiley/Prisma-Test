@@ -75,21 +75,6 @@ const MainGrid = styled.div`
     `}
 `;
 
-const PictureContainer = styled.div`
-  ${tw`
-    h-full
-    w-full
-    
-    `}
-`;
-
-const PictureAnchor = styled.a`
-  ${tw`
-    
-    w-auto
-    h-auto
-    `}
-`;
 
 export interface IDesignProps {
   thumbnails: any;

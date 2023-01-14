@@ -23,7 +23,7 @@ const HomeStyles = styled.div`
   items-center
   justify-center
     relative
-    z-50
+    z-40
 
     
     `}
@@ -50,7 +50,7 @@ const Background = styled.div`
   ${tw`
     absolute
     flex
-    w-full
+    w-screen
     h-full
     items-center  
     justify-evenly
@@ -58,35 +58,64 @@ const Background = styled.div`
 `;
 
 const CardContainer = styled.div`
-  box-shadow: 0px 0px 15px 0px rgba(77,77,255,0.5); 
+  //box-shadow: 0px 0px 15px 0px rgba(77,77,255,0.5); 
   ${tw`
     flex
     justify-center
     items-center
     w-[60%]
-    bg-black
     rounded-md
     p-4
-    opacity-80
+    z-40
     
     `}
 `
 
 const Title = styled.div`
-  text-shadow: rgba(242, 100, 255, 1) 0px 0px 1480px;
+  //text-shadow: rgba(242, 100, 255, 1) 0px 0px 1480px;
   ${tw`
-  h-40
-  w-[60%]
+  h-full
+  w-full
   flex
   justify-center
-  text-4xl
-  uppercase
-  font-bold
+  items-center
+  text-center
+  text-2xl
+  font-extrabold
   text-white
+  font-sans
+  uppercase
   rounded-md
+  leading-[4rem]
+  z-40
+    
+    sm:text-3xl
+    sm:leading-[6rem]
+    md:text-3xl
+    md:leading-[6rem]
+    lg:text-4xl
+    lg:leading-[7rem]
+    xl:text-4xl
+    xl:leading-[7rem]
+
+    
     
     `}
 `;
+
+
+const BackgroundImage = styled.img`
+    ${tw`
+    absolute
+    w-full
+    h-full
+    items-center
+    justify-center
+    object-contain
+    
+    `}
+`
+
 
 const IndexPage: NextPage = () => {
 
@@ -103,16 +132,19 @@ const IndexPage: NextPage = () => {
         <HomeStyles>
 
 
-          <CardContainer>
+          {/*<CardContainer>*/}
             <Title>
-              Connor
-              Smiley
+              Connor Smiley <br/>
+            코너 스마일리<br/>
+              コナー・スマイリー
             </Title>
-          </CardContainer>
+          {/*</CardContainer>*/}
+
+          <BackgroundImage src="/3paint.png" />
 
         </HomeStyles>
+
       </HomeContainer>
-      <Footer />
     </>
   );
 };

@@ -19,7 +19,7 @@ const DesignThumbContainer = styled.div`
     aspect-h-12
     w-full
     h-full
-    z-50
+    z-20
     opacity-60
     
     `}
@@ -55,7 +55,7 @@ const HoverContainer = styled.div`
   items-center
   justify-center
   flex-col
-  z-50
+  z-20
   
   hover:cursor-pointer
 

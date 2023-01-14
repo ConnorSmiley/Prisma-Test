@@ -64,7 +64,7 @@ const CloudStyle = styled.div`
   flex
   flex-col
   justify-center
-  z-50
+  z-20
     
     `}
 `;
