@@ -178,7 +178,7 @@ const Navbar: React.FC<IProps> = () => {
               <>
                 <HoverStyle>
                   <Link href="/Contact">
-                   Contact
+                  Contact
                   </Link>
                   <NavbarTextBottomBorder />
                 </HoverStyle>
@@ -186,7 +186,7 @@ const Navbar: React.FC<IProps> = () => {
               :
               <HoverStyle>
                 <Link href="/Contact">
-                Contact
+               Contact
                 </Link>
               </HoverStyle>
             }
