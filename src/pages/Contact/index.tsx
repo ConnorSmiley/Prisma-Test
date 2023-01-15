@@ -20,7 +20,6 @@ const Background = styled.div`
     h-full
     justify-evenly
     py-80
-    overflow-hidden
     
     `}
 `;
@@ -80,7 +79,8 @@ const FormContainer = styled.form`
         pt-4
         absolute
         z-10
-        w-full
+        flex
+        w-auto
         
         shadow-2xl
         max-w-7xl
@@ -122,7 +122,7 @@ const FormFields = styled.div`
       flex-col
       px-4
       z-10
-      w-[90%]
+      w-full
      
       sm:px-6
       md:px-8
