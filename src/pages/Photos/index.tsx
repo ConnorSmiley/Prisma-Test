@@ -13,7 +13,6 @@ const Background = styled.div`
     h-full
     justify-evenly
     py-60
-    bg-black
     
     `}
 `;
@@ -37,6 +36,7 @@ const PhotosContainer = styled.div`
     w-screen
     h-full
     pt-20
+    bg-black
 
     `}
 `;

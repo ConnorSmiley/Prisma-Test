@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 const HomeContainer = styled.div`
   ${tw`
     w-screen
-    h-screen
+    h-full
     bg-black
     pt-20
 

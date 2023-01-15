@@ -36,12 +36,13 @@ const AboutContainer = styled.div`
     w-screen
     h-screen
     pt-20
+    bg-black
+    
     `}
 `;
 
 const AboutStyle = styled.div`
   ${tw`
-    bg-black
     
     `}
 `;
