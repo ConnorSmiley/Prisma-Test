@@ -47,11 +47,10 @@ const ContactStyles = styled.div`
   ${tw`
       bg-black
       h-screen
-      w-screen
+      w-full
       relative
       pt-60
       pb-40
-      overflow-hidden
         `}
 `;
 
@@ -59,10 +58,14 @@ const ContactContainer = styled.div`
   min-width: 320px;
   ${tw`
         h-full
-        w-full
+        w-[98%]
         flex
+        flex-col
         justify-center
         items-center
+        overflow-hidden
+        
+        sm:w-full
         `}
 `;
 
@@ -119,6 +122,7 @@ const FormFields = styled.div`
       flex-col
       px-4
       z-10
+      w-[90%]
      
       sm:px-6
       md:px-8
