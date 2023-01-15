@@ -36,7 +36,7 @@ const PhotosContainer = styled.div`
   ${tw`
     w-screen
     h-full
-    bg-black
+    pt-20
 
     `}
 `;
@@ -45,10 +45,8 @@ const PhotosStyle = styled.div`
   ${tw`
   w-full
   h-full
-  bg-black
   relative
   
-  sm:mt-20
 
    `}
 `;
