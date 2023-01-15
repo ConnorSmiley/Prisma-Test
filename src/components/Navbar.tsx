@@ -24,6 +24,7 @@ const NavbarStyle = styled.div`
     h-full
     pl-[20%]
     pr-[20%]
+    z-50
     `}
 `;
 
@@ -38,6 +39,7 @@ const NavbarText = styled.div`
   uppercase
   text-xl
   items-center
+  z-50
   
  hidden lg:flex
     `}
@@ -54,6 +56,7 @@ const NavbarTextBottomBorder = styled.div`
   justify-center
   pb-14
   rounded-lg
+  z-50
   
  hidden lg:flex
     `}
@@ -72,9 +75,7 @@ const HoverStyle = styled.div`
     `}
 `;
 
-
 export interface IProps {
-
 }
 
 const Navbar: React.FC<IProps> = () => {

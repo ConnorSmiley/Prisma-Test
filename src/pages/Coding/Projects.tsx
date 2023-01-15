@@ -9,7 +9,7 @@ const ProjectsContainer = styled.div`
     w-screen
     h-full
     bg-black
-    z-50
+    z-10
     
     `}
 `;
@@ -21,7 +21,7 @@ const ProjectsStyle = styled.div`
     pt-20
     flex
     justify-center
-    z-50
+    z-10
     
     sm:h-full
     sm:pt-20
@@ -40,7 +40,7 @@ const ProjectDisplay = styled.div`
     items-center
     flex-col
     grid-cols-1
-    z-50
+    z-10
     
     sm:items-center
     sm:h-full

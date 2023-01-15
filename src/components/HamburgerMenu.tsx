@@ -5,7 +5,6 @@ import { FaBars } from "react-icons/fa";
 import { CgCloseO } from "react-icons/cg";
 import Link from "next/link";
 
-
 const HamburgerMenuContainer = styled.div`
   ${tw`
     h-full
@@ -19,20 +18,20 @@ const HamburgerMenuStyle = styled.div`
     right-2
     top-2
     overflow-hidden
+    z-50
     `}
 `;
-
 
 const FaBarsIcon = styled(FaBars)`
   ${tw`
   absolute
   w-10
   h-10
-    z-50
     text-white
     fill-current
     right-4
     top-4
+    z-50
     `}
 `;
 
@@ -43,12 +42,11 @@ const CgCloseOIcon = styled(CgCloseO)`
     text-white
     h-10
     w-10
-    z-50
     right-6
     top-6
+    z-50
     `}
 `;
-
 
 const HamburgerList = styled.div` 
   ${tw`
@@ -68,7 +66,7 @@ const HamburgerList = styled.div`
    text-3xl
    pb-[40%]
    pt-[20%]
-   z-10
+   z-40
    hover:text-red-500
    
    sm:text-3xl

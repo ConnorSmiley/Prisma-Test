@@ -22,7 +22,6 @@ const CodingStyle = styled.div`
   ${tw`
     h-full
     w-full
-    z-50
     
     `}
 `;
@@ -57,6 +56,7 @@ const Blog = styled.div`
     w-full
     h-full
     relative
+    z-10
     
     `}
 `;
