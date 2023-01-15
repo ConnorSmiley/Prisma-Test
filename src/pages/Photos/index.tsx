@@ -13,6 +13,7 @@ const Background = styled.div`
     h-full
     justify-evenly
     py-60
+    bg-black
     
     `}
 `;
@@ -82,7 +83,6 @@ const PictureContainer = styled.div`
     
     `}
 `;
-
 
 export interface IDesignProps {
   pic: any;

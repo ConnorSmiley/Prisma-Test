@@ -11,6 +11,7 @@ const Background = styled.div`
     h-full
     justify-evenly
     py-60
+    bg-black
     
     `}
 `;
