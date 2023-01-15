@@ -7,30 +7,30 @@ import DesignThumb from "@/pages/Design/DesignThumb";
 import { supabase } from "@/utils/supabase";
 import Link from "next/link";
 
-
 const Background = styled.div`
   ${tw`
     absolute
     flex
     w-full
     h-full
-    items-center  
     justify-evenly
-    overflow-hidden
+    py-60
+    
     `}
 `;
+
 const GlowBoxPurple = styled.div`
   //x-offset y-offset blur spread
   box-shadow: 0px 0px 10000px 200px rgba(148, 97, 255, 1);
   ${tw`
-    
+  opacity-50
     `}
 `;
 
 const GlowBoxPink = styled.div`
   box-shadow: 0px 0px 1000px 200px #fe017a;
   ${tw`
-    
+  opacity-50
     `}
 `;
 
@@ -111,14 +111,11 @@ const Design: React.FC<IDesignProps> = ({ thumbnails }) => {
 
               {filteredThumbs}
 
-
             </MainGrid>
 
           </GridWidth>
 
         </DesignStyle>
-
-
 
       </DesignContainer>
 

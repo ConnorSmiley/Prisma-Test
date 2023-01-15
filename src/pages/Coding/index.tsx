@@ -8,13 +8,11 @@ import CodeBlog from "@/pages/Coding/Blog";
 import { supabase } from "@/utils/supabase";
 import CodeCard from "@/pages/Coding/CodeCard";
 
-
 const CodingContainer = styled.div`
   ${tw`
     w-screen
     h-full
     pt-10
-    z-50
     bg-black
  
     `}
@@ -24,45 +22,44 @@ const CodingStyle = styled.div`
   ${tw`
     h-full
     w-full
+    z-50
     
     `}
 `;
 
-
 const Background = styled.div`
   ${tw`
-  absolute
-  w-full
-  h-full
+    absolute
     flex
-    items-center
+    w-full
+    h-full
     justify-evenly
-    overflow-hidden
+    
     `}
 `;
 const GlowBoxPurple = styled.div`
   //x-offset y-offset blur spread
   box-shadow: 0px 0px 10000px 200px rgba(148, 97, 255, 1);
   ${tw`
-    
+  opacity-40
     `}
 `;
 
 const GlowBoxPink = styled.div`
   box-shadow: 0px 0px 1000px 200px #fe017a;
   ${tw`
-    
+  opacity-40
     `}
 `;
 
 const Blog = styled.div`
-    ${tw`
+  ${tw`
     w-full
     h-full
     relative
     
     `}
-`
+`;
 
 export interface ICodingProps {
   Projects: any;
@@ -87,25 +84,22 @@ const Coding: React.FC<ICodingProps> = ({ codePics, codeBlog }) => {
 
         <CodingStyle>
 
-
           <CodingStyle>
             <Projects codePics={codePics} />
           </CodingStyle>
 
+          <Background>
+            <GlowBoxPurple />
+            <GlowBoxPink />
+          </Background>
 
           <Blog>
-            <Background>
-              <GlowBoxPurple />
-              <GlowBoxPink />
-            </Background>
 
             {filterBlog}
 
           </Blog>
 
-
         </CodingStyle>
-
 
       </CodingContainer>
       <Footer />
@@ -114,7 +108,6 @@ const Coding: React.FC<ICodingProps> = ({ codePics, codeBlog }) => {
 };
 
 export default Coding;
-
 
 export const getStaticProps = async () => {
   const { data: codePics } = await supabase.from("CodeThumbnails").select("*");

@@ -98,8 +98,6 @@ const Title = styled.div`
     xl:text-4xl
     xl:leading-[7rem]
 
-    
-    
     `}
 `;
 
@@ -111,7 +109,9 @@ const BackgroundImage = styled.img`
     h-full
     items-center
     justify-center
-    object-contain
+    object-cover
+    
+    sm:object-contain
     
     `}
 `

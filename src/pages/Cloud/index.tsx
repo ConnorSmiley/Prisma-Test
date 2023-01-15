@@ -13,8 +13,9 @@ const Background = styled.div`
     flex
     w-full
     h-full
-    items-center  
     justify-evenly
+    pt-60
+    
     
     `}
 `;
@@ -22,14 +23,14 @@ const GlowBoxPurple = styled.div`
   //x-offset y-offset blur spread
   box-shadow: 0px 0px 10000px 200px rgba(148, 97, 255, 1);
   ${tw`
-    
+  opacity-50
     `}
 `;
 
 const GlowBoxPink = styled.div`
   box-shadow: 0px 0px 1000px 200px #fe017a;
   ${tw`
-    
+  opacity-50
     `}
 `;
 

@@ -16,15 +16,40 @@ export interface IProps {
   post: any;
 }
 
+const Background = styled.div`
+  ${tw`
+    absolute
+    flex
+    w-full
+    h-full
+    justify-evenly
+    py-60
+    
+    `}
+`;
+const GlowBoxPurple = styled.div`
+  //x-offset y-offset blur spread
+  box-shadow: 0px 0px 10000px 200px rgba(148, 97, 255, 1);
+  ${tw`
+  opacity-50
+    `}
+`;
+
+const GlowBoxPink = styled.div`
+  box-shadow: 0px 0px 1000px 200px #fe017a;
+  ${tw`
+  opacity-50
+    `}
+`;
+
 
 const IdContainer = styled.div`
   ${tw`
-    w-screen
+    w-full
     h-full
-    bg-gradient-to-r from-pink-500 to-purple-900
     flex
     pb-10
-    overflow-hidden
+    z-50
     
     `}
 `;
@@ -38,6 +63,7 @@ const IdStyles = styled.div`
     flex
     flex-col
     items-center
+    z-50
     `}
 `;
 
@@ -48,6 +74,7 @@ const BlogContainer = styled.div`
   flex-col
   items-center
   relative
+  z-50
   
     `}
 `;
@@ -58,8 +85,8 @@ const Heading = styled.div`
   flex-col
     pb-2
     w-[80%]
+    z-50
     
-   
    sm:flex-col
     sm:w-[80%]
     md:w-[80%]
@@ -73,22 +100,24 @@ const Heading = styled.div`
 `;
 
 const Heading2 = styled.div`
-    ${tw`
+  ${tw`
     flex
     flex-col
     w-full
+    z-50
     
     sm:flex
     md:flex
     md:flex-col
     `}
-`
+`;
 
 const PictureContainer = styled.div`
   ${tw`
     aspect-h-1
     w-[100%]
     mr-8
+    z-50
     
     md:w-[40%]
     lg:w-[30%]
@@ -98,6 +127,7 @@ const PictureContainer = styled.div`
 
 const Picture = styled.img`
   ${tw`
+    z-50
     
     `}
 `;
@@ -109,7 +139,7 @@ const Title = styled.header`
   font-extrabold
   text-white
   pt-2
-  
+  z-50
   
   sm:text-4xl
   sm:pt-6
@@ -122,7 +152,6 @@ const Title = styled.header`
   xl:font-extrabold
   xl:py-8
   xl:w-[90%]
-  
     
     `}
 `;
@@ -135,6 +164,7 @@ const Title1 = styled.div`
     pb-6
     tracking-tight
     italic
+    z-50
     
     sm:text-4xl
     md:pb-8
@@ -162,6 +192,7 @@ const LinkMain = styled.div`
     flex
     items-center
     justify-evenly
+    z-50
     
     `}
 `;
@@ -172,6 +203,7 @@ const LinksContainer = styled.div`
     flex-row
     justify-evenly
     w-[30rem]
+    z-50
     
     `}
 `;
@@ -183,6 +215,7 @@ const Date = styled.div`
     font-light
     flex
     self-end
+    z-50
     
     sm:text-base
     md:text-lg
@@ -207,6 +240,7 @@ const LinkedInContainer = styled.div`
     text-xl
     font-bold
     text-white
+    z-50
     
     hover:bg-gray-500
     
@@ -219,34 +253,36 @@ const LinkedInStyles = styled.div`
     flex
     justify-evenly
     w-full
+    z-50
     
     `}
 `;
 
 const Content = styled.text`
   white-space: pre-line;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   ${tw`
   flex
   flex-col
   justify-center
-  w-[80%]
-  text-xl
+  w-[90%]
+  text-base
   tracking-tight
   text-white
   pt-4
   pb-6
   px-6
   mt-2
+  z-50
   
   rounded-md
   
   sm:pt-6
   sm:text-lg
-  sm:w-[80%]
-  md:w-[80%]
-  lg:w-[80%]
-  xl:w-[80%]
+  sm:w-[90%]
+  md:w-[90%]
+  lg:w-[90%]
+  xl:w-[90%]
   xl:pb-10
   xl:pt-10
   xl:mt-2
@@ -258,81 +294,84 @@ const CloudPosts: React.FC<IProps> = ({ post }) => {
 
   return (
     <>
-      <IdContainer>
-        <Navbar />
+      <Navbar />
 
+      <IdContainer>
         <BlogContainer>
 
-            <IdStyles>
+          <IdStyles>
 
-              <Heading>
-                <PictureContainer>
-                  <Picture src={post?.img} />
-                </PictureContainer>
-                <Heading2>
-                  <Title>
-                    {post?.title}
-                  </Title>
-                  <Date>
-                    {post?.TimeStamp.slice(0, -16)}
-                  </Date>
-                </Heading2>
-              </Heading>
+            <Heading>
+              <PictureContainer>
+                <Picture src={post?.img} />
+              </PictureContainer>
+              <Heading2>
+                <Title>
+                  {post?.title}
+                </Title>
+                <Date>
+                  {post?.TimeStamp.slice(0, -16)}
+                </Date>
+              </Heading2>
+            </Heading>
 
+            <LinkMain>
+              <LinksContainer>
+                <LinkedInStyles>
+                  <LinkedinShareButton url={`www.localhost:3000/Cloud/${post?.id}`} title={"Connor Smiley's Blog"}>
+                    <LinkedInContainer>
+                      <LinkedinIcon size={28} iconFillColor={"white"} borderRadius={10} />
+                      Share
+                    </LinkedInContainer>
+                  </LinkedinShareButton>
+                </LinkedInStyles>
 
-              <LinkMain>
                 <LinksContainer>
                   <LinkedInStyles>
-                    <LinkedinShareButton url={`www.localhost:3000/Cloud/${post?.id}`} title={"Connor Smiley's Blog"}>
+                    <FacebookShareButton url={`www.localhost:3000/Cloud/${post?.id}`} title={"Connor Smiley's Blog"}>
                       <LinkedInContainer>
-                        <LinkedinIcon size={28} iconFillColor={"white"} borderRadius={10} />
+                        <FacebookIcon size={28} iconFillColor={"white"} borderRadius={10} />
                         Share
                       </LinkedInContainer>
-                    </LinkedinShareButton>
+                    </FacebookShareButton>
                   </LinkedInStyles>
-
-                  <LinksContainer>
-                    <LinkedInStyles>
-                      <FacebookShareButton url={`www.localhost:3000/Cloud/${post?.id}`} title={"Connor Smiley's Blog"}>
-                        <LinkedInContainer>
-                          <FacebookIcon size={28} iconFillColor={"white"} borderRadius={10} />
-                          Share
-                        </LinkedInContainer>
-                      </FacebookShareButton>
-                    </LinkedInStyles>
-                  </LinksContainer>
-
-                  <LinksContainer>
-                    <LinkedInStyles>
-                      <TwitterShareButton url={`www.localhost:3000/Cloud/${post?.id}`} title={"Connor Smiley's Blog"}>
-                        <LinkedInContainer>
-                          <TwitterIcon size={28} iconFillColor={"white"} borderRadius={10} />
-                          Tweet
-                        </LinkedInContainer>
-                      </TwitterShareButton>
-                    </LinkedInStyles>
-                  </LinksContainer>
                 </LinksContainer>
-              </LinkMain>
 
+                <LinksContainer>
+                  <LinkedInStyles>
+                    <TwitterShareButton url={`www.localhost:3000/Cloud/${post?.id}`} title={"Connor Smiley's Blog"}>
+                      <LinkedInContainer>
+                        <TwitterIcon size={28} iconFillColor={"white"} borderRadius={10} />
+                        Tweet
+                      </LinkedInContainer>
+                    </TwitterShareButton>
+                  </LinkedInStyles>
+                </LinksContainer>
+              </LinksContainer>
+            </LinkMain>
 
-              <Content>
-                <Title1>
-                  {post?.title1}
-                </Title1>
+            <Content>
+              <Title1>
+                {post?.title1}
+              </Title1>
 
-                {post?.content}
+              {post?.content}
 
-              </Content>
-            </IdStyles>
+            </Content>
+
+            <Background>
+              <GlowBoxPurple />
+              <GlowBoxPink />
+            </Background>
+
+          </IdStyles>
 
         </BlogContainer>
 
       </IdContainer>
-      <Footer />;
+      <Footer />
     </>
   )
-    ;
 };
 
 
