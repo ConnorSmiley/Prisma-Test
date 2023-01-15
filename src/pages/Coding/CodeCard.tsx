@@ -15,6 +15,7 @@ const CodeCardContainer = styled.div`
     overflow-hidden
     opacity-100
     px-2
+    z-20
     
     sm:opacity-70
     
@@ -30,6 +31,7 @@ const CodeCardStyle = styled.div`
   flex-row
   pb-4
   pt-4
+  z-20
   
   sm:flex
   sm:flex-col

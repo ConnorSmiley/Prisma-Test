@@ -14,6 +14,7 @@ const CloudCardContainer = styled.div`
     cursor-pointer
     overflow-hidden
     opacity-100
+    pb-2
     
     sm:opacity-70
     `}
@@ -22,7 +23,7 @@ const CloudCardContainer = styled.div`
 const CloudCardStyle = styled.div`
   ${tw`
   w-full
-  h-auto
+  h-full
   flex
   flex-row
   
@@ -97,7 +98,7 @@ const ContentContainer = styled.text`
     text-sm
     tracking-wide
     leading-tight
-    pt-4
+    pt-1
 
     sm:pt-2
    sm:text-xl
