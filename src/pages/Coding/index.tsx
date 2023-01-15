@@ -31,8 +31,9 @@ const Background = styled.div`
     absolute
     flex
     w-full
-    h-full
+    h-[100%]
     justify-evenly
+    overflow-hidden
     
     `}
 `;

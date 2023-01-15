@@ -26,10 +26,8 @@ const CodeCardStyle = styled.div`
   h-auto
   flex
   flex-row
-  border-b-2
-  border-gray-500
-  pb-8
-  my-4
+  pb-4
+  pt-4
   
   sm:flex
   sm:flex-col

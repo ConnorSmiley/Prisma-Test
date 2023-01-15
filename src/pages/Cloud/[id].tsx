@@ -24,6 +24,7 @@ const Background = styled.div`
     h-full
     justify-evenly
     py-60
+    z-10
     
     `}
 `;
@@ -32,6 +33,7 @@ const GlowBoxPurple = styled.div`
   box-shadow: 0px 0px 10000px 200px rgba(148, 97, 255, 1);
   ${tw`
   opacity-50
+
     `}
 `;
 
@@ -49,7 +51,7 @@ const IdContainer = styled.div`
     h-full
     flex
     pb-10
-    z-50
+    z-10
     
     `}
 `;
@@ -63,7 +65,7 @@ const IdStyles = styled.div`
     flex
     flex-col
     items-center
-    z-50
+    z-10
     `}
 `;
 
@@ -74,7 +76,7 @@ const BlogContainer = styled.div`
   flex-col
   items-center
   relative
-  z-50
+  z-10
   
     `}
 `;
@@ -85,17 +87,17 @@ const Heading = styled.div`
   flex-col
     pb-2
     w-[90%]
-    z-50
+    z-30
     
    sm:flex-col
-    sm:w-[80%]
-    md:w-[80%]
+    sm:w-[90%]
+    md:w-[90%]
     md:flex-row
-    lg:w-[80%]
+    lg:w-[90%]
     xl:flex
     xl:items-center
     xl:justify-start
-    xl:w-[80%]
+    xl:w-[90%]
     `}
 `;
 
@@ -270,13 +272,13 @@ const Content = styled.text`
   flex
   flex-col
   justify-center
-  w-[90%]
+  w-[95%]
   text-base
   tracking-tight
   text-white
   pt-4
   pb-6
-  px-6
+  px-4
   mt-2
   z-50
   

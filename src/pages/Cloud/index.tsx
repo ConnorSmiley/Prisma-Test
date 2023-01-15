@@ -16,7 +16,6 @@ const Background = styled.div`
     justify-evenly
     pt-60
     
-    
     `}
 `;
 const GlowBoxPurple = styled.div`

@@ -7,10 +7,11 @@ import Footer from "@/components/Footer";
 
 const HomeContainer = styled.div`
   ${tw`
-    w-screen
+    w-full
     h-full
     bg-black
     pt-20
+  relative
 
     `}
 `;
@@ -22,9 +23,7 @@ const HomeStyles = styled.div`
   flex
   items-center
   justify-center
-    relative
-    z-40
-
+  z-40
     
     `}
 `;
@@ -101,21 +100,16 @@ const Title = styled.div`
     `}
 `;
 
-
 const BackgroundImage = styled.img`
     ${tw`
-    absolute
     w-full
     h-full
+    absolute
     items-center
     justify-center
-    object-cover
-    
-    sm:object-contain
     
     `}
 `
-
 
 const IndexPage: NextPage = () => {
 
@@ -123,12 +117,13 @@ const IndexPage: NextPage = () => {
     <>
       <Navbar />
 
-      <Background>
-        <GlowBoxPurple />
-        <GlowBoxPink />
-      </Background>
 
       <HomeContainer>
+        <Background>
+          <GlowBoxPurple />
+          <GlowBoxPink />
+        </Background>
+
         <HomeStyles>
 
 

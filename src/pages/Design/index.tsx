@@ -50,6 +50,7 @@ const DesignStyle = styled.div`
   w-full
   h-full
   pt-20
+  pb-10
  
     `}
 `;
