@@ -34,6 +34,7 @@ const AboutContainer = styled.div`
   ${tw`
     w-screen
     h-screen
+    bg-black
     `}
 `;
 
