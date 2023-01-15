@@ -20,6 +20,7 @@ const Background = styled.div`
     h-full
     justify-evenly
     py-80
+    overflow-hidden
     
     
     `}
@@ -43,42 +44,47 @@ const GlowBoxPink = styled.div`
 const ContactStyles = styled.div`
   background-color: black;
   ${tw`
-      bg-black
       h-full
       w-full
-      relative
-      pt-60
-      pb-40
+      pb-80
+      overflow-hidden
+      
+     sm:pt-10 
         `}
 `;
 
 const ContactContainer = styled.div`
   ${tw`
+      pt-24
         h-full
         w-[98%]
         flex
         flex-col
         justify-center
-        items-center
         overflow-hidden
         
         sm:w-full
+        sm:items-center
         `}
 `;
 
 const FormContainer = styled.form`
   ${tw`
-        bg-white
-        bg-opacity-10
         grid
-        pt-4
-        absolute
         z-10
-        flex
-        w-[95%]
+        h-full
+        w-full
+        justify-center
         
         shadow-2xl
         max-w-7xl
+        
+        sm:w-full
+        sm:flex
+        sm:items-center
+        sm:justify-center
+        sm:flex-col
+        sm:w-[95%]
         
         `}
 `;
@@ -87,10 +93,11 @@ const Blur = styled.div`
   ${tw`
         h-full
         w-full
+        flex
+        items-center
+        justify-center
         opacity-40
-        absolute
         overflow-hidden
-        z-0
         `}
 `;
 
@@ -114,10 +121,12 @@ const FormFields = styled.div`
   ${tw`
       flex
       flex-col
-      px-4
+      pl-2
       z-10
-      w-[98%]
+      w-full
+      h-full
       overflow-hidden
+     
      
       sm:px-6
       md:px-8
