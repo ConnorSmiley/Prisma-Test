@@ -35,14 +35,14 @@ const AboutContainer = styled.div`
   ${tw`
     w-screen
     h-screen
-    bg-black
     `}
 `;
 
 const AboutStyle = styled.div`
   ${tw`
-    mt-20
     bg-black
+    
+    sm:mt-20
     
     `}
 `;

@@ -45,9 +45,10 @@ const PhotosStyle = styled.div`
   ${tw`
   w-full
   h-full
-  mt-20
   bg-black
   relative
+  
+  sm:mt-20
 
    `}
 `;
