@@ -35,7 +35,7 @@ const AboutContainer = styled.div`
   ${tw`
     w-screen
     h-screen
-    mt-20
+    pt-20
     bg-black
     
     `}
