@@ -4,6 +4,8 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Link from 'next/link'
+
 
 const HomeContainer = styled.div`
   ${tw`
@@ -20,6 +22,7 @@ const HomeStyles = styled.div`
   w-full
   h-full
   flex
+  flex-col
   items-center
   justify-center
     relative
@@ -61,15 +64,15 @@ const CardContainer = styled.div`
   //box-shadow: 0px 0px 15px 0px rgba(77,77,255,0.5); 
   ${tw`
     flex
+    flex-col
     justify-center
     items-center
-    w-[60%]
     rounded-md
     p-4
     z-40
     
     `}
-`
+`;
 
 const Title = styled.div`
   //text-shadow: rgba(242, 100, 255, 1) 0px 0px 1480px;
@@ -103,6 +106,118 @@ const Title = styled.div`
     `}
 `;
 
+const Title2 = styled.div`
+  background: rgba(0, 0, 0, 0.5);
+  ${tw`
+  flex
+  flex-col
+  justify-center
+  items-center
+  text-center
+  text-2xl
+  font-extrabold
+  text-white
+  font-sans
+  uppercase
+  rounded-md
+  leading-[4rem]
+  z-40
+  px-4
+  py-2
+  rounded-md
+  
+    
+    sm:text-3xl
+    sm:leading-[6rem]
+    md:text-3xl
+    md:leading-[6rem]
+    lg:text-4xl
+    lg:leading-[7rem]
+    xl:text-4xl
+    xl:leading-[7rem]
+
+    
+    
+    `}
+`;
+
+
+const Title3 = styled.div`
+  ${tw`
+  flex
+  items-center
+  text-center
+  text-xl
+  font-extrabold
+  text-white
+  font-sans
+  uppercase
+  rounded-md
+  leading-[4rem]
+  z-40
+  mt-8
+  px-4
+  rounded-md
+  bg-blue-500
+  hover:bg-black
+  
+    
+    sm:text-3xl
+    sm:leading-[6rem]
+    md:text-3xl
+    md:leading-[6rem]
+    lg:text-4xl
+    lg:leading-[7rem]
+    xl:text-4xl
+    xl:leading-[7rem]
+    
+    `}
+`;
+
+const Title4 = styled.div`
+  ${tw`
+  flex
+  items-center
+  text-center
+  text-xl
+  font-extrabold
+  text-white
+  font-sans
+  uppercase
+  rounded-md
+  leading-[4rem]
+  z-40
+  px-4
+  mt-8
+  rounded-md
+  bg-gray-500
+  
+  hover:bg-black
+    
+    sm:text-3xl
+    sm:leading-[6rem]
+    md:text-3xl
+    md:leading-[6rem]
+    lg:text-4xl
+    lg:leading-[7rem]
+    xl:text-4xl
+    xl:leading-[7rem]
+    
+    `}
+`;
+
+
+
+const Links = styled.div`
+    ${tw`
+    flex
+    flex-row
+    justify-evenly
+    w-full
+    pt-10
+    
+    `}
+`
 
 const BackgroundImage = styled.img`
   ${tw`
@@ -118,7 +233,7 @@ const BackgroundImage = styled.img`
     sm:opacity-100
 
     `}
-`
+`;
 
 
 const IndexPage: NextPage = () => {
@@ -136,13 +251,27 @@ const IndexPage: NextPage = () => {
         <HomeStyles>
 
 
-          {/*<CardContainer>*/}
-          <Title>
-            Connor Smiley <br/>
-            코너 스마일리<br/>
-            コナー・スマイリー
-          </Title>
-          {/*</CardContainer>*/}
+          <CardContainer>
+            <Title>
+              Connor Smiley <br />
+              코너 스마일리<br />
+              コナー・スマイリー
+            </Title>
+            <Title2>
+              Work in progress
+            </Title2>
+            <Link href={"https://www.linkedin.com/in/connor-smiley/"}>
+              <Title3>
+                Click for
+                LinkedIn
+              </Title3>
+            </Link>
+            <Link href={'https://github.com/ConnorSmiley'}>
+              <Title4>
+                Click for Github
+              </Title4>
+            </Link>
+          </CardContainer>
 
           <BackgroundImage src="/3paint.png" />
 
