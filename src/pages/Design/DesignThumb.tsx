@@ -119,7 +119,7 @@ const DesignThumb: React.FC<IDesignThumbProps> = ({ posts }) => {
 
   return (
     <>
-      <Link key={posts?.id} href={`Design/${posts?.id}`}>
+      <Link key={posts?.id} href={`Design/${posts?.Company}`}>
 
         <DesignThumbContainer>
 

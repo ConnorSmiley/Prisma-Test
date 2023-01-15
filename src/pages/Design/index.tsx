@@ -89,7 +89,7 @@ const Design: React.FC<IDesignProps> = ({ thumbnails }) => {
 
   const filteredThumbs = [...thumbnails]?.map((posts: any) => (
     <>
-      <Link key={posts.id} href={`Design/${posts.id}`}>
+      <Link key={posts.id} href={`Design/${posts?.Company}`}>
         <DesignThumb key={posts.id} posts={posts} />
       </Link>
     </>
