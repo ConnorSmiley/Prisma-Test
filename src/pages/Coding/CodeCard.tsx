@@ -5,6 +5,7 @@ import Link from "next/link";
 
 const CodeCardContainer = styled.div`
   :hover {opacity: 100%}
+  box-shadow: 0px 0px 10px 5px #fe017a;
 
   ${tw`
    w-full
@@ -21,6 +22,7 @@ const CodeCardContainer = styled.div`
 `;
 
 const CodeCardStyle = styled.div`
+  
   ${tw`
   w-full
   h-auto

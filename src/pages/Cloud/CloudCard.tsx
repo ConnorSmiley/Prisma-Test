@@ -5,6 +5,7 @@ import Link from "next/link";
 
 const CloudCardContainer = styled.div`
   :hover {opacity: 100%}
+  box-shadow: 0px 0px 10px 5px #fe017a;
 
   ${tw`
     w-full
@@ -24,20 +25,18 @@ const CloudCardStyle = styled.div`
   h-auto
   flex
   flex-row
-  pb-8
   
   sm:my-4
   sm:flex
   sm:flex-col
   md:flex-row
- 
     `}
 `;
 
 const CardContainer = styled.div`
   ${tw`
   bg-black
-  w-full
+  w-auto
   h-full
   flex
   items-center
@@ -75,11 +74,9 @@ const Title = styled.header`
     tracking-wide
     leading-tight
 
-    sm:pt-2
     sm:text-4xl
-    sm:pr-4
     md:text-xl
-    lg:text-lg
+    lg:text-3xl
     xl:text-4xl
     `}
 `;
@@ -102,7 +99,7 @@ const ContentContainer = styled.text`
     leading-tight
     pt-4
 
-    sm:pt-4
+    sm:pt-2
    sm:text-xl
    md:text-base
    lg:text-2xl
@@ -118,6 +115,7 @@ const PictureContainer = styled.img`
   rounded-lg
   aspect-h-1
   w-60
+  overflow-hidden
   
   sm:flex
   sm:flex-col
@@ -139,7 +137,6 @@ const Date = styled.div`
     tracking-wide
     
     sm:text-sm
-    sm:mt-2
     sm:pb-0
     md:text-base
     lg:text-base

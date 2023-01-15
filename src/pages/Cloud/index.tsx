@@ -39,6 +39,7 @@ const CloudContainer = styled.div`
     w-screen
     h-full
     bg-black
+    pb-20
  
     `}
 `;
@@ -61,7 +62,6 @@ const CloudStyle = styled.div`
   ${tw`
   pt-4
   h-auto
-  overflow-hidden
   flex
   flex-col
   justify-center
@@ -103,8 +103,9 @@ const Index: React.FC<ICloudProps> = ({ blogPost }) => {
           </Background>
 
         </DarkBackground>
-        <Footer />
       </CloudContainer>
+      <Footer />
+
     </>
   );
 };

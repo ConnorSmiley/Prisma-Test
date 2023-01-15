@@ -70,15 +70,15 @@ const Card = styled.img`
   :hover {
     opacity: 100%
   }
+  box-shadow: 0px 0px 10px 5px #fe017a;
 
   ${tw`
     rounded-xl
     h-[20rem]
     w-[20rem]
-    border
-    border-white
     object-cover
     opacity-100
+    bg-black
     
     hover:cursor-pointer
     

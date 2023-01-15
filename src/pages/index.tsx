@@ -7,11 +7,10 @@ import Footer from "@/components/Footer";
 
 const HomeContainer = styled.div`
   ${tw`
-    w-full
-    h-full
+    w-screen
+    h-screen
     bg-black
     pt-20
-  relative
 
     `}
 `;
@@ -23,7 +22,9 @@ const HomeStyles = styled.div`
   flex
   items-center
   justify-center
-  z-40
+    relative
+    z-40
+
     
     `}
 `;
@@ -97,19 +98,28 @@ const Title = styled.div`
     xl:text-4xl
     xl:leading-[7rem]
 
+    
+    
     `}
 `;
 
+
 const BackgroundImage = styled.img`
-    ${tw`
+  ${tw`
+    absolute
     w-full
     h-full
-    absolute
     items-center
     justify-center
+    object-cover
+    opacity-60
     
+    sm:object-contain
+    sm:opacity-100
+
     `}
 `
+
 
 const IndexPage: NextPage = () => {
 
@@ -117,22 +127,21 @@ const IndexPage: NextPage = () => {
     <>
       <Navbar />
 
+      <Background>
+        <GlowBoxPurple />
+        <GlowBoxPink />
+      </Background>
 
       <HomeContainer>
-        <Background>
-          <GlowBoxPurple />
-          <GlowBoxPink />
-        </Background>
-
         <HomeStyles>
 
 
           {/*<CardContainer>*/}
-            <Title>
-              Connor Smiley <br/>
+          <Title>
+            Connor Smiley <br/>
             코너 스마일리<br/>
-              コナー・スマイリー
-            </Title>
+            コナー・スマイリー
+          </Title>
           {/*</CardContainer>*/}
 
           <BackgroundImage src="/3paint.png" />

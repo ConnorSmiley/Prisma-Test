@@ -4,6 +4,7 @@ import tw from "twin.macro";
 import Navbar from "@/components/Navbar";
 import { supabase } from "@/utils/supabase";
 import PhotoThumb from "@/pages/Photos/PhotoThumb";
+import Footer from "@/components/Footer";
 
 const Background = styled.div`
   ${tw`
@@ -36,6 +37,7 @@ const PhotosContainer = styled.div`
     w-screen
     h-full
     pt-20
+    pb-20
     bg-black
 
     `}
@@ -118,6 +120,7 @@ const Photos: React.FC<IDesignProps> = ({ pic, fullPics }) => {
           </GridWidth>
         </PhotosStyle>
       </PhotosContainer>
+      <Footer />
     </>
   );
 };

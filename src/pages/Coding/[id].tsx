@@ -13,13 +13,43 @@ import {
 import Footer from "@/components/Footer";
 import { supabase } from "@/utils/supabase";
 
+
+const Background = styled.div`
+  ${tw`
+    absolute
+    flex
+    w-full
+    h-full
+    justify-evenly
+    py-60
+    z-10
+    
+    `}
+`;
+const GlowBoxPurple = styled.div`
+  //x-offset y-offset blur spread
+  box-shadow: 0px 0px 10000px 200px rgba(148, 97, 255, 1);
+  ${tw`
+  opacity-50
+
+    `}
+`;
+
+const GlowBoxPink = styled.div`
+  box-shadow: 0px 0px 1000px 200px #fe017a;
+  ${tw`
+  opacity-50
+    `}
+`;
+
+
 const IdContainer = styled.div`
   ${tw`
-    w-screen
+    w-full
     h-full
-    bg-gradient-to-r from-pink-500 to-purple-900
     flex
-    pb-20
+    pb-10
+    z-10
     
     `}
 `;
@@ -29,39 +59,44 @@ const IdStyle = styled.div`
   relative
     mt-20
     h-full
+    w-full
     flex
     flex-col
     items-center
-    px-2
-    pr-40
-    pl-40
-    
-    md:pl-10
-    md:w-[64rem]
+    z-10
     
     `}
 `;
 
 const BlogContainer = styled.div`
   ${tw`
-      flex
+  flex
+  w-full
   flex-col
   items-center
   relative
+  z-10
     
     `}
 `;
 
 const Heading = styled.div`
   ${tw`
-    flex
-    items-center
-    justify-start
-    w-full
-    pb-4
-    border-b-2
-    border-white
-    relative
+  flex
+  flex-col
+    pb-2
+    w-[90%]
+    z-30
+    
+   sm:flex-col
+    sm:w-[90%]
+    md:w-[90%]
+    md:flex-row
+    lg:w-[90%]
+    xl:flex
+    xl:items-center
+    xl:justify-start
+    xl:w-[90%]
     
     `}
 `;
@@ -70,8 +105,13 @@ const Heading = styled.div`
 const PictureContainer = styled.div`
   ${tw`
     aspect-h-1
-    w-[20rem]
+    w-[100%]
     mr-8
+    z-50
+    
+    md:w-[40%]
+    lg:w-[30%]
+    xl:w-[35%]
     
     `}
 `;
@@ -100,14 +140,24 @@ const Sharebutton = styled.div`
 
 const Title = styled.header`
   ${tw`
-  text-7xl
+  text-2xl
   uppercase
   font-extrabold
-  py-8
-  w-[40rem]
   text-white
+  pt-2
+  z-50
   
-  md:text-6xl
+  sm:text-4xl
+  sm:pt-6
+  sm:pb-2
+  md:w-[100%]
+  md:text-4xl
+  lg:text-5xl
+  
+  xl:text-7xl
+  xl:font-extrabold
+  xl:py-8
+  xl:w-[90%]
     
     `}
 `;
@@ -123,11 +173,18 @@ const Picture = styled.img`
 const Title1 = styled.div`
 
   ${tw`
-    text-6xl
+    text-4xl
     font-extrabold
-    pb-8
+    pb-6
     tracking-tight
     italic
+    z-50
+    
+    sm:text-4xl
+    md:pb-8
+    md:text-5xl
+    lg:text-5xl
+    xl:text-6xl
     
     `}
 `;
@@ -135,9 +192,13 @@ const Title1 = styled.div`
 const LinkMain = styled.div`
   ${tw`
     w-full
+    h-full
     flex
-    items-center
-    justify-evenly
+    flex-col
+    z-50
+    
+    sm:items-center
+    sm:justify-evenly
     
     `}
 `;
@@ -145,9 +206,13 @@ const LinkMain = styled.div`
 const LinksContainer = styled.div`
   ${tw`
     flex
-    flex-row
+    flex-col
     justify-evenly
-    w-[30rem]
+    w-full
+    z-50
+    
+    sm:flex-row
+    sm:w-[30rem]
     
     `}
 `;
@@ -155,13 +220,15 @@ const LinksContainer = styled.div`
 const Date = styled.div`
   ${tw`
     text-white
-    absolute
-    bottom-8
-    right-0
-    text-xl
+    text-base
     font-light
+    flex
+    self-end
+    z-50
     
-    md:text-base
+    sm:text-base
+    md:text-lg
+    lg:text-xl
     `}
 `;
 
@@ -182,6 +249,7 @@ const LinkedInContainer = styled.div`
     text-xl
     font-bold
     text-white
+    z-50
     
     hover:bg-gray-500
     `}
@@ -193,6 +261,7 @@ const LinkedInStyles = styled.div`
     flex
     justify-evenly
     w-full
+    z-50
     
     `}
 `;
@@ -201,17 +270,30 @@ const Content = styled.text`
   white-space: pre-line;
   background: rgba(0, 0, 0, 0.5);
   ${tw`
-  text-2xl
+  flex
+  flex-col
+  justify-center
+  w-[95%]
+  text-base
   tracking-tight
   text-white
-  pt-10
-  pb-10
-  px-10
+  pt-4
+  pb-6
+  px-4
   mt-2
-  w-full
-  h-full
+  z-50
   
   rounded-md
+  
+  sm:pt-6
+  sm:text-lg
+  sm:w-[90%]
+  md:w-[90%]
+  lg:w-[90%]
+  xl:w-[90%]
+  xl:pb-10
+  xl:pt-10
+  xl:mt-2
     
     `}
 `;
@@ -288,6 +370,12 @@ const CodePosts: React.FC<IdProps> = ({post}) => {
               {post?.content}
 
             </Content>
+
+            <Background>
+              <GlowBoxPurple />
+              <GlowBoxPink />
+            </Background>
+
           </IdStyle>
 
         </BlogContainer>

@@ -14,6 +14,7 @@ const CodingContainer = styled.div`
     h-full
     pt-10
     bg-black
+    pb-20
  
     `}
 `;
@@ -31,9 +32,8 @@ const Background = styled.div`
     absolute
     flex
     w-full
-    h-[100%]
+    h-full
     justify-evenly
-    overflow-hidden
     
     `}
 `;
@@ -56,8 +56,9 @@ const Blog = styled.div`
   ${tw`
     w-full
     h-full
-    relative
     z-10
+    px-8
+    py-8
     
     `}
 `;

@@ -174,19 +174,19 @@ const Navbar: React.FC<IProps> = () => {
               </HoverStyle>
             }
 
-            {currentRoute === "/About" ?
+            {currentRoute === "/Contact" ?
               <>
                 <HoverStyle>
-                  <Link href="/About">
-                   About
+                  <Link href="/Contact">
+                   Contact
                   </Link>
                   <NavbarTextBottomBorder />
                 </HoverStyle>
               </>
               :
               <HoverStyle>
-                <Link href="/About">
-                 About
+                <Link href="/Contact">
+                Contact
                 </Link>
               </HoverStyle>
             }
