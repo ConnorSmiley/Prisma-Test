@@ -13,7 +13,6 @@ const Background = styled.div`
     h-full
     justify-evenly
     py-60
-    bg-black
     
     `}
 `;
@@ -46,6 +45,7 @@ const PhotosStyle = styled.div`
   w-full
   h-full
   mt-20
+  bg-black
   relative
 
    `}

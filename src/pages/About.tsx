@@ -14,6 +14,7 @@ const Background = styled.div`
     
     `}
 `;
+
 const GlowBoxPurple = styled.div`
   //x-offset y-offset blur spread
   box-shadow: 0px 0px 10000px 200px rgba(148, 97, 255, 1);
@@ -29,7 +30,6 @@ const GlowBoxPink = styled.div`
     `}
 `;
 
-
 const AboutContainer = styled.div`
   ${tw`
     w-screen
@@ -41,6 +41,7 @@ const AboutContainer = styled.div`
 const AboutStyle = styled.div`
   ${tw`
     mt-20
+    bg-black
     
     `}
 `;
