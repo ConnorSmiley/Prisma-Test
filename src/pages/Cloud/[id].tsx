@@ -84,7 +84,7 @@ const Heading = styled.div`
   flex
   flex-col
     pb-2
-    w-[80%]
+    w-[90%]
     z-50
     
    sm:flex-col
@@ -176,7 +176,7 @@ const Title1 = styled.div`
 
 const Title2 = styled.div`
   ${tw`
-        text-6xl
+    text-6xl
     font-extrabold
     pb-10
     pt-4
@@ -189,10 +189,13 @@ const Title2 = styled.div`
 const LinkMain = styled.div`
   ${tw`
     w-full
+    h-full
     flex
-    items-center
-    justify-evenly
+    flex-col
     z-50
+    
+    sm:items-center
+    sm:justify-evenly
     
     `}
 `;
@@ -200,11 +203,13 @@ const LinkMain = styled.div`
 const LinksContainer = styled.div`
   ${tw`
     flex
-    flex-row
+    flex-col
     justify-evenly
-    w-[30rem]
+    w-full
     z-50
     
+    sm:flex-row
+    sm:w-[30rem]
     `}
 `;
 
