@@ -21,7 +21,7 @@ const Background = styled.div`
     justify-evenly
     py-80
     overflow-hidden
-    
+    bg-black
     
     `}
 `;
@@ -46,7 +46,6 @@ const ContactStyles = styled.div`
   ${tw`
       h-full
       w-full
-      pb-80
       overflow-hidden
       
      sm:pt-10 
@@ -62,6 +61,7 @@ const ContactContainer = styled.div`
         flex-col
         justify-center
         overflow-hidden
+        pb-60
         
         sm:w-full
         sm:items-center
