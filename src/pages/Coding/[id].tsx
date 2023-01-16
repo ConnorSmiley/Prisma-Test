@@ -202,6 +202,7 @@ const LinkMain = styled.div`
     
     sm:items-center
     sm:justify-evenly
+    sm:flex-row
     
     `}
 `;
@@ -216,6 +217,7 @@ const LinksContainer = styled.div`
     
     sm:flex-row
     sm:w-[30rem]
+    
     
     `}
 `;

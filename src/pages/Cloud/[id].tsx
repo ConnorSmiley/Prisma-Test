@@ -194,12 +194,14 @@ const LinkMain = styled.div`
     w-full
     h-full
     flex
+    flex-col
     items-center
     justify-evenly
     z-50
     
     sm:items-center
     sm:justify-evenly
+    sm:flex-row
     
     `}
 `;
@@ -207,6 +209,7 @@ const LinkMain = styled.div`
 const LinksContainer = styled.div`
   ${tw`
     flex
+    flex-col
     justify-evenly
     w-full
     z-50
