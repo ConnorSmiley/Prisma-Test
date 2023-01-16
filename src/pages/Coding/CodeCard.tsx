@@ -8,14 +8,14 @@ const CodeCardContainer = styled.div`
   box-shadow: 0px 0px 10px 5px #fe017a;
 
   ${tw`
-   w-full
+   w-[98%]
     flex
     justify-center
     cursor-pointer
     overflow-hidden
     opacity-100
-    px-2
     z-20
+    mb-6
     
     sm:opacity-70
     
@@ -29,8 +29,8 @@ const CodeCardStyle = styled.div`
   h-auto
   flex
   flex-row
-  pb-4
-  pt-4
+  pb-2
+  pt-2
   z-20
   
   sm:flex
@@ -58,9 +58,11 @@ const CardStyle = styled.div`
   w-full
   relative
   pl-2
+  pt-2
+  pb-2
   flex
   flex-col
-  justify-evenly
+  justify-between
   
     
     `}
@@ -85,9 +87,9 @@ const Title = styled.header`
 
     sm:text-4xl
     sm:pr-3
-    md:text-xl
-    lg:text-lg
-    xl:text-4xl
+    md:text-3xl
+    lg:text-3xl
+    xl:text-5xl
     `}
 `;
 

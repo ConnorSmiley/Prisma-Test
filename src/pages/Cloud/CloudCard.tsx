@@ -14,7 +14,7 @@ const CloudCardContainer = styled.div`
     cursor-pointer
     overflow-hidden
     opacity-100
-    pb-2
+    mb-4
     
     sm:opacity-70
     `}
@@ -25,9 +25,7 @@ const CloudCardStyle = styled.div`
   w-full
   h-full
   flex
-  flex-row
   
-  sm:my-4
   sm:flex
   sm:flex-col
   md:flex-row
@@ -53,8 +51,8 @@ const CardStyle = styled.div`
   relative
   flex
   flex-col
-  justify-evenly
-  
+  justify-between
+  pb-2
     
     `}
 `;
@@ -75,11 +73,12 @@ const Title = styled.header`
     flex
     tracking-wide
     leading-tight
+    pr-4
 
     sm:text-4xl
-    md:text-xl
+    md:text-2xl
     lg:text-3xl
-    xl:text-4xl
+    xl:text-5xl
     `}
 `;
 
@@ -135,13 +134,11 @@ const Date = styled.div`
     text-white
     font-light
     tracking-wide
+    pt-2
     
     sm:text-sm
-    sm:pb-0
     md:text-base
     lg:text-base
-    lg:mt-1
-    lg:pb-0
     lg:bottom-5
     xl:text-xl
     xl:font-light
