@@ -51,8 +51,9 @@ const CardStyle = styled.div`
   h-full
   w-full
   relative
-  pl-2
-  pt-2
+  flex
+  flex-col
+  justify-evenly
   
     
     `}
@@ -93,14 +94,12 @@ const ContentContainer = styled.text`
 
   ${tw`
     text-white
-    pr-4
+    pr-3
     flex
     text-sm
     tracking-wide
     leading-tight
-    pt-1
 
-    sm:pt-2
    sm:text-xl
    md:text-base
    lg:text-2xl
