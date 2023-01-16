@@ -194,7 +194,8 @@ const LinkMain = styled.div`
     w-full
     h-full
     flex
-    flex-col
+    items-center
+    justify-evenly
     z-50
     
     sm:items-center
@@ -206,7 +207,6 @@ const LinkMain = styled.div`
 const LinksContainer = styled.div`
   ${tw`
     flex
-    flex-col
     justify-evenly
     w-full
     z-50
@@ -239,7 +239,7 @@ const LinkedInContainer = styled.div`
     flex
     flex-row
     items-center
-    justify-between
+    justify-evenly
     pr-2
     pl-1
     rounded-xl

@@ -243,7 +243,7 @@ const LinkedInContainer = styled.div`
     flex
     flex-row
     items-center
-    justify-between
+    justify-evenly
     pr-2
     pl-1
     rounded-xl
@@ -291,12 +291,16 @@ const Content = styled.text`
   sm:pt-6
   sm:text-lg
   sm:w-[98%]
+  sm:text-xl
   md:w-[98%]
+  md:text-xl
   lg:w-[98%]
+  lg:text-2xl
   xl:w-[98%]
   xl:pb-10
   xl:pt-10
   xl:mt-2
+  xl:text-2xl
     
     `}
 `;

@@ -35,7 +35,6 @@ const Footer: React.FC<IFooterProps> = () => {
        <>
         <FooterContainer>
             <FooterStyle>
-              footer
             </FooterStyle>
         </FooterContainer>
        </>
