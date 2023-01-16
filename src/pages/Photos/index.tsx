@@ -63,7 +63,7 @@ const GridWidth = styled.div`
 const MainGrid = styled.div`
   ${tw`
     grid
-    grid-cols-1
+    grid-cols-2
     gap-4
     place-items-center
     justify-center   
