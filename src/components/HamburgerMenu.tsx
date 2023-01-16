@@ -4,6 +4,8 @@ import tw from "twin.macro";
 import { FaBars } from "react-icons/fa";
 import { CgCloseO } from "react-icons/cg";
 import Link from "next/link";
+import Linkedin from "/public/linkedin.svg";
+import Github from "/public/GithubLogo.svg";
 
 const HamburgerMenuContainer = styled.div`
   ${tw`
@@ -48,7 +50,7 @@ const CgCloseOIcon = styled(CgCloseO)`
     `}
 `;
 
-const HamburgerList = styled.div` 
+const HamburgerList = styled.div`
   ${tw`
   bg-black
    h-screen
@@ -86,6 +88,40 @@ const HamburgerList = styled.div`
     `}
 `;
 
+const LinkedinIcon = styled(Linkedin)`
+  ${tw`
+    h-20
+    w-20
+    text-white
+    
+    hover:cursor-pointer
+    hover:opacity-50
+    
+    `}
+`;
+
+const GitHubLogo = styled(Github)`
+  ${tw`
+    h-16
+    w-16
+    
+    hover:cursor-pointer
+    hover:opacity-50
+    
+    `}
+`;
+
+
+const Flex = styled.div`
+    ${tw`
+    flex
+    w-full
+    items-center
+    flex-row
+    justify-evenly
+    
+    `}
+`
 
 export interface IHamburgerMenuProps {
 }
@@ -113,7 +149,7 @@ const HamburgerMenu: React.FC<IHamburgerMenuProps> = () => {
                 Design
               </Link>
               <Link href="/Coding">
-               Coding
+                Coding
               </Link>
               <Link href="/Cloud">
                 cloud
@@ -122,8 +158,18 @@ const HamburgerMenu: React.FC<IHamburgerMenuProps> = () => {
                 Photos
               </Link>
               <Link href="/Contact">
-               Contact
+                Contact
               </Link>
+
+              <Flex>
+              <Link href="https://github.com/ConnorSmiley">
+                <GitHubLogo />
+              </Link>
+              <Link href="https://www.linkedin.com/in/connor-smiley">
+                <LinkedinIcon />
+              </Link>
+              </Flex>
+
             </HamburgerList>)
           }
         </HamburgerMenuStyle>
