@@ -77,7 +77,6 @@ const FormContainer = styled.form`
         justify-center
         
         shadow-2xl
-        max-w-7xl
         
         sm:w-full
         sm:flex
@@ -89,7 +88,7 @@ const FormContainer = styled.form`
         `}
 `;
 const Blur = styled.div`
-  box-shadow: 0px 0px 40px 20px deeppink;
+  //box-shadow: 0px 0px 40px 20px deeppink;
   ${tw`
         h-full
         w-full
@@ -183,7 +182,7 @@ const NameInput = styled.input`
 `;
 const MessageInput = styled.textarea`
   ${tw`
-     h-full
+     h-60
      w-auto
      rounded-md
      shadow-2xl
@@ -196,6 +195,8 @@ const MessageInput = styled.textarea`
      focus:ring-white
      focus:border-4
      focus:border-pink-500
+     
+     sm:h-40
         `}
 `;
 
