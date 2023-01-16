@@ -326,7 +326,7 @@ const CloudPosts: React.FC<IProps> = ({ post }) => {
             <LinkMain>
               <LinksContainer>
                 <LinkedInStyles>
-                  <LinkedinShareButton url={`www.localhost:3000/Cloud/${post?.id}`} title={"Connor Smiley's Blog"}>
+                  <LinkedinShareButton url={`www.localhost:3000/Cloudhttps://www.connorsmiley.com/Cloud/${post?.id}`} title={"Connor Smiley's Blog"}>
                     <LinkedInContainer>
                       <LinkedinIcon size={28} iconFillColor={"white"} borderRadius={10} />
                       Share
@@ -336,7 +336,7 @@ const CloudPosts: React.FC<IProps> = ({ post }) => {
 
                 <LinksContainer>
                   <LinkedInStyles>
-                    <FacebookShareButton url={`www.localhost:3000/Cloud/${post?.id}`} title={"Connor Smiley's Blog"}>
+                    <FacebookShareButton url={`https://www.connorsmiley.com/Cloud/${post?.id}`} title={"Connor Smiley's Blog"}>
                       <LinkedInContainer>
                         <FacebookIcon size={28} iconFillColor={"white"} borderRadius={10} />
                         Share
@@ -347,7 +347,7 @@ const CloudPosts: React.FC<IProps> = ({ post }) => {
 
                 <LinksContainer>
                   <LinkedInStyles>
-                    <TwitterShareButton url={`www.localhost:3000/Cloud/${post?.id}`} title={"Connor Smiley's Blog"}>
+                    <TwitterShareButton url={`https://www.connorsmiley.com/Cloud/${post?.id}`} title={"Connor Smiley's Blog"}>
                       <LinkedInContainer>
                         <TwitterIcon size={28} iconFillColor={"white"} borderRadius={10} />
                         Tweet
