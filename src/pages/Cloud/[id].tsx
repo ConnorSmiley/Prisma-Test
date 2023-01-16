@@ -52,6 +52,7 @@ const IdContainer = styled.div`
     flex
     pb-10
     z-10
+    bg-black
     
     `}
 `;
@@ -239,8 +240,8 @@ const LinkedInContainer = styled.div`
     flex-row
     items-center
     justify-between
-    pr-4
-    pl-3
+    pr-2
+    pl-1
     rounded-xl
     border-2
     border-gray-500
@@ -272,7 +273,7 @@ const Content = styled.text`
   flex
   flex-col
   justify-center
-  w-[95%]
+  w-[98%]
   text-base
   tracking-tight
   text-white
@@ -286,10 +287,10 @@ const Content = styled.text`
   
   sm:pt-6
   sm:text-lg
-  sm:w-[90%]
-  md:w-[90%]
-  lg:w-[90%]
-  xl:w-[90%]
+  sm:w-[98%]
+  md:w-[98%]
+  lg:w-[98%]
+  xl:w-[98%]
   xl:pb-10
   xl:pt-10
   xl:mt-2
