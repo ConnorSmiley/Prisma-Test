@@ -58,6 +58,9 @@ const CardStyle = styled.div`
   w-full
   relative
   pl-2
+  flex
+  flex-col
+  justify-evenly
   
     
     `}
@@ -81,7 +84,7 @@ const Title = styled.header`
     leading-tight
 
     sm:text-4xl
-    sm:pr-4
+    sm:pr-3
     md:text-xl
     lg:text-lg
     xl:text-4xl
@@ -116,8 +119,7 @@ const ContentContainer = styled.text`
   ${tw`
   flex
     text-white
-    pt-1
-    pr-4
+    pr-3
     flex
     text-sm
     tracking-wide
@@ -139,7 +141,6 @@ const Date = styled.div`
     text-white
     font-light
     tracking-wide
-    pt-2
     
     sm:text-sm
     sm:mt-2

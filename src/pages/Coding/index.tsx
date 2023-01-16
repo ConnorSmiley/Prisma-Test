@@ -12,9 +12,11 @@ const CodingContainer = styled.div`
   ${tw`
     w-screen
     h-full
-    pt-10
+    pt-2
     bg-black
     pb-20
+    
+    sm:pt-10
  
     `}
 `;
@@ -57,7 +59,7 @@ const Blog = styled.div`
     w-full
     h-full
     z-10
-    px-8
+    px-2
     py-8
     
     `}
