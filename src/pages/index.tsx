@@ -258,20 +258,6 @@ const IndexPage: NextPage = () => {
               코너 스마일리<br />
               コナー・スマイリー
             </Title>
-            <Title2>
-              Work in progress
-            </Title2>
-            <Link href={"https://www.linkedin.com/in/connor-smiley/"}>
-              <Title3>
-                Click for
-                LinkedIn
-              </Title3>
-            </Link>
-            <Link href={'https://github.com/ConnorSmiley'}>
-              <Title4>
-                Click for Github
-              </Title4>
-            </Link>
           </CardContainer>
 
           <BackgroundImage src="/3paint.png" />

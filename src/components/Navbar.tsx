@@ -4,6 +4,8 @@ import tw from "twin.macro";
 import Link from "next/link";
 import HamburgerMenu from "@/components/HamburgerMenu";
 import { useRouter } from "next/router";
+import Linkedin from "/public/linkedin.svg"
+import Github from "/public/GithubLogo.svg"
 
 
 const NavbarBG = styled.div`
@@ -74,6 +76,29 @@ const HoverStyle = styled.div`
  
     `}
 `;
+
+const LinkedinIcon = styled(Linkedin)`
+    ${tw`
+    h-10
+    w-10
+    text-white
+    
+    hover:cursor-pointer
+    hover:opacity-50
+    
+    `}
+`
+
+const GitHubLogo = styled(Github)`
+    ${tw`
+    h-8
+    w-8
+    
+    hover:cursor-pointer
+    hover:opacity-50
+    
+    `}
+`
 
 export interface IProps {
 }
@@ -190,9 +215,17 @@ const Navbar: React.FC<IProps> = () => {
                 </Link>
               </HoverStyle>
             }
+            <Link href="https://github.com/ConnorSmiley">
+            <GitHubLogo />
+            </Link>
+
+            <Link href="https://www.linkedin.com/in/connor-smiley">
+            <LinkedinIcon />
+            </Link>
 
           </NavbarText>
         </NavbarStyle>
+
       </NavbarBG>
     </>
   );
