@@ -59,8 +59,7 @@ const GoLiteStyle = styled.div`
     flex
     flex-col
     items-center
-      relative
-
+    relative
     
     z-10
     `}
@@ -86,6 +85,7 @@ const PictureContainer = styled.div`
 
 const Title = styled.div`
   ${tw`
+  w-[95%]
   text-4xl
   z-10
   text-white
@@ -102,7 +102,7 @@ const About = styled.div`
   h-full
   z-10
   text-white
-  w-[95%]
+  w-[98%]
   pb-10
   px-3
   py-3
