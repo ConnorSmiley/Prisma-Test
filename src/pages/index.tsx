@@ -12,7 +12,8 @@ const HomeContainer = styled.div`
     w-screen
     h-screen
     bg-black
-    pt-20
+    
+    sm:pt-20
 
     `}
 `;
