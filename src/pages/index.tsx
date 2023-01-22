@@ -6,7 +6,6 @@ import tw from "twin.macro";
 
 const IndexContainer = styled.div`
     ${tw`
-    
     `}
 `
 
@@ -23,6 +22,7 @@ const IndexPage: NextPage = () => {
     <>
       <IndexContainer>
         <IndexStyle>
+          jfkdjf
 
 
         </IndexStyle>
