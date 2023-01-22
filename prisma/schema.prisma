@@ -11,14 +11,11 @@ model Prisma {
   id BigInt @id @default(autoincrement())
 }
 
-
-
 model Projects{
   id Int @id @default(autoincrement())
   name String?
   Email Email[]
 }
-
 
 model Email {
   id Int @id @default(autoincrement())
@@ -28,15 +25,4 @@ model Email {
   project Projects @relation(fields : [projectId], references: [id])
   projectId Int
 }
-
-
-
-
-
-
-
-
-
-
-
 
