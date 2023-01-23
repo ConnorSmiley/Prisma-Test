@@ -46,7 +46,7 @@ export default IndexPage;
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const prisma = new PrismaClient()
-  const stringEmail = await prisma.email.findMany();
+  const stringEmail = await prisma.test.findMany();
   const arrayEmail = stringEmail.map(({ name}) =>  name)
   // const email = JSON.stringify(arrayEmail)
   return {

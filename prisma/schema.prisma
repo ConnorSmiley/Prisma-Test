@@ -8,20 +8,13 @@ datasource db {
 }
 
 model Email {
-  id        Int       @id @default(autoincrement())
-  name      String
-  dateCreated  DateTime
-  // projectId Int?
-  // Projects  Projects?  @relation(fields: [projectId], references: [id])
+  id          Int      @id @default(autoincrement())
+  name        String
+  dateCreated DateTime @default(now())
 }
 
-// model Projects {
-//   id    Int     @id @default(autoincrement())
-//   name  String?
-//   Email Email[]
-// }
-
-model Test {
-  id Int @id @default(autoincrement())
-  dateCreated DateTime
+model test {
+  id          Int      @id(map: "Test_pkey") @default(autoincrement())
+  dateCreated DateTime @default(now())
+  name        String
 }
