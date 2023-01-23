@@ -11,13 +11,17 @@ model Email {
   id        Int       @id @default(autoincrement())
   name      String
   dateCreated  DateTime
-  projectId Int?
-  Projects  Projects?  @relation(fields: [projectId], references: [id])
+  // projectId Int?
+  // Projects  Projects?  @relation(fields: [projectId], references: [id])
 }
 
-model Projects {
-  id    Int     @id @default(autoincrement())
-  name  String?
-  Email Email[]
-}
+// model Projects {
+//   id    Int     @id @default(autoincrement())
+//   name  String?
+//   Email Email[]
+// }
 
+model Test {
+  id Int @id @default(autoincrement())
+  dateCreated DateTime
+}
