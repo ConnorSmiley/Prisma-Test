@@ -1,60 +1,76 @@
 import styled from "styled-components";
 import tw from "twin.macro";
 import { useState } from "react";
-import {PrismaClient, Prisma} from "@prisma/client";
+import { PrismaClient, Prisma } from "@prisma/client";
 
-
-const prisma = new PrismaClient()
+const prisma = new PrismaClient();
 
 const Container = styled.div`
   ${tw`
-  h-16
+  h-full
   w-full
-  bg-red-500
-  text-green-500
+  bg-black
     
     `}
 `;
 
 
+const Style = styled.div`
+    ${tw`
+    items-center
+    flex
+    justify-center
+    flex-col
+    
+    `}
+`
+
+const List = styled.div`
+    ${tw`
+    bg-gray-400
+    w-[90%]
+    flex
+    flex-col
+    
+    `}
+`
+
+
+
 const ProjectPage = ({ emailx }) => {
   const [words, setWords] = useState();
-
   const handleChange = (e: any) => {
     setWords(e.target.value);
   };
 
-
-
-
-
-  async function saveMovie(e ) {
-    e.preventDefault()
-    const response = await fetch('/api/email', {
-      method: 'POST',
+  async function saveMovie(e) {
+    e.preventDefault();
+    const response = await fetch("/api/email", {
+      method: "POST",
       body: JSON.stringify(words)
-    })
-
-    return await response.json()
+    });
+    return await response.json();
   }
-
-
 
   return (
     <>
       <Container>
-        <form onSubmit={saveMovie}
-        >
+        <Style>
+
+        <form onSubmit={saveMovie}>
           <input onChange={handleChange} />
-          <button >submit</button>
+          <button>submit</button>
         </form>
 
         {[emailx].map((x) => (
           <>
-            {x}
+              <List>
+              {x}
+              </List>
           </>
-            ))}
+        ))}
 
+        </Style>
       </Container>
     </>
   );
@@ -64,7 +80,7 @@ export default ProjectPage;
 export async function getServerSideProps() {
 
   const emails = await prisma.signup.findMany();
-  const emailx = JSON.stringify(emails)
+  const emailx = JSON.stringify(emails);
 
   return {
     props: {
