@@ -7,13 +7,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Email {
+model Signup {
   id          Int      @id @default(autoincrement())
-  name        String
+  email       String
   dateCreated DateTime @default(now())
 }
 
-model test {
+model Test {
   id          Int      @id(map: "Test_pkey") @default(autoincrement())
   dateCreated DateTime @default(now())
   name        String

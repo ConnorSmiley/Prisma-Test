@@ -1,56 +1,40 @@
-import { GetServerSideProps  } from "next";
-import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
-import {PrismaClient} from "@prisma/client";
+import { useState } from "react";
 
 
-const IndexContainer = styled.div`
+const Container = styled.div`
   ${tw`
-    `}
-`;
-
-const IndexStyle = styled.div`
-  ${tw`
+  h-16
+  w-full
+  bg-red-500
     
     `}
 `;
 
-export interface IndexProps {
-  email:any
-  stringEmail: any
-  arrayEmail:any
-}
 
+const ProjectPage = () => {
+  const [words, setWords] = useState("");
 
-const IndexPage: React.FC<IndexProps> = ({ arrayEmail }) => {
-  console.log(arrayEmail)
+  const handlesubmit = ()  => {
+  }
+
+  const handleChange = (e:any)  => {
+    setWords(e.target.value)
+  }
 
   return (
     <>
-      <IndexContainer>
-        <IndexStyle>
-          {arrayEmail.map((x:any) => (
-            <div>
-              {x}
-            </div>
-          ))}
+      <Container>
+        <form>
+          <input onChange={handleChange} />
+          <button onClick={handlesubmit}>submit</button>
+        </form>
 
-        </IndexStyle>
-      </IndexContainer>
+      </Container>
     </>
   );
 };
+export default ProjectPage;
 
-export default IndexPage;
-
-export const getServerSideProps: GetServerSideProps = async () => {
-  const prisma = new PrismaClient()
-  const stringEmail = await prisma.test.findMany();
-  const arrayEmail = stringEmail.map(({ name}) =>  name)
-  // const email = JSON.stringify(arrayEmail)
-  return {
-    props: { arrayEmail }
-  };
-};
 

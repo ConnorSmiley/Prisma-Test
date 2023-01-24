@@ -24,7 +24,7 @@ Remember to install dependencies after cloning it locally.
 yarn dev # npm run dev
 ```
 
-### Test Production Environment
+### Index Production Environment
 
 The `stage` script will build and start a production server.
 
