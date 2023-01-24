@@ -10,7 +10,7 @@
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext"
+      "esnext",
     ],
     "module": "esnext",
     "moduleResolution": "node",
@@ -36,7 +36,8 @@
       ],
       "@/utils/*": [
         "utils/*"
-      ]
+      ],
+      "db": ["lib/prisma"]
     },
     "resolveJsonModule": true,
     "skipLibCheck": true,
